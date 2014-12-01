@@ -25,7 +25,8 @@ if (isset($_POST["action"])) {
     if ($_POST["action"] == "add") {
 //        echo "add";
 //        echo "<br>";
-        $add = "INSERT INTO products (id, name, price, color, size, quantity, availability) VALUES ('" . $_POST["id"] . "', '" . $_POST["name"] . "', '" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "', '" . $_POST["quantity"] . "', '" . $_POST["availability"] . "',)";
+        $add = "INSERT INTO products (id, name, price, color, size, quantity, availability) VALUES ('" . $_POST["id"] . "', '" . $_POST["name"] . "', '" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "', '" . $_POST["quantity"] . "', '" . $_POST["availability"] . "')";
+//        echo $add;
         $stmt = $dbm->prepare($add);
         $stmt->execute();
 //        echo $add;
