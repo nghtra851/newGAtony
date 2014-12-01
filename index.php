@@ -70,7 +70,11 @@ if (isset($_GET["action"]) and $_GET["action"] == "buy") {
         <title></title>
     </head>
     <body>
+        <a href="login.php">Login</a>
+        <a href="kill.php">Kill</a>
+        <a href="db.php">Database</a><br><br>
         <?php
+        
         var_dump($_SESSION);
         ?>
     </body>
