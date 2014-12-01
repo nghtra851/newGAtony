@@ -5,7 +5,7 @@ session_start();
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
-define("DB_NAME", "logindb");
+define("DB_NAME", "projectdb");
 
 $dsn = 'mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8';
 
@@ -70,7 +70,7 @@ if (isset($_POST["action"])) {
             <br>
             <input type="submit" name="action" value="Login">
             <br>
-            <a href="kill.php">Kill</a>
+            <a href="kill.php">Sign Out</a>
         </form>
 
     </body>

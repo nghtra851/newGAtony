@@ -2,7 +2,7 @@
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
-define("DB_NAME", "productmanagement");
+define("DB_NAME", "projectdb");
 
 $dbm = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
 
@@ -78,12 +78,12 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
                         }
                         ?>
                     </div>
-                    <form id="delete">
+                    <form id="delete" method="POST">
                         <input  type="text" name="id">
                         <input  type="submit" name="action" value="delete">
                         <br><br>
                     </form>
-                    <form id="editadd">
+                    <form id="editadd" method="POST">
                         <input type="text" name="id" placeholder="Index">
                         <br>
                         <br>
