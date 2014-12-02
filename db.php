@@ -38,6 +38,7 @@ if (isset($_POST["action"])) {
 
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
+$stmt->bindParam($id, $name, $price, $color, $size, $color, $quantity, $availability);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
