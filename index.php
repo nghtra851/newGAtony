@@ -64,7 +64,9 @@ if (isset($_GET["action"]) and $_GET["action"] == "buy") {
 if (isset($_POST["action"]) == "signout") {
     session_unset();
     session_destroy();
-    echo "You have logged out. Please come back.";
+    if (isset($_SESSION["user"]) === NULL) {
+        echo "You have logged out. Please come back.";
+    }
 }
 ?>
 
@@ -83,10 +85,10 @@ if (isset($_POST["action"]) == "signout") {
             <button type="submit" value="signout" name="action">Sign Out</button>
         </form>
         <?php
-        if (isset($username) === NULL) {
+        if (isset($_SESSION["user"]) != NULL) {
             echo "Logged in as " . $_SESSION["user"];
 //        var_dump($_SESSION);
-        }else{
+        } else {
             echo "You are not logged in. Please log in.";
         }
         ?>
