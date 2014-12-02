@@ -38,7 +38,13 @@ if (isset($_POST["action"])) {
 
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
-$stmt->bindParam($id, $name, $price, $color, $size, $color, $quantity, $availability);
+$stmt->bindParam($id);
+$stmt->bindParam($name);
+$stmt->bindParam($price);
+$stmt->bindParam($color);
+$stmt->bindParam($size);
+$stmt->bindParam($quantity);
+$stmt->bindParam($availability);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
@@ -63,7 +69,9 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
         <link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
+        <a href="index.php">Home</a>
         <div id="wrapper">
+            
             <tr>
                 <td>
                     <div id="products">
