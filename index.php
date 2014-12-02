@@ -6,7 +6,7 @@ if (!isset($_SESSION["cart"])) {
 }
 
 //om tömma
-if (isset($_GET["empty"])) {
+if (isset($_POST["empty"])) {
     session_destroy();
     header("Location: ?");
     exit();
@@ -14,11 +14,11 @@ if (isset($_GET["empty"])) {
 
 
 //kolla om ta bort enskild rad ur vagnen
-if (isset($_GET["action"]) and $_GET["action"] == "delete") {
+if (isset($_POST["action"]) and $_POST["action"] == "delete") {
     //loopa igenom värdena
     for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
         //kolla om ID:t ska tas bort
-        if ($_SESSION["cart"][$i]["id"] == $_GET["id"]) {
+        if ($_SESSION["cart"][$i]["id"] == $_POST["id"]) {
             //radera ett index ur en array
             array_splice($_SESSION["cart"], $i, 1);
             //avbryt loopen
@@ -32,11 +32,11 @@ if (isset($_GET["action"]) and $_GET["action"] == "delete") {
 
 //kolla om vi ska uppdatera en rad ur vagnen
 //denna del skulle kunna ingå i ovanstående
-if (isset($_GET["action"]) and $_GET["action"] == "update") {
+if (isset($_POST["action"]) and $_POST["action"] == "update") {
     //loopa igenom sessionsvariabeln
     for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-        if ($_SESSION["cart"][$i]["id"] == $_GET["id"]) {
-            $_SESSION["cart"][$i]["antal"] = $_GET["antal"];
+        if ($_SESSION["cart"][$i]["id"] == $_POST["id"]) {
+            $_SESSION["cart"][$i]["antal"] = $_POST["antal"];
             break;
         }
     }
@@ -47,7 +47,7 @@ if (isset($_GET["action"]) and $_GET["action"] == "update") {
 
 
 //kolla om vi fått nya grejer i vagnen och lägg dem där annars
-if (isset($_GET["action"]) and $_GET["action"] == "buy") {
+if (isset($_POST["action"]) and $_POST["action"] == "buy") {
 
     $laggTill = true;
 
@@ -92,5 +92,9 @@ if (isset($_POST["action"]) == "signout") {
             echo "You are not logged in. Please log in.";
         }
         ?>
+        <br><br><br>
+        <form method="POST">
+            <input type="submit" name="action" value="add">
+        </form>
     </body>
 </html>
