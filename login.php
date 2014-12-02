@@ -60,6 +60,7 @@ if (isset($_POST["action"]) == "Sign Up") {
     var_dump($signup);
     
 //    $signup = $stmt->
+//    LOL
 
     if ($signup != NULL) {
         echo "<br>";
