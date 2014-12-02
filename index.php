@@ -61,6 +61,11 @@ if (isset($_GET["action"]) and $_GET["action"] == "buy") {
         }
     }
 }
+if (isset($_POST["action"]) == "signout") {
+    session_unset();
+    session_destroy();
+    echo "You have logged out. Please come back.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,11 +76,19 @@ if (isset($_GET["action"]) and $_GET["action"] == "buy") {
     </head>
     <body>
         <a href="login.php">Login</a>
-        <a href="kill.php">Kill</a>
+        <a href="signup.php">Sign Up</a>
+        <a href="kill.php">Sign Out</a>
         <a href="db.php">Database</a><br><br>
+        <form method="POST">
+            <button type="submit" value="signout" name="action">Sign Out</button>
+        </form>
         <?php
-        
-        var_dump($_SESSION);
+        if (isset($username) === NULL) {
+            echo "Logged in as " . $_SESSION["user"];
+//        var_dump($_SESSION);
+        }else{
+            echo "You are not logged in. Please log in.";
+        }
         ?>
     </body>
 </html>
