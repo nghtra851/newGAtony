@@ -47,32 +47,6 @@ if (isset($_POST["action"]) == "login") {
         $_SESSION["user"] = null;
     }
 }
-
-//if (isset($_POST["action"]) == "Sign Up") {
-//    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-//    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-//
-//    $signup = "INSERT INTO login (username, password) VALUES ('" . $_POST["username"] . "', '" . $_POST["password"] . "')";
-//    $stmt = $dbh->prepare($signup);
-//    $stmt->bindParam(":username", $username);
-//    $stmt->bindParam(":password", $password);
-//    $stmt->execute();
-    
-//    var_dump($signup);
-    
-//    $signup = $stmt->
-//    LOL
-
-//    if ($signup != NULL) {
-//        echo "<br>";
-//        echo "Välkommen till oss!";
-//        $_SESSION["user"] = $username;
-//    } else {
-//        echo "<br>" . "Felaktig inmatning.";
-//        $_SESSION["user"] = NULL;
-//    }
-//}
-
 ?>
 
 <!DOCTYPE html>
@@ -98,22 +72,5 @@ if (isset($_POST["action"]) == "login") {
             <br>
             <a href="kill.php">Sign Out</a>
         </form>
-<!--        <form method="POST">
-            <label>Username:</label>
-            <br>
-            <input name="username" type="text" placeholder ="Username">
-            <br>
-            <br>
-            <label>Password:</label>
-            <br>
-            <input name="password" type="password" placeholder="Password">
-            <br>
-            <br>
-            <input type="submit" name="action" value="Sign Up">
-            <br>
-            <br>
-            <a href="kill.php">Home</a>
-        </form>-->
-
     </body>
 </html>
