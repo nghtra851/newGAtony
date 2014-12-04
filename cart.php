@@ -89,7 +89,7 @@ if (isset($_POST["action"]) and $_POST["action"] == "buy") {
 //            echo "Logged in as " . $_SESSION["user"];
 ////        var_dump($_SESSION);
 //        } else {
-//            echo "You are not logged in. Please log in.";
+//            echo "You are not zlogged in. Please log in.";
 //        }
         ?>
         <br><br><br>

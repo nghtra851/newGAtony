@@ -39,7 +39,8 @@ if (isset($_POST["action"])) {
     echo "<br><br>";
 }
 
-$sql = "SELECT id FROM products WHERE id = :id AND name = :name AND price = :price AND color = :color AND size = :size AND quantity = :quantity AND availability = :availability";
+//$sql = "SELECT id FROM products WHERE id = :id AND name = :name AND price = :price AND color = :color AND size = :size AND quantity = :quantity AND availability = :availability";
+$sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->bindParam(":id", $id);
 $stmt->bindParam(":name", $name);
@@ -108,11 +109,15 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
                         <br>
                         <input type="text" name="color" placeholder="Color">
                         <br>
+                        <br>
                         <input type="text" name="size" placeholder="Size">
+                        <br>
                         <br>
                         <input type="text" name="quantity" placeholder="Quantity">
                         <br>
+                        <br>
                         <input type="text" name="availability" placeholder="Availability">
+                        <br>
                         <br>
                         <input type="submit" name="action" value="edit">
                         <input type="submit" name="action" value="add">

@@ -4,10 +4,10 @@ session_start();
 if (isset($_POST["action"]) == "signout") {
     session_unset();
     session_destroy();
-    if (isset($_SESSION["user"]) === NULL) {
-        echo "You have logged out. Please come back.";
+    $signoutmessage = "You have logged out.";
+    }else{
+        $signoutmessage = NULL;
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,6 @@ if (isset($_POST["action"]) == "signout") {
     <body>
         <a href="login.php">Login</a>
         <a href="signup.php">Sign Up</a>
-        <a href="kill.php">Sign Out</a>
         <a href="db.php">Database</a>
         <a href="cart.php">Cart</a><br><br>
         <form method="POST">
@@ -30,7 +29,7 @@ if (isset($_POST["action"]) == "signout") {
             echo "Logged in as " . $_SESSION["user"];
 //        var_dump($_SESSION);
         } else {
-            echo "You are not logged in. Please log in.";
+            echo $signoutmessage;
         }
         ?>
         <br><br><br>

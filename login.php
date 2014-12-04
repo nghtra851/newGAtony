@@ -18,6 +18,7 @@ if (($_SESSION["user"]) === NULL) {
     echo "Var vänlig och logga in!";
 } else {
     echo "Välkommen";
+    $loginform;
 }
 
 
@@ -35,13 +36,13 @@ if (isset($_POST["action"]) == "login") {
 
     $login = $stmt->fetchAll();
 
-    //var_dump($login);
+//var_dump($login);
 
     if ($login != NULL) {
         echo "<br>";
         echo "Du är inloggad!";
         $_SESSION["user"] = $username;
-        
+        header("Location: index.php");
     } else {
         echo "<br>";
         echo "Var vänlig försök igen.";
@@ -58,7 +59,7 @@ if (isset($_POST["action"]) == "login") {
         <meta name="viewport" content="width = device-width">
     </head>
     <body>
-        <form method="POST">
+        <form id="loginform" method="POST">
             <label>Username:</label>
             <br>
             <input name="username" type="text" placeholder ="Username">
