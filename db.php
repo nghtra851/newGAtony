@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 define("DB_SERVER", "localhost");
@@ -13,7 +12,7 @@ if (isset($_POST["action"])) {
     if ($_POST["action"] == "delete") {
 //        echo "delete";
 //        echo "<br>";
-        $delete = "DELETE FROM products WHERE id=" . $_POST["id"];
+        $delete = "DELETE FROM products WHERE id='" . $_POST["id"];
         $stmt = $dbm->prepare($delete);
         $stmt->execute();
 //        echo $delete;
@@ -75,13 +74,15 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
     <body>
         <a href="index.php">Home</a>
         <div id="wrapper">
-            
+
             <tr>
                 <td>
                     <div id="products">
                         <?PHP
                         foreach ($products as $product) {
-                            echo $product["id"] . " ";
+                            echo $product["id"] . '<form id="delete" method="POST">'
+                            . '<input type="submit" name="action" value="delete">'
+                            . '</form>' . " ";
                             echo $product["name"] . " ";
                             echo $product["price"] . " ";
                             echo $product["color"] . " ";
