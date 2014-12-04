@@ -12,7 +12,7 @@ $attributes = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
 
 $dbh = new PDO($dsn, DB_USER, DB_PASSWORD, $attributes);
 
-$_SESSION["user"] === NULL;
+$_SESSION["user"] = NULL;
 
 if (($_SESSION["user"]) === NULL) {
     echo "Var vänlig och logga in!";
@@ -41,6 +41,7 @@ if (isset($_POST["action"]) == "login") {
         echo "<br>";
         echo "Du är inloggad!";
         $_SESSION["user"] = $username;
+        
     } else {
         echo "<br>";
         echo "Var vänlig försök igen.";
@@ -70,7 +71,10 @@ if (isset($_POST["action"]) == "login") {
             <br>
             <input type="submit" name="action" value="Login">
             <br>
-            <a href="kill.php">Sign Out</a>
+
         </form>
+        <br>
+        <a href="kill.php">Sign Out</a><br>
+        <a href="index.php">Home</a>
     </body>
 </html>

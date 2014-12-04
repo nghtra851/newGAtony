@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
@@ -36,15 +39,15 @@ if (isset($_POST["action"])) {
     echo "<br><br>";
 }
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT id FROM products WHERE id = :id AND name = :name AND price = :price AND color = :color AND size = :size AND quantity = :quantity AND availability = :availability";
 $stmt = $dbm->prepare($sql);
-$stmt->bindParam($id);
-$stmt->bindParam($name);
-$stmt->bindParam($price);
-$stmt->bindParam($color);
-$stmt->bindParam($size);
-$stmt->bindParam($quantity);
-$stmt->bindParam($availability);
+$stmt->bindParam(":id", $id);
+$stmt->bindParam(":name", $name);
+$stmt->bindParam(":price", $price);
+$stmt->bindParam(":color", $color);
+$stmt->bindParam(":size", $size);
+$stmt->bindParam(":quantity", $quantity);
+$stmt->bindParam(":availability", $availability);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
