@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST["action"]) === "signout") {
+if (isset($_POST["action"]) == "signout") {
     if (isset($_SESSION["user"]) != NULL) {
         session_unset();
         session_destroy();
