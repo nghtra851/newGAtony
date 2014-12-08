@@ -12,19 +12,26 @@ if (isset($_POST["empty"])) {
     exit();
 }
 
-if(isset($_POST["action"]) === "add"){
-    $amount = $_POST["amount"];
+if (isset($_POST["action"]) == "add") {
+    if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
+        $errormessage = "Please fill in the forms.";
+    } else {
+        $color = $_POST["color"];
+        $size = $_POST["size"];
+        $amount = $_POST["amount"];
+        $_SESSION["cart"][] = array($color, $size, $amount);
+    }
 }
 //$amount = $_POST["amount"];
 //$id=123;
 //$price = 456;
 //$amount = 789;
 
-$id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_POST, "size", FILTER_SANITIZE_SPECIAL_CHARS);
 $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
-$_SESSION["cart"][] = array($id,$price,$amount);
+
 
 
 var_dump($_SESSION["cart"]);
@@ -78,6 +85,18 @@ var_dump($_SESSION["cart"]);
 //        }
 //    }
 //}
+
+if (isset($_POST["action"]) == "signout") {
+    if (isset($_SESSION["user"]) != NULL) {
+        session_unset();
+        session_destroy();
+        $signoutmessage = "You have logged out.";
+    } else {
+        $signoutmessage = "You are not logged in. Please log in.";
+    }
+} else {
+    $signoutmessage = "You are not logged in. Please log in.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -87,12 +106,37 @@ var_dump($_SESSION["cart"]);
         <title></title>
     </head>
     <body>
-        <a href="login.php">Login</a>
-        <a href="signup.php">Sign Up</a>
-        <a href="kill.php">Sign Out</a>
+
         <a href="db.php">Database</a><br><br>
+        <?php
+        if (isset($_SESSION["user"]) != NULL) {
+            echo "Logged in as " . $_SESSION["user"];
+            echo "<form method='POST'>
+            <button type='submit' value='signout' name='action'>Sign Out</button>
+        </form>";
+        } else {
+            echo $signoutmessage;
+            echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
+            echo "<a href='signup.php'>Sign Up</a>";
+        }
+        ?>
         <form method="POST">
             <p name="id">Top Hat</p>
+            <select  type="text" name="color">
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+                <option value="purple">Purple</option>
+                <option value="blue">Blue</option>
+                <option value="pink">Pink</option>
+                <option value="black">Black</option>
+            </select>
+            <select  type="text" name="size">
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
             <input type="text" name="amount">
             <button type="submit" name="action" value="add">Add to cart</button>
         </form>

@@ -9,7 +9,7 @@ if (isset($_POST["action"]) == "signout") {
     } else {
         $signoutmessage = "You are not logged in. Please log in.";
     }
-}else{
+} else {
     $signoutmessage = "You are not logged in. Please log in.";
 }
 ?>
@@ -21,19 +21,23 @@ if (isset($_POST["action"]) == "signout") {
         <title></title>
     </head>
     <body>
-        <a href="login.php">Login</a>
-        <a href="signup.php">Sign Up</a>
+        
+        
         <a href="db.php">Database</a>
         <a href="cart.php">Cart</a><br><br>
-        <form method="POST">
-            <button type="submit" value="signout" name="action">Sign Out</button>
-        </form>
+
         <?php
         if (isset($_SESSION["user"]) != NULL) {
+           
             echo "Logged in as " . $_SESSION["user"];
-//        var_dump($_SESSION);
+            echo "<form method='POST'>
+            <button type='submit' value='signout' name='action'>Sign Out</button>
+        </form>";
+
         } else {
             echo $signoutmessage;
+             echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
+             echo "<a href='signup.php'>Sign Up</a>";
         }
         ?>
         <br><br><br>
