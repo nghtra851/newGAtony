@@ -1,6 +1,19 @@
 <?php
 session_start();
 
+define("DB_SERVER", "localhost");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
+define("DB_NAME", "projectdb");
+
+$dbm = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
+
+//$result = mysql_query("SELECT * FROM products");
+//while ($row = mysql_fetch_array($result, MYSQL_BOTH)){
+//    printf("ID: %s Name: %s", $row[0], $row["name"]);
+//}
+//mysql_free_result($result);
+
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
@@ -13,28 +26,30 @@ if (isset($_POST["empty"])) {
 }
 
 if (isset($_POST["action"]) == "add") {
-    if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
+    if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "" or $_POST["amount"] == "") {
         $errormessage = "Please fill in the forms.";
     } else {
+        $item = $_POST["tophat"];
         $color = $_POST["color"];
         $size = $_POST["size"];
         $amount = $_POST["amount"];
-        $_SESSION["cart"][] = array($color, $size, $amount);
+        $_SESSION["cart"][] = array($item, $color, $size, $amount);
     }
 }
+
+
+
+//echo json_encode($cart);
 //$amount = $_POST["amount"];
 //$id=123;
 //$price = 456;
 //$amount = 789;
 
+$item = filter_input(INPUT_POST, "tophat", FILTER_SANITIZE_SPECIAL_CHARS);
 $color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
 $size = filter_input(INPUT_POST, "size", FILTER_SANITIZE_SPECIAL_CHARS);
 $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
-
-
-
-var_dump($_SESSION["cart"]);
 
 
 ////kolla om ta bort enskild rad ur carten
@@ -109,6 +124,7 @@ if (isset($_POST["action"]) == "signout") {
 
         <a href="db.php">Database</a><br><br>
         <?php
+        
         if (isset($_SESSION["user"]) != NULL) {
             echo "Logged in as " . $_SESSION["user"];
             echo "<form method='POST'>
@@ -119,9 +135,11 @@ if (isset($_POST["action"]) == "signout") {
             echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
             echo "<a href='signup.php'>Sign Up</a>";
         }
+        
         ?>
         <form method="POST">
             <p name="id">Top Hat</p>
+            <input type="hidden" name="tophat" value="tophat">
             <select  type="text" name="color">
                 <option value="green">Green</option>
                 <option value="red">Red</option>
@@ -137,8 +155,13 @@ if (isset($_POST["action"]) == "signout") {
                 <option value="L">L</option>
                 <option value="XL">XL</option>
             </select>
-            <input type="text" name="amount">
+            <input type="text" name="amount" placeholder="Amount">
             <button type="submit" name="action" value="add">Add to cart</button>
         </form>
+        <?php
+        foreach ($_SESSION["cart"] as $cart) {
+            echo $cart;
+        }
+        ?>
     </body>
 </html>
