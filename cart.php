@@ -124,7 +124,6 @@ if (isset($_POST["action"]) == "signout") {
 
         <a href="db.php">Database</a><br><br>
         <?php
-        
         if (isset($_SESSION["user"]) != NULL) {
             echo "Logged in as " . $_SESSION["user"];
             echo "<form method='POST'>
@@ -135,7 +134,6 @@ if (isset($_POST["action"]) == "signout") {
             echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
             echo "<a href='signup.php'>Sign Up</a>";
         }
-        
         ?>
         <form method="POST">
             <p name="id">Top Hat</p>
@@ -160,7 +158,11 @@ if (isset($_POST["action"]) == "signout") {
         </form>
         <?php
         foreach ($_SESSION["cart"] as $cart) {
-            echo $cart;
+            foreach ($cart as $item) {
+                $item = ucfirst($item);
+                echo "<br>";
+                echo $item;
+            }
         }
         ?>
     </body>
