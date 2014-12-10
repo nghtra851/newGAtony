@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
-define("DB_NAME", "projectdb");
-
-$dbm = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
+include "includeDB.php";
 
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "delete") {
@@ -72,8 +67,12 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
         <link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <a href="index.php">Home</a>
+        <a href="index.php">Home</a><br><br>
+        <?php
+        include "loggedin.php";
+        ?>
         <div id="wrapper">
+
 
             <tr>
                 <td>

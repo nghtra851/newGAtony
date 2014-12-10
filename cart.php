@@ -1,18 +1,7 @@
 <?php
 session_start();
 
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
-define("DB_NAME", "projectdb");
-
-$dbm = new PDO('mysql:dbname=' . DB_NAME . ';host=' . DB_SERVER . ';charset=utf8', DB_USER, DB_PASSWORD);
-
-//$result = mysql_query("SELECT * FROM products");
-//while ($row = mysql_fetch_array($result, MYSQL_BOTH)){
-//    printf("ID: %s Name: %s", $row[0], $row["name"]);
-//}
-//mysql_free_result($result);
+include "includeDB.php";
 
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
@@ -40,10 +29,6 @@ if (isset($_POST["action"]) == "add") {
 
 
 //echo json_encode($cart);
-//$amount = $_POST["amount"];
-//$id=123;
-//$price = 456;
-//$amount = 789;
 
 $item = filter_input(INPUT_POST, "tophat", FILTER_SANITIZE_SPECIAL_CHARS);
 $color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -100,18 +85,7 @@ $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 //        }
 //    }
 //}
-
-if (isset($_POST["action"]) == "signout") {
-    if (isset($_SESSION["user"]) != NULL) {
-        session_unset();
-        session_destroy();
-        $signoutmessage = "You have logged out.";
-    } else {
-        $signoutmessage = "You are not logged in. Please log in.";
-    }
-} else {
-    $signoutmessage = "You are not logged in. Please log in.";
-}
+include "signout.php";
 ?>
 
 <!DOCTYPE html>
@@ -124,16 +98,7 @@ if (isset($_POST["action"]) == "signout") {
 
         <a href="db.php">Database</a><br><br>
         <?php
-        if (isset($_SESSION["user"]) != NULL) {
-            echo "Logged in as " . $_SESSION["user"];
-            echo "<form method='POST'>
-            <button type='submit' value='signout' name='action'>Sign Out</button>
-        </form>";
-        } else {
-            echo $signoutmessage;
-            echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
-            echo "<a href='signup.php'>Sign Up</a>";
-        }
+        include "loggedin.php";
         ?>
         <form method="POST">
             <p name="id">Top Hat</p>
@@ -165,5 +130,7 @@ if (isset($_POST["action"]) == "signout") {
             }
         }
         ?>
+        <br>
+        <a href="killCart.php">Delete all</a>
     </body>
 </html>
