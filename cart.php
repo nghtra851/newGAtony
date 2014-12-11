@@ -6,27 +6,25 @@ include "includeDB.php";
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
-
 //om tömma
-if (isset($_POST["empty"])) {
-    session_destroy();
-    header("Location: ?");
-    exit();
-}
-
-if (isset($_POST["action"]) == "add") {
-    if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "" or $_POST["amount"] == "") {
-        $errormessage = "Please fill in the forms.";
-    } else {
-        $item = $_POST["tophat"];
-        $color = $_POST["color"];
-        $size = $_POST["size"];
-        $amount = $_POST["amount"];
-        $_SESSION["cart"][] = array($item, $color, $size, $amount);
+//if (isset($_POST["empty"])) {
+//    session_destroy();
+//    header("Location: ?");
+//    exit();
+//}
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "add") {
+        if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
+            $errormessage = "Please fill in the forms.";
+        } else {
+            $item = $_POST["tophat"];
+            $size = $_POST["size"];
+            $color = $_POST["color"];
+            $amount = $_POST["amount"];
+            $_SESSION["cart"][] = array($item, $color, $size, $amount);
+        }
     }
 }
-
-
 
 //echo json_encode($cart);
 
@@ -86,6 +84,12 @@ $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 //    }
 //}
 include "signout.php";
+//var_dump($_SESSION);
+
+$sql = "SELECT * FROM products";
+$stmt = $dbm->prepare($sql);
+$stmt->execute();
+$products = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -99,18 +103,26 @@ include "signout.php";
         <a href="db.php">Database</a><br><br>
         <?php
         include "loggedin.php";
+
+        foreach ($products as $product) {
+            foreach ($product as $pro)
+                echo "<br>" . $pro . "<br>";
+            echo "<form method='POST'>";
+            echo "<input type='hidden' name='id' value=''>";
+            echo "<select  type='text' name='color'>
+                <option value='green'>Green</option>
+                <option value='red'>Red</option>
+                <option value='purple'>Purple</option>
+                <option value='blue'>Blue</option>
+                <option value='pink'>Pink</option>
+                <option value='black'>Black</option>
+            </select>";
+        }
         ?>
-        <form method="POST">
-            <p name="id">Top Hat</p>
-            <input type="hidden" name="tophat" value="tophat">
-            <select  type="text" name="color">
-                <option value="green">Green</option>
-                <option value="red">Red</option>
-                <option value="purple">Purple</option>
-                <option value="blue">Blue</option>
-                <option value="pink">Pink</option>
-                <option value="black">Black</option>
-            </select>
+        
+            <p name="id"> <form method="POST">Top Hat</p>
+            
+            
             <select  type="text" name="size">
                 <option value="XS">XS</option>
                 <option value="S">S</option>
@@ -118,10 +130,11 @@ include "signout.php";
                 <option value="L">L</option>
                 <option value="XL">XL</option>
             </select>
-            <input type="text" name="amount" placeholder="Amount">
+            <input type="text" name="amount" placeholder="Amount" required>
             <button type="submit" name="action" value="add">Add to cart</button>
         </form>
         <?php
+//        $cart = $_SESSION["cart"];
         foreach ($_SESSION["cart"] as $cart) {
             foreach ($cart as $item) {
                 $item = ucfirst($item);

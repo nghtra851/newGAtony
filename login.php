@@ -12,32 +12,33 @@ if (($_SESSION["user"]) === NULL) {
     $loginform;
 }
 
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "login") {
 
-if (isset($_POST["action"]) == "login") {
-
-    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 //    var_dump($password . " " . $username);
 
-    $sql = "SELECT username FROM login WHERE username = :username AND password= :password";
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindParam(":username", $username);
-    $stmt->bindParam(":password", $password);
-    $stmt->execute();
+        $sql = "SELECT username FROM login WHERE username = :username AND password= :password";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":password", $password);
+        $stmt->execute();
 
-    $login = $stmt->fetchAll();
+        $login = $stmt->fetchAll();
 
 //var_dump($login);
 
-    if ($login != NULL) {
-        echo "<br>";
-        echo "Du är inloggad!";
-        $_SESSION["user"] = $username;
-        header("Location: index.php");
-    } else {
-        echo "<br>";
-        echo "Var vänlig försök igen.";
-        $_SESSION["user"] = null;
+        if ($login != NULL) {
+            echo "<br>";
+            echo "Du är inloggad!";
+            $_SESSION["user"] = $username;
+            header("Location: index.php");
+        } else {
+            echo "<br>";
+            echo "Var vänlig försök igen.";
+            $_SESSION["user"] = null;
+        }
     }
 }
 ?>
@@ -53,12 +54,12 @@ if (isset($_POST["action"]) == "login") {
         <form id="loginform" method="POST">
             <label>Username:</label>
             <br>
-            <input name="username" type="text" placeholder ="Username">
+            <input name="username" type="text" placeholder ="Username" required>
             <br>
             <br>
             <label>Password:</label>
             <br>
-            <input name="password" type="password" placeholder="Password">
+            <input name="password" type="password" placeholder="Password" required>
             <br>
             <br>
             <input type="submit" name="action" value="Login">
