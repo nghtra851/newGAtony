@@ -17,18 +17,19 @@ if (isset($_POST["action"])) {
         if ($_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
             $errormessage = "Please fill in the forms.";
         } else {
-            $item = $_POST["tophat"];
+//            $id = $_POST["id"];
             $size = $_POST["size"];
             $color = $_POST["color"];
             $amount = $_POST["amount"];
-            $_SESSION["cart"][] = array($item, $color, $size, $amount);
+            $_SESSION["cart"][] = array($color, $size, $amount);
         }
     }
 }
+var_dump($_SESSION);
 
 //echo json_encode($cart);
 
-$item = filter_input(INPUT_POST, "tophat", FILTER_SANITIZE_SPECIAL_CHARS);
+$item = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 $color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
 $size = filter_input(INPUT_POST, "size", FILTER_SANITIZE_SPECIAL_CHARS);
 $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -84,6 +85,7 @@ $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 //    }
 //}
 include "signout.php";
+//include './style.html';
 //var_dump($_SESSION);
 
 $sql = "SELECT * FROM products";
@@ -105,36 +107,30 @@ $products = $stmt->fetchAll();
         include "loggedin.php";
 
         foreach ($products as $product) {
-            foreach ($product as $pro)
+            foreach ($product as $pro) {
                 echo "<br>" . $pro . "<br>";
-            echo "<form method='POST'>";
-            echo "<input type='hidden' name='id' value=''>";
-            echo "<select  type='text' name='color'>
-                <option value='green'>Green</option>
-                <option value='red'>Red</option>
-                <option value='purple'>Purple</option>
-                <option value='blue'>Blue</option>
-                <option value='pink'>Pink</option>
-                <option value='black'>Black</option>
-            </select>";
+                echo "<form method='POST'>";
+                echo "<input type='hidden' name='id' value=''>";
+                echo "<select  type='text' name='color'>
+                    <option value='green'>Green</option>
+                   <option value='red'>Red</option>
+                   <option value='purple'>Purple</option>
+                    <option value='blue'>Blue</option>
+                   <option value='pink'>Pink</option>
+                  <option value='black'>Black</option>
+                </select>";
+                echo "<select  type='text' name='size'>
+            <option value='XS'>XS</option>
+            <option value='S'>S</option>
+            <option value='M'>M</option>
+            <option value='L'>L</option>
+            <option value='XL'>XL</option>
+        </select>";
+                echo "<input type='text' name='amount' placeholder='Amount'>";
+                echo "<button type='submit' name='action' value='add'>Add to cart</button>";
+                echo "</form>";
+            }
         }
-        ?>
-        
-            <p name="id"> <form method="POST">Top Hat</p>
-            
-            
-            <select  type="text" name="size">
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
-            <input type="text" name="amount" placeholder="Amount" required>
-            <button type="submit" name="action" value="add">Add to cart</button>
-        </form>
-        <?php
-//        $cart = $_SESSION["cart"];
         foreach ($_SESSION["cart"] as $cart) {
             foreach ($cart as $item) {
                 $item = ucfirst($item);

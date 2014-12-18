@@ -7,7 +7,7 @@ if (isset($_POST["action"])) {
     if ($_POST["action"] == "delete") {
 //        echo "delete";
 //        echo "<br>";
-        $delete = "DELETE FROM products WHERE id='" . $_POST["id"];
+//        $delete = "DELETE FROM products WHERE id='" . $_POST["id"];
         $stmt = $dbm->prepare($delete);
         $stmt->execute();
 //        echo $delete;
@@ -70,6 +70,7 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
         <a href="index.php">Home</a><br><br>
         <?php
         include "loggedin.php";
+        include './style.html';
         ?>
         <div id="wrapper">
 

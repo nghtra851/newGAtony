@@ -1,5 +1,6 @@
 *{
     margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     /*background-image: url('http://media.giphy.com/media/BTDFQ527nyoWk/giphy.gif');*/
@@ -26,7 +27,7 @@ h2{
     /*background-image: url('http://media.giphy.com/media/weiLUXkb1cSm4/giphy.gif');*/
 }
 input{
-    float: right;
+    /*float: right;*/
 }
 #delete{
     float: right;

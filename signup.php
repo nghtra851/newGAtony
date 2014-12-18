@@ -38,6 +38,7 @@ if (isset($_POST["action"])) {
         }
     }
 }
+include './style.html';
 ?>
 
 <!DOCTYPE html>
