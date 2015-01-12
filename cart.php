@@ -14,6 +14,7 @@ if (!isset($_SESSION["cart"])) {
 //}
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "add") {
+
         if ($_POST["id"] == "" or $_POST["name"] == "" or $_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
             $errormessage = "Please fill in the forms.";
         } else {
@@ -26,6 +27,8 @@ if (isset($_POST["action"])) {
         }
     }
 }
+
+var_dump($_SESSION["cart"]);
 var_dump($_SESSION);
 
 //echo json_encode($cart);
@@ -38,67 +41,14 @@ $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
 
 
-////kolla om ta bort enskild rad ur carten
-//if (isset($_POST["action"]) and $_POST["action"] == "delete") {
-//    //loopa igenom värdena
-//    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-//        //kolla om ID:t ska tas bort
-//        if ($_SESSION["cart"][$i]["id"] == $_POST["id"]) {
-//            //radera ett index ur en array
-//            array_splice($_SESSION["cart"], $i, 1);
-//            //avbryt loopen
-//            break;
-//        }
-//    }
-//    //ladda om sidan och visa kundcart
-//    header("Location: ?cart");
-//    exit();
-//}
-//
-////kolla om vi ska uppdatera en rad ur carten
-////denna del skulle kunna ingå i ovanstående
-//if (isset($_POST["action"]) and $_POST["action"] == "update") {
-//    //loopa igenom sessionsvariabeln
-//    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-//        if ($_SESSION["cart"][$i]["id"] == $_POST["id"]) {
-//            $_SESSION["cart"][$i]["count"] = $_POST["count"];
-//            break;
-//        }
-//    }
-//    //ladda om sidan och visa kundcarten
-//    header("Location: ?");
-//    exit();
-//}
-//
-//
-////kolla om vi fått nya grejer i carten och lägg dem där annars
-//if (isset($_POST["action"]) and $_POST["action"] == "buy") {
-//
-//    $laggTill = true;
-//
-//    //loopa igenom kundcarten för att kolla om varan man lägger till redan finns
-//    //här kan jag inte göra en foreach eftersom jag behöver kunna skriva der uppdaterade countet tillbaka till sessionen
-//    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-//        //foreach ($_SESSION["cart"] as $pryl) {
-//        //kolla om varan redan finns
-//        if ($_SESSION["cart"][$i]["id"]) {
-//            
-//        }
-//    }
-//}
+
 include "signout.php";
-//include './style.html';
-//var_dump($_SESSION);
 
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
-$nametest = "SELECT id FROM products";
-$stmt = $dbm->prepare($nametest);
-$stmt->execute();
-$names = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -117,30 +67,63 @@ $names = $stmt->fetchAll();
 
 
         foreach ($products as $product) {
-            echo "<tr>";
-            echo "<form method='POST'>";
-            echo "<p>" . $name . "</p>";
-            echo "<td>";
-            echo "<input type='hidden' name='id' value='$id'";
-            echo "</td>";
-            echo "<td>";
-            echo "<input type='hidden' name='name' value='$name'";
-            echo "<td>";
-            echo "<select type='text' name='color'>
-                        <option value='green'>Green</option>
-                        <option value='red'>Red</option>
+
+            $name = $product["name"];
+            $id = $product["id"];
+            $color = $product["color"];
+            $size = $product["size"];
+            $price = $product["price"];
+            $quantity = $product["quantity"];
+
+            if ($quantity > 0) {
+                echo "<tr>";
+                echo "<form method='POST'>";
+                echo "<p>" . $name . " " . $price . "£" . "</p>";
+                echo "<td>";
+                echo "<input type='hidden' name='id' value='$id'";
+                echo "</td>";
+                echo "<td>";
+                echo "<input type='hidden' name='name' value='$name'";
+                echo "<td>";
+                echo "<select type='text' name='color'>
+                        <option value='$color'>$color</option>
                   </select>";
-            echo "<td>";
-            echo "<select type='text' name='size'>
-                        <option value='XS'>XS</option>
-                        <option value='M'>M</option>
+                echo "<td>";
+                echo "<select type='text' name='size'>
+                        <option value='$size'>$size</option>
                   </select>";
-            echo "<td>";
-            echo "<input type='text' name'amount' placeholder='Amount'>";
-            echo "<td>";
-            echo "<button type='submit' name='action' value='add'>Add to cart</button>";
-            echo "</form>";
-            echo "</tr>";
+                echo "<td>";
+                echo "<input type='text' name='amount' placeholder='Amount'>";
+                echo "<td>";
+                echo "<button type='submit' name='action' value='add'>Add to cart</button>";
+                echo "</form>";
+                echo "</tr>";
+            } else {
+                $availability = "Out of stock";
+                echo "<tr>";
+                echo "<form method='POST'>";
+                echo "<p>" . $name . " " . $price . "£" . "</p>";
+                echo "<td>";
+                echo "<input type='hidden' name='id' value='$id'";
+                echo "</td>";
+                echo "<td>";
+                echo "<input type='hidden' name='name' value='$name'";
+                echo "<td>";
+                echo "<select type='text' name='color'>
+                        <option value='$color'>$color</option>
+                  </select>";
+                echo "<td>";
+                echo "<select type='text' name='size'>
+                        <option value='$size'>$size</option>
+                  </select>";
+                echo "<td>";
+                echo "<input type='text' name='amount' placeholder='Amount'>";
+                echo "<td>";
+//                echo "<button type='submit' name='action' value='add'>Add to cart</button>";
+                echo $availability;
+                echo "</form>";
+                echo "</tr>";
+            }
         }
 
 
