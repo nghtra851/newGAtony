@@ -119,7 +119,7 @@ $products = $stmt->fetchAll();
                 echo "<td>";
                 echo "<input type='text' name='amount' placeholder='Amount'>";
                 echo "<td>";
-//                echo "<button type='submit' name='action' value='add'>Add to cart</button>";
+                echo "<button type='submit' name='action' value='add' disabled>Add to cart</button>";
                 echo $availability;
                 echo "</form>";
                 echo "</tr>";

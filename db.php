@@ -52,7 +52,6 @@ $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
 $color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
 $size = filter_input(INPUT_POST, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
 $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
-$availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL_CHARS);
 ?>
 
 
@@ -88,7 +87,6 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
                             echo $product["color"] . " ";
                             echo $product["size"] . " ";
                             echo $product["quantity"] . " ";
-                            echo $product["availability"] . " ";
                             echo "<br>";
                         }
                         ?>
@@ -115,9 +113,6 @@ $availability = filter_input(INPUT_POST, 'availability', FILTER_SANITIZE_SPECIAL
                         <br>
                         <br>
                         <input type="text" name="quantity" placeholder="Quantity">
-                        <br>
-                        <br>
-                        <input type="text" name="availability" placeholder="Availability">
                         <br>
                         <br>
                         <input type="submit" name="action" value="edit">
