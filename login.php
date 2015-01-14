@@ -17,10 +17,10 @@ if (isset($_POST["action"])) {
 
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
-//    var_dump($password . " " . $username);
+    var_dump($username);
 
         $sql = "SELECT username FROM login WHERE username = :username AND password= :password";
-        $stmt = $dbh->prepare($sql);
+        $stmt = $dbm->prepare($sql);
         $stmt->bindParam(":username", $username);
         $stmt->bindParam(":password", $password);
         $stmt->execute();
@@ -33,7 +33,7 @@ if (isset($_POST["action"])) {
             echo "<br>";
             echo "Du är inloggad!";
             $_SESSION["user"] = $username;
-            header("Location: index.php");
+//            header("Location: index.php");
         } else {
             echo "<br>";
             echo "Var vänlig försök igen.";
@@ -63,7 +63,7 @@ include './style.html';
             <input name="password" type="password" placeholder="Password" required>
             <br>
             <br>
-            <input type="submit" name="action" value="Login">
+            <input type="submit" name="action" value="login">
             <br>
 
         </form>

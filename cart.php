@@ -28,7 +28,6 @@ if (isset($_POST["action"])) {
     }
 }
 
-var_dump($_SESSION["cart"]);
 var_dump($_SESSION);
 
 //echo json_encode($cart);
@@ -48,7 +47,6 @@ $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -85,13 +83,21 @@ $products = $stmt->fetchAll();
                 echo "<td>";
                 echo "<input type='hidden' name='name' value='$name'";
                 echo "<td>";
-                echo "<select type='text' name='color'>
-                        <option value='$color'>$color</option>
-                  </select>";
+                $colors = explode(",", $color);
+
+                echo "<select type='text' name='color'>";
+                foreach ($colors as $color) {
+                    echo "<option value='$color'>$color</option>";
+                }
+                echo "</select>";
                 echo "<td>";
-                echo "<select type='text' name='size'>
-                        <option value='$size'>$size</option>
-                  </select>";
+                $sizes = explode(",", $size);
+
+                echo "<select type='text' name='size'>";
+                foreach ($sizes as $size) {
+                    echo "<option value='$size'>$size</option>";
+                }
+                echo "</select>";
                 echo "<td>";
                 echo "<input type='text' name='amount' placeholder='Amount'>";
                 echo "<td>";
@@ -109,13 +115,22 @@ $products = $stmt->fetchAll();
                 echo "<td>";
                 echo "<input type='hidden' name='name' value='$name'";
                 echo "<td>";
-                echo "<select type='text' name='color'>
-                        <option value='$color'>$color</option>
-                  </select>";
+                $colors = explode(",", $color);
+
+                echo "<select type='text' name='color'>";
+                foreach ($colors as $color) {
+                    echo "<option value='$color'>$color</option>";
+                }
+                echo "</select>";
+
                 echo "<td>";
-                echo "<select type='text' name='size'>
-                        <option value='$size'>$size</option>
-                  </select>";
+                $sizes = explode(",", $size);
+
+                echo "<select type='text' name='size'>";
+                foreach ($sizes as $size) {
+                    echo "<option value='$size'>$size</option>";
+                }
+                echo "</select>";
                 echo "<td>";
                 echo "<input type='text' name='amount' placeholder='Amount'>";
                 echo "<td>";

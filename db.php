@@ -4,25 +4,23 @@ session_start();
 include "includeDB.php";
 
 if (isset($_POST["action"])) {
-    if ($_POST["action"] == "delete") {
-//        echo "delete";
-//        echo "<br>";
-//        $delete = "DELETE FROM products WHERE id='" . $_POST["id"];
+    
+    if ($_POST["action"] == "delete") { 
+        $delete = "DELETE FROM products WHERE id='" . $product["id"] . "'";
         $stmt = $dbm->prepare($delete);
         $stmt->execute();
-//        echo $delete;
-    }
+        }
     if ($_POST["action"] == "edit") {
 //        echo "edit";
 //        echo "<br>";
-        $edit = "UPDATE products SET name='" . $_POST["name"] . "', price='" . $_POST["price"] . "', color='" . $_POST["color"] . "', size='" . $_POST["size"] . "', quantity='" . $_POST["quantity"] . "', availability='" . $_POST["color"] . "' WHERE id=" . $_POST["id"];
+        $edit = "UPDATE products SET name='" . $_POST["name"] . "', price='" . $_POST["price"] . "', color='" . $_POST["color"] . "', size='" . $_POST["size"] . "', quantity='" . $_POST["quantity"] . "' WHERE id=" . $_POST["id"];
         $stmt = $dbm->prepare($edit);
         $stmt->execute();
     }
     if ($_POST["action"] == "add") {
 //        echo "add";
 //        echo "<br>";
-        $add = "INSERT INTO products (id, name, price, color, size, quantity, availability) VALUES ('" . $_POST["id"] . "', '" . $_POST["name"] . "', '" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "', '" . $_POST["quantity"] . "', '" . $_POST["availability"] . "')";
+        $add = "INSERT INTO products (id, name, price, color, size, quantity) VALUES ('" . $_POST["id"] . "', '" . $_POST["name"] . "', '" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "', '" . $_POST["quantity"] . "')";
 //        echo $add;
         $stmt = $dbm->prepare($add);
         $stmt->execute();
@@ -32,7 +30,6 @@ if (isset($_POST["action"])) {
     echo "Go do yo thang!";
     echo "<br><br>";
 }
-
 //$sql = "SELECT id FROM products WHERE id = :id AND name = :name AND price = :price AND color = :color AND size = :size AND quantity = :quantity AND availability = :availability";
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
@@ -42,7 +39,6 @@ $stmt->bindParam(":price", $price);
 $stmt->bindParam(":color", $color);
 $stmt->bindParam(":size", $size);
 $stmt->bindParam(":quantity", $quantity);
-$stmt->bindParam(":availability", $availability);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
