@@ -7,7 +7,7 @@ if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 //echo json_encode($cart);
 
 $id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -24,30 +24,48 @@ $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
 //var_dump($products);
+//var_dump($_SESSION["cart"]);
 
 if (isset($_POST["action"])) {
     if ($_POST["action"] == "add") {
-
         foreach ($products as $product) {
-
-            if ($_POST["amount"] <= $product["quantity"]) {
-                if ($_POST["id"] == "" or $_POST["name"] == "" or $_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
-                    $errormessage = "Please fill in the forms.";
-                } else {
-                    $id = $_POST["id"];
-                    $name = $_POST["name"];
-                    $size = $_POST["size"];
-                    $color = $_POST["color"];
-                    $amount = $_POST["amount"];
-                    $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
-                }
+//            var_dump($product["quantity"]);
+            var_dump($_POST["amount"]);
+            if ($_SESSION["cart"][] && $_POST["amount"] > $product["quantity"]) {
+                echo "Too much.";
+//                header("Location: index.php", true, 12);
+//                exit();
             } else {
-                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
-                echo "<script type='text/javascript'>alert('$message');</script>";
+
+                foreach ($products as $product) {
+
+                    if ($_POST["amount"] <= $product["quantity"]) {
+                        if ($_POST["id"] == "" or $_POST["name"] == "" or $_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
+                            $errormessage = "Please fill in the forms.";
+                        } else {
+                            $id = $_POST["id"];
+                            $name = $_POST["name"];
+                            $size = $_POST["size"];
+                            $color = $_POST["color"];
+                            $amount = $_POST["amount"];
+                            $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
+                        }
+                    }
+//            else {
+//                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
+//                echo "<script type='text/javascript'>alert('$message');</script>";
+//            }
+                }
             }
         }
     }
 }
+
+//function compareQ() {
+//    $products;
+//}
+
+
 var_dump($_SESSION);
 //var_dump($products);
 ?>
