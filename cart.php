@@ -31,7 +31,7 @@ if (isset($_POST["action"])) {
         foreach ($products as $product) {
 //            var_dump($product["quantity"]);
             var_dump($_POST["amount"]);
-            if ($_SESSION["cart"][] && $_POST["amount"] > $product["quantity"]) {
+            if ($_SESSION["cart"] && $_POST["amount"] > $product["quantity"]) {
                 echo "Too much.";
 //                header("Location: index.php", true, 12);
 //                exit();
