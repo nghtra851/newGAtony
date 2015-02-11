@@ -3,34 +3,6 @@ session_start();
 
 include "includeDB.php";
 
-if (isset($_POST["action"])) {
-    
-    if ($_POST["action"] == "delete") { 
-        $delete = "DELETE FROM products WHERE id='" . $product["id"] . "'";
-        $stmt = $dbm->prepare($delete);
-        $stmt->execute();
-        }
-    if ($_POST["action"] == "edit") {
-//        echo "edit";
-//        echo "<br>";
-        $edit = "UPDATE products SET name='" . $_POST["name"] . "', price='" . $_POST["price"] . "', color='" . $_POST["color"] . "', size='" . $_POST["size"] . "', quantity='" . $_POST["quantity"] . "' WHERE id=" . $_POST["id"];
-        $stmt = $dbm->prepare($edit);
-        $stmt->execute();
-    }
-    if ($_POST["action"] == "add") {
-//        echo "add";
-//        echo "<br>";
-        $add = "INSERT INTO products (id, name, price, color, size, quantity) VALUES ('" . $_POST["id"] . "', '" . $_POST["name"] . "', '" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "', '" . $_POST["quantity"] . "')";
-//        echo $add;
-        $stmt = $dbm->prepare($add);
-        $stmt->execute();
-//        echo $add;
-    }
-} else {
-    echo "Go do yo thang!";
-    echo "<br><br>";
-}
-//$sql = "SELECT id FROM products WHERE id = :id AND name = :name AND price = :price AND color = :color AND size = :size AND quantity = :quantity AND availability = :availability";
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->bindParam(":id", $id);
@@ -42,16 +14,41 @@ $stmt->bindParam(":quantity", $quantity);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
-$color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
-$size = filter_input(INPUT_POST, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
-$quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_GET, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_GET, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_GET, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
+$quantity = filter_input(INPUT_GET, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
+
+foreach ($products as $product) {
+    echo $product["id"] . " ";
+    echo $product["name"] . " ";
+    echo $product["price"] . " ";
+    echo $product["color"] . " ";
+    echo $product["size"] . " ";
+    echo $product["quantity"] . " ";
+    echo "<form method='GET'>";
+    echo "<input type='hidden' value='" . $product["id"] . "' name='id'>";
+    echo "<input type='submit' name='action' value='delete'>";
+    echo "</form>";
+    echo "<form method='GET' action='edit.php'>";
+    echo "<input type='hidden' value='" . $product["id"] . "' name='id'>";
+    echo "<input type='submit' name='action' value='edit'>";
+    echo "</form>";
+    echo "<br>";
+}
+
+if (isset($_GET["action"])) {
+
+    if ($_GET["action"] == "delete") {
+        $delete = "DELETE FROM products WHERE id='" . $_GET["id"] . "'";
+        $stmt = $dbm->prepare($delete);
+        $stmt->execute();
+        header("Location: db.php");
+    }
+}
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -62,59 +59,11 @@ $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
         <link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <a href="index.php">Home</a><br><br>
+        <a href="index.php">Home</a><br>
+        <a href="add.php">Add product</a><br><br>
         <?php
         include "loggedin.php";
         include './style.html';
         ?>
-        <div id="wrapper">
-
-
-            <tr>
-                <td>
-                    <div id="products">
-                        <?PHP
-                        foreach ($products as $product) {
-                            echo $product["id"] . '<form id="delete" method="POST">'
-                            . '<input type="submit" name="action" value="delete">'
-                            . '</form>' . " ";
-                            echo $product["name"] . " ";
-                            echo $product["price"] . " ";
-                            echo $product["color"] . " ";
-                            echo $product["size"] . " ";
-                            echo $product["quantity"] . " ";
-                            echo "<br>";
-                        }
-                        ?>
-                    </div>
-                    <form id="delete" method="POST">
-                        <input  type="text" name="id">
-                        <input  type="submit" name="action" value="delete">
-                        <br><br>
-                    </form>
-                    <form id="editadd" method="POST">
-                        <input type="text" name="id" placeholder="Index">
-                        <br>
-                        <br>
-                        <input type="text" name="name" placeholder="Name">
-                        <br>
-                        <br>
-                        <input type="text" name="price" placeholder="Price">
-                        <br>
-                        <br>
-                        <input type="text" name="color" placeholder="Color">
-                        <br>
-                        <br>
-                        <input type="text" name="size" placeholder="Size">
-                        <br>
-                        <br>
-                        <input type="text" name="quantity" placeholder="Quantity">
-                        <br>
-                        <br>
-                        <input type="submit" name="action" value="edit">
-                        <input type="submit" name="action" value="add">
-                        <br><br>
-                    </form>
-        </div>
     </body>
 </html>

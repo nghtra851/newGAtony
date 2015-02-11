@@ -24,7 +24,7 @@ include './style.html';
     </head>
     <body>
 
-
+        <a href="add.php">Lägg till produkt</a>
         <a href="db.php">Database</a>
         <a href="cart.php">Cart</a><br><br>
 
