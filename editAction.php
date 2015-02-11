@@ -1,8 +1,12 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include "includeDB.php";
 
+if (isset($_GET["action"])) {
+    if ($_GET["action"] == "Save") {
+        $edit = "UPDATE products SET name='" . $_GET['name'] . "',price='" . $_GET['price'] . "',color='" . $_GET["color"] . "',size='" . $_GET["size"] . "',quantity='" . $_GET["quantity"] . "' WHERE id='" . $_GET['id'] . "'";
+        $stmt = $dbm->prepare($edit);
+        $stmt->execute();
+        header("Location: db.php");
+    }
+}
