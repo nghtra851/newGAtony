@@ -10,11 +10,11 @@ if (!isset($_SESSION["cart"])) {
 //var_dump($_SESSION);
 //echo json_encode($cart);
 
-$id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
-$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-$color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
-$size = filter_input(INPUT_POST, "size", FILTER_SANITIZE_SPECIAL_CHARS);
-$amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_GET, "color", FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_GET, "size", FILTER_SANITIZE_SPECIAL_CHARS);
+$amount = filter_input(INPUT_GET, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
 
 include "signout.php";
@@ -26,12 +26,12 @@ $products = $stmt->fetchAll();
 //var_dump($products);
 //var_dump($_SESSION["cart"]);
 
-if (isset($_POST["action"])) {
-    if ($_POST["action"] == "add") {
+if (isset($_GET["action"])) {
+    if ($_GET["action"] == "add") {
         foreach ($products as $product) {
 //            var_dump($product["quantity"]);
-            var_dump($_POST["amount"]);
-            if ($_SESSION["cart"] && $_POST["amount"] > $product["quantity"]) {
+            var_dump($_GET["amount"]);
+            if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
                 echo "Too much.";
 //                header("Location: index.php", true, 12);
 //                exit();
@@ -39,15 +39,15 @@ if (isset($_POST["action"])) {
 
                 foreach ($products as $product) {
 
-                    if ($_POST["amount"] <= $product["quantity"]) {
-                        if ($_POST["id"] == "" or $_POST["name"] == "" or $_POST["color"] == "" or $_POST["size"] == "" or $_POST["amount"] == "") {
+                    if ($_GET["amount"] <= $product["quantity"]) {
+                        if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
                             $errormessage = "Please fill in the forms.";
                         } else {
-                            $id = $_POST["id"];
-                            $name = $_POST["name"];
-                            $size = $_POST["size"];
-                            $color = $_POST["color"];
-                            $amount = $_POST["amount"];
+                            $id = $_GET["id"];
+                            $name = $_GET["name"];
+                            $size = $_GET["size"];
+                            $color = $_GET["color"];
+                            $amount = $_GET["amount"];
                             $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
                         }
                     }
@@ -59,7 +59,7 @@ if (isset($_POST["action"])) {
             }
         }
     }
-}
+}   
 
 //function compareQ() {
 //    $products;
@@ -93,7 +93,7 @@ var_dump($_SESSION);
 
             if ($quantity > 0) {
                 echo "<tr>";
-                echo "<form method='POST'>";
+                echo "<form method='GET'>";
                 echo "<p>" . $name . " " . $price . "£" . "</p>";
                 echo "<td>";
                 echo "<input type='hidden' name='id' value='$id'";
@@ -125,7 +125,7 @@ var_dump($_SESSION);
             } else {
                 $availability = "Out of stock";
                 echo "<tr>";
-                echo "<form method='POST'>";
+                echo "<form method='GET'>";
                 echo "<p>" . $name . " " . $price . "£" . "</p>";
                 echo "<td>";
                 echo "<input type='hidden' name='id' value='$id'";
