@@ -6,7 +6,7 @@ if (isset($_SESSION["user"]) != NULL) {
             <button type='submit' value='signout' name='action'>Sign Out</button>
         </form>";
 } else {
-    echo $signoutmessage;
+//    echo $signoutmessage;
     echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
     echo "<a href='signup.php'>Sign Up</a>";
 }

@@ -7,7 +7,7 @@ if (isset($_POST["action"]) == "signout") {
         session_destroy();
         $signoutmessage = "You have logged out.";
     } else {
-        $signoutmessage = "You are not logged in. Please log in.";
+        $signoutmessage = "You are not a member. Please sign up";
     }
 } else {
     $signoutmessage = "You are not logged in. Please log in.";
@@ -24,7 +24,7 @@ include './style.html';
     </head>
     <body>
 
-        <a href="add.php">Lägg till produkt</a>
+        <a href="add.php">Add product</a>
         <a href="db.php">Database</a>
         <a href="cart.php">Cart</a><br><br>
 

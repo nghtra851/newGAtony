@@ -7,8 +7,6 @@ if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 
-//var_dump($_SESSION);
-//echo json_encode($cart);
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 $name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -23,18 +21,26 @@ $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
-//var_dump($products);
-//var_dump($_SESSION["cart"]);
 
 if (isset($_GET["action"])) {
     if ($_GET["action"] == "add") {
         foreach ($products as $product) {
 //            var_dump($product["quantity"]);
             var_dump($_GET["amount"]);
+            for ($i = 0; $i < count($product["quantity"]); $i++) {
+                var_dump(count($product["quantity"]));
+                echo "<br><br>";
+
+                if ($_GET["id"] == $_SESSION["cart"][$i][$product["id"]]) {
+                    if (($_SESSION["cart"][$i]["quantity"] + $_GET["amount"]) < $product["quantity"]) {
+                        $_SESSION["cart"][$i]["amount"]+=$_GET["amount"];
+                    } else {
+                        echo "Please choose fewer products.";
+                    }
+                }
+            }
             if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
                 echo "Too much.";
-//                header("Location: index.php", true, 12);
-//                exit();
             } else {
 
                 foreach ($products as $product) {
@@ -59,7 +65,7 @@ if (isset($_GET["action"])) {
             }
         }
     }
-}   
+}
 
 //function compareQ() {
 //    $products;
