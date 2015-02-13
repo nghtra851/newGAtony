@@ -28,12 +28,20 @@ if (isset($_GET["action"])) {
 //            var_dump($product["quantity"]);
             var_dump($_GET["amount"]);
             for ($i = 0; $i < count($product["quantity"]); $i++) {
+
+                echo "<br><br>";
+                echo "antal produkter i databasen: ";
                 var_dump(count($product["quantity"]));
                 echo "<br><br>";
-
                 if ($_GET["id"] == $_SESSION["cart"][$i][$product["id"]]) {
+                    echo "<br><br>";
+                    echo "Rätt id.";
+                    echo "<br><br>";
                     if (($_SESSION["cart"][$i]["quantity"] + $_GET["amount"]) < $product["quantity"]) {
                         $_SESSION["cart"][$i]["amount"]+=$_GET["amount"];
+                        echo "<br><br>";
+                        var_dump($_SESSION["cart"][$i]["amount"]);
+                        echo "<br><br>";
                     } else {
                         echo "Please choose fewer products.";
                     }
