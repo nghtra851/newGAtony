@@ -15,5 +15,5 @@ if (isset($_POST["action"])) {
 } else {
     $signoutmessage = "You are not logged in. Please log in.";
 }
-?>
+
 

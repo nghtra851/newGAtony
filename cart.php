@@ -22,57 +22,72 @@ $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
+
+
+
+
+
+
+
+
+
+
+
+
 if (isset($_GET["action"])) {
     if ($_GET["action"] == "add") {
         foreach ($products as $product) {
 //            var_dump($product["quantity"]);
             var_dump($_GET["amount"]);
-            for ($i = 0; $i < count($product["quantity"]); $i++) {
-
-                echo "<br><br>";
-                echo "antal produkter i databasen: ";
-                var_dump(count($product["quantity"]));
-                echo "<br><br>";
-                if ($_GET["id"] == $_SESSION["cart"][$i][$product["id"]]) {
-                    echo "<br><br>";
-                    echo "Rätt id.";
-                    echo "<br><br>";
-                    if (($_SESSION["cart"][$i]["quantity"] + $_GET["amount"]) < $product["quantity"]) {
-                        $_SESSION["cart"][$i]["amount"]+=$_GET["amount"];
-                        echo "<br><br>";
-                        var_dump($_SESSION["cart"][$i]["amount"]);
-                        echo "<br><br>";
-                    } else {
-                        echo "Please choose fewer products.";
-                    }
-                }
-            }
+//            for ($i = 0; $i < count($product["quantity"]); $i++) {
+//                echo "antal: ";
+//                var_dump($product["quantity"]);
+//                echo "<br><br>";
+//                echo "antal produkter i databasen: ";
+//                var_dump(count($product["quantity"]));
+//                echo "<br><br>";
+//                if ($_GET["id"] == $_SESSION["cart"][$i][$product["id"]]) {
+//                    echo "<br><br>";
+//                    echo "Rätt id.";
+//                    echo "<br><br>";
+//                    if (($_SESSION["cart"][$i]["quantity"] + $_GET["amount"]) < $product["quantity"]) {
+//                        $_SESSION["cart"][$i]["amount"]+=$_GET["amount"];
+//                        echo "<br><br>";
+//                        var_dump($_SESSION["cart"][$i]["amount"]);
+//                        echo "<br><br>";
+//                    } else {
+//                        echo "Please choose fewer products.";
+//                    }
+//                }
+//            }
             if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
                 echo "Too much.";
             } else {
 
-                foreach ($products as $product) {
-
-                    if ($_GET["amount"] <= $product["quantity"]) {
-                        if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
-                            $errormessage = "Please fill in the forms.";
-                        } else {
-                            $id = $_GET["id"];
-                            $name = $_GET["name"];
-                            $size = $_GET["size"];
-                            $color = $_GET["color"];
-                            $amount = $_GET["amount"];
-                            $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
-                        }
+//                cart ($products as $product) {
+//                echo "produkter:";
+//                var_dump($i);
+//                echo "<br><cbr>";
+                if ($_GET["amount"] <= $product["quantity"]) {
+                    if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
+                        $errormessage = "Please fill in the forms.";
+                    } else {
+                        $id = $_GET["id"];
+                        $name = $_GET["name"];
+                        $size = $_GET["size"];
+                        $color = $_GET["color"];
+                        $amount = $_GET["amount"];
+                        $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
                     }
+                }
 //            else {
 //                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
 //                echo "<script type='text/javascript'>alert('$message');</script>";
-//            }
-                }
             }
         }
     }
+//        }
+//    }
 }
 
 //function compareQ() {
