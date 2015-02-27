@@ -25,6 +25,54 @@ $products = $stmt->fetchAll();
 
 
 
+if (isset($_GET["id"])) {
+    $select = "SELECT quantity FROM products WHERE id ='" . $_GET["id"] . "' ";
+    $stmt = $dbm->prepare($select);
+    $stmt->execute();
+    $totalQuantity = $stmt->fetchAll();
+    echo "ID finns: " . $_GET["id"] . "<br><br>";
+    echo "Antal i databasen for id " . $_GET["id"] . " ";
+    print_r($totalQuantity);
+    echo "<br><br>";
+    echo "antal: ";
+    echo count($_SESSION["cart"]);
+    $addToCart = true;
+    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+        if ($_GET["id"] == $_SESSION["cart"][$i]["id"]) {
+            echo "<br>Finns, position: ";
+            var_dump($i);
+            $addToCart = false;
+            $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
+            echo "antal: " . $_SESSION["cart"][$i]["amount"];
+            echo "<br><br>";
+
+//            echo "antal: ";
+//            echo count($_SESSION["cart"]);
+//            echo "<br><br>";
+        } else {
+            echo "<br>Fanns inte";
+            echo "<br><br>";
+        }
+    }
+    if ($addToCart) {
+//lägg till
+        if (isset($_GET["action"])) {
+            if ($_GET["action"] == "add") {
+                $id = $_GET["id"];
+                $name = $_GET["name"];
+                $size = $_GET["size"];
+                $color = $_GET["color"];
+                $amount = $_GET["amount"];
+                $_SESSION["cart"][] = array("id" => $id, "name" => $name, "color" => $color, "size" => $size, "amount" => $amount);
+            }
+        }
+    }
+//    echo "antal: ";
+//    echo count($_SESSION["cart"]);
+    echo "<br><br>";
+} else {
+    echo " Kan inte hitta ID ";
+}
 
 
 
@@ -34,11 +82,10 @@ $products = $stmt->fetchAll();
 
 
 
-if (isset($_GET["action"])) {
-    if ($_GET["action"] == "add") {
-        foreach ($products as $product) {
+//        foreach ($products as $product) {
 //            var_dump($product["quantity"]);
-            var_dump($_GET["amount"]);
+echo "<br><br><br><br>";
+//            var_dump($_GET["amount"]);
 //            for ($i = 0; $i < count($product["quantity"]); $i++) {
 //                echo "antal: ";
 //                var_dump($product["quantity"]);
@@ -60,36 +107,28 @@ if (isset($_GET["action"])) {
 //                    }
 //                }
 //            }
-            if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
-                echo "Too much.";
-            } else {
-
-//                cart ($products as $product) {
-//                echo "produkter:";
-//                var_dump($i);
-//                echo "<br><cbr>";
-                if ($_GET["amount"] <= $product["quantity"]) {
-                    if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
-                        $errormessage = "Please fill in the forms.";
-                    } else {
-                        $id = $_GET["id"];
-                        $name = $_GET["name"];
-                        $size = $_GET["size"];
-                        $color = $_GET["color"];
-                        $amount = $_GET["amount"];
-                        $_SESSION["cart"][] = array($id, $name, $color, $size, $amount);
-                    }
-                }
-//            else {
-//                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
-//                echo "<script type='text/javascript'>alert('$message');</script>";
-            }
-        }
-    }
+//            if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
+//                echo "Too much.";
+//            } else {
+//
+////                cart ($products as $product) {
+////                echo "produkter:";
+////                var_dump($i);
+////                echo "<br><cbr>";
+//                if ($_GET["amount"] <= $product["quantity"]) {
+//                    if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
+//                        $errormessage = "Please fill in the forms.";
+//                    } else {
+//                        
+//                    }
+//                }
+////            else {
+////                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
+////                echo "<script type='text/javascript'>alert('$message');</script>";
+//            }
 //        }
 //    }
-}
-
+//        }
 //function compareQ() {
 //    $products;
 //}

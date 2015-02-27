@@ -2,6 +2,6 @@
 
 session_start();
 unset($_SESSION["cart"]);
-header("Location: index.php");
+header("Location: cart.php");
 exit();
 ?>
