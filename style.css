@@ -1,0 +1,49 @@
+*{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    /*background-image: url('http://media.giphy.com/media/BTDFQ527nyoWk/giphy.gif');*/
+}
+h2{
+    margin: 10px;
+    text-decoration: underline;
+    color: white;
+}
+#wrapper{
+    margin-top: 100px;
+    border: black solid 2px;
+    width: 690px;
+    overflow: auto;
+    /*background-image: url('http://media.giphy.com/media/M2pj6s09eeINy/giphy.gif');*/
+}
+#products{
+    overflow: auto;
+    border: 1px solid black;
+    width: 400px;
+    height: 500px;
+    margin: 10px;
+    float: left;
+    background-image: url('http://media.giphy.com/media/weiLUXkb1cSm4/giphy.gif');
+}
+input{
+    /*float: right;*/
+}
+#delete{
+    float: right;
+}
+#editadd{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    float: left;
+    border: 1px solid blue;
+    /*background-image: url('http://media1.giphy.com/media/aqDXCH2M1ycEw/giphy.gif');*/
+}
+#delbut{
+    float:right;
+}
+#datadiv{
+    margin-top: 5px;
+    background-color: white;
+}
