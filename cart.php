@@ -39,27 +39,30 @@ if (isset($_GET["id"])) {
     echo count($_SESSION["cart"]);
     $addToCart = true;
     for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-        if ($_GET["id"] == $_SESSION["cart"][$i]["id"]) {
+        if ($_GET["id"] == $_SESSION["cart"][$i]["id"] && $_GET["color"] == $_SESSION["cart"][$i]["color"] && $_GET["size"] == $_SESSION["cart"][$i]["size"]) {
             echo "<br>Finns, position: ";
             var_dump($i);
             $addToCart = false;
-            $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
+            
 //            echo "<br>ja: ";
 //            var_dump($_SESSION["cart"][$i]);
-            echo "<br>antal: " . $_SESSION["cart"][$i]["amount"];
-            echo "<br><br>";
+$total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
             foreach ($totalQuantity as $q) {
                 foreach ($q as $que) {
                     echo "<br>antal i db: ";
                     echo "<br>" . $que;
-                    if ($_SESSION["cart"][$i]["amount"] > $que) {
+                    if ($total > $que) {
                         echo "<br>du försöker köpa " . $_SESSION["cart"][$i]["amount"] . " produkter. I databasen finns " . $que . " produkter";
-                        $addToCart = true;
+                        
+                        $addToCart = false;
                     } else {
                         $addToCart = false;
+                        $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
                     }
                 }
             }
+            echo "<br>antal: " . $_SESSION["cart"][$i]["amount"];
+            echo "<br><br>";
         }
         echo "<br>Fanns inte";
         echo "<br><br>";
