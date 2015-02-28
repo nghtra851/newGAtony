@@ -47,3 +47,17 @@ input{
     margin-top: 5px;
     background-color: white;
 }
+form{
+    padding: 10px;
+    margin-left: 10px;
+    border-bottom: 5px solid blueviolet;
+    border-right: 5px solid blueviolet;
+    border-left: 5px solid blueviolet;
+    width: 200px;
+}
+.item{
+    border: 2px solid springgreen;
+    margin-left: 10px;
+    width: 200px;
+    padding: 13px;
+}
