@@ -40,6 +40,9 @@
 .navigation2 li a:hover{
     color: #29B6F6;
 }
+.signout{
+    font-size: 15px;
+}
 .droppdown{
     background-color: #424242;
     height: 300px;

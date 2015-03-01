@@ -90,7 +90,7 @@ session_start();
 
                                     echo "Logged in as " . $_SESSION["user"];
                                     echo "<form method='POST'>
-                                <button type='submit' value='signout' name='action'>Sign Out</button>
+                                <button class='signout' type='submit' value='signout' name='action'>Sign Out</button>
                                 </form>";
                                 } else {
                                     echo $signoutmessage;
