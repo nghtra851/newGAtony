@@ -1,5 +1,5 @@
 <?php
-include "style.html";
+//include "style.html";
 session_start();
 
 include "includeDB.php";
