@@ -1,0 +1,289 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="css/test.css">
+        <link type="text/css" rel="stylesheet" href="css/navtest.css">
+        <link rel="icon" type="image/ico" href="img/favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.cycle.all.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+
+
+            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
+                <div class="container">
+                    <?php include 'showCart.php'; ?>
+                    <div class=" navbar navbar-static-top navigation">
+                        <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
+                        <div class='navigation2 col-sm-10'>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>  
+                                <li class="dropdown">
+
+                                    <a href="shop.html" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
+
+                                    <ul class="dropdown-menu mega-menu droppdown">
+
+                                        <li class="mega-menu-column ">
+                                            <ul>
+                                                <li class="nav-header">Kille</li>
+                                                <li class="undermen"><a href="#">Hoodie</a></li>
+                                                <li class="undermen"><a href="#">T-shirt</a></li>
+                                                <li class="undermen"><a href="#">Shirt</a></li>
+                                                <li class="undermen"><a href="#">Shorts</a></li>
+                                                <li class="undermen"><a href="#">Jeans</a></li>
+                                                <li class="undermen"><a href="#">Trousers</a></li>
+                                            </ul>
+                                        </li>    
+
+                                        <li class="mega-menu-column">
+                                            <ul>
+                                                <li class="nav-header">Tjej</li>
+                                                <li class="undermen"><a href="#">Hoodie</a></li>
+                                                <li class="undermen"><a href="#">T-shirt</a></li>
+                                                <li class="undermen"><a href="#">Shirt</a></li>
+                                                <li class="undermen"><a href="#">Shorts</a></li>
+                                                <li class="undermen"><a href="#">Jeans</a></li>
+                                                <li class="undermen"><a href="#">Trousers</a></li>
+                                            </ul>
+                                        </li> 
+
+                                        <li class="mega-menu-column">
+                                            <ul>                            
+                                                <li class="nav-header">Barn</li>
+                                                <li class="undermen"><a href="#">Hoodie</a></li>
+                                                <li class="undermen"><a href="#">T-shirt</a></li>
+                                                <li class="undermen"><a href="#">Shirt</a></li>
+                                                <li class="undermen"><a href="#">Shorts</a></li>
+                                                <li class="undermen"><a href="#">Jeans</a></li>
+                                                <li class="undermen"><a href="#">Trousers</a></li>
+                                            </ul>
+                                        </li> 
+
+                                    </ul>
+
+
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li class="login"><a href="#contact">Registrate</a></li>
+                                <li class="login dropdown">
+
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>                      
+                                    <ul class="dropdown-menu login-menu droppdown">
+
+                                        <form>
+                                            <h3 class="top user">Username:</h3> 
+                                            <input type="text" name="FirstName" value=""><br>
+                                            <h3 class="user">Password:</h3>
+                                            <input type="text" name="LastName" value=""><br>
+                                            <input class="send" type="submit" value="Login">
+                                        </form>
+
+
+                                    </ul>
+                                </li>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="col-lg-12 pheader">
+                    <ul>
+                        <li>
+                            <a href="#">Logo.com</a>
+                        </li>
+                        /
+                        <li>
+                            <a href="#">Kön</a>
+                        </li>
+                        /
+                        <li>
+                            <a href="#">Byxor</a>
+                        </li>
+                        /
+                        <li>
+                            <a href="#">Produkt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 pbild top-product">
+                        <div id="slider1" >
+
+                            <img border="0" src="img/img1.jpg"   alt="" />
+                            <img border="0" src="img/img2.jpg"  alt="" />
+                            <img border="0" src="img/img3.jpg"  alt="" />
+                            <img border="0" src="img/img4.jpg"  alt="" />
+                            <img border="0" src="img/img5.jpg"  alt="" />
+                            <img border="0" src="img/img6.jpg"  alt="" />
+                        </div>
+                        <ul id="thumb"> </ul>
+                        <div class="col-sm-12 likprodukter">
+                            <h3>LIKNANDE PRODUKTER</h3>
+                            <div class="row">
+                                <a href="#">    
+                                    <div class="col-sm-3 ">
+                                        <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                        <h5>JEANS</h5>
+                                        <h5>BYXOR-MICROSOFT</h5>
+                                        <h5>166KR</h5>
+
+                                    </div>
+                                </a>
+                                <a href="#">  
+                                    <div class="col-sm-3 ">
+                                        <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                        <h5>JEANS</h5>
+                                        <h5>BYXOR-MICROSOFT</h5>
+                                        <h5>166KR</h5>
+
+                                    </div>
+                                </a>
+                                <a href="#">  
+                                    <div class="col-sm-3 ">
+                                        <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                        <h5>JEANS</h5>
+                                        <h5>BYXOR-MICROSOFT</h5>
+                                        <h5>166KR</h5>
+
+                                    </div>
+                                </a>
+                                <a href="#">  
+                                    <div class="col-sm-3 ">
+                                        <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                        <h5>JEANS</h5>
+                                        <h5>BYXOR-MICROSOFT</h5>
+                                        <h5>166KR</h5>
+
+                                    </div>
+                                </a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-1 sidebar top-product">
+
+                    </div>
+                    <div class="col-sm-5 pinfos top-product">
+                        <div class="col-sm-12 pheadernamn">
+                            <h1>MICROSOFT</h1>
+                        </div>
+                        <div class="col-sm-12 pris">
+                            <h3>SuperJeans</h3>
+
+                            <h3>-200Kr</h3>
+
+                            <div class="col-sm-12"></div>  
+                            <div id="grid">
+                                <p>Färger:</p>
+                                <a href="#" style="background-color: black;"></a>
+                                <a href="#" style="background-color: white;"></a>
+                                <a href="#" style="background-color: pink;"></a>
+                                <a href="#" style="background-color: red;"></a>
+                                <a href="#" style="background-color: yellow;"></a>
+                                <a href="#" style="background-color: green;"></a>
+                                <a href="#" style="background-color: gray;"></a>
+                                <a href="#" style="background-color: blue;"></a>
+                            </div>
+
+
+                            <div class="panel-heading pbeskrivning" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <p>Produkt Beskrivning</p>
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body pbeskrivning2">
+                                    <h4>Beskrivning</h4>
+                                    <p>En Byxa i snabbtorkande funktionsmaterial som andas. Slim fit. Byxan är delvis tillverkad av återvunnen polyester.</p>
+                                    <h4>Detaljer</h5>             
+                                        <p>Snabbtorkande, 83% polyester, 17% elastan. Maskintvätt 40˚
+                                            Art.nr. 47-0779</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        include "cart.php";
+                        ?>
+
+                        <div class="col-sm-12">
+
+                            <div class="dropdown knappdesign knappdesignleft"> 
+
+                                <button class=" dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Storlek
+                                    <span class="caret pilen"></span></button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">S</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">M</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">L</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">XL</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">XXL</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="dropdown knappdesign">
+                                <button class=" dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Antal
+                                    <span class="caret pilen"></span></button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">...</a></li>
+
+
+                                </ul>
+                            </div>
+                            <div class="panel-heading pbeskrivning margintop" role="tab" id="headingTwo">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <p>Storlekts Guide</p>
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body pbeskrivning2">
+                                    STOEOREOREORAOAFASDFJDSPFJSFSDFIJ
+                                </div>
+                            </div>
+                            <a class="köpknapp" href="#"><p>Lägg I varuuukoorken</p></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="jumbotron backgroundfooter">
+                <div class="container">
+
+                    <div class="col-sm-4 footercontent">
+                        <h2>© 2014 Clothes Store </h2>
+                        <p>By David KB, Viktor RT <br>
+                            Albin S, Tony T</p>
+                    </div>
+                    <div class="col-sm-4 footercontent">
+                        <h2>Find us</h2>
+                        <p>Adress:</p>
+                        <p>City:</p>
+                        <p>Phone nr:</p>
+                    </div>
+                    <div class="col-sm-4 footercontent">
+                        <h2>Follow us</h2>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
