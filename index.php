@@ -72,31 +72,12 @@ session_start();
                             <li><a href="contact.html">Contact</a></li>
                             <li class="login dropdown1">
 
-                                
+
                                 <?php
-                                if (isset($_POST["action"]) == "signout") {
-                                    if (isset($_SESSION["user"]) != NULL) {
-                                        session_unset();
-                                        session_destroy();
-                                        $signoutmessage = "You have logged out.";
-                                    } else {
-                                        $signoutmessage = "You are not a member. Please sign up";
-                                    }
-                                } else {
-                                    $signoutmessage = "You are not logged in. Please log in.";
-                                }
-
-                                if (isset($_SESSION["user"]) != NULL) {
-
-                                    echo "Logged in as " . $_SESSION["user"];
-                                    echo "<form method='POST'>
-                                <button class='signout' type='submit' value='signout' name='action'>Sign Out</button>
-                                </form>";
-                                } else {
-                                    echo $signoutmessage;
-                                    echo "<br>" . "<a href='login.php'>Login</a>" . "<br>";
-                                    echo "<a href='signup.php'>Sign Up</a>";
-                                }
+                                include 'showCart.php';
+                                echo "<a href='killCart.php'>Delete All</a>";
+                                include 'signout.php';
+                                include 'loggedin.php';
                                 ?>
                                 <ul class="dropdown-menu login-menu droppdown1">
                                     <div class="row"> 
@@ -104,9 +85,9 @@ session_start();
                                         <div class="col-sm-6 login">
                                             <h2>Sign Up</h2>
                                             <h3 class="user">Username:</h3> 
-                                            <input type="text" name="FirstName" value="">
+                                            <input type="text" name="username" value="">
                                             <h3 class="user">Password:</h3>
-                                            <input type="text" name="LastName" value="">
+                                            <input type="text" name="password" value="">
                                             <input class="send" type="submit" value="Submit">
                                         </div>
                                         <div class="col-sm-6 login">
@@ -199,12 +180,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function () {
+                jQuery(document).ready(function() {
                     $(".dropdown").hover(
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });

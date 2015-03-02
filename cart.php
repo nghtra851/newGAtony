@@ -43,17 +43,17 @@ if (isset($_GET["id"])) {
             echo "<br>Finns, position: ";
             var_dump($i);
             $addToCart = false;
-            
+
 //            echo "<br>ja: ";
 //            var_dump($_SESSION["cart"][$i]);
-$total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
+            $total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
             foreach ($totalQuantity as $q) {
                 foreach ($q as $que) {
                     echo "<br>antal i db: ";
                     echo "<br>" . $que;
                     if ($total > $que) {
                         echo "<br>du försöker köpa " . $_SESSION["cart"][$i]["amount"] . " produkter. I databasen finns " . $que . " produkter";
-                        
+
                         $addToCart = false;
                     } else {
                         $addToCart = false;
@@ -93,60 +93,6 @@ $total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
     echo " Kan inte hitta ID ";
 }
 
-
-
-
-
-
-
-
-//        foreach ($products as $product) {
-//            var_dump($product["quantity"]);
-echo "<br><br><br><br>";
-//            var_dump($_GET["amount"]);
-//            for ($i = 0; $i < count($product["quantity"]); $i++) {
-//                echo "antal: ";
-//                var_dump($product["quantity"]);
-//                echo "<br><br>";
-//                echo "antal produkter i databasen: ";
-//                var_dump(count($product["quantity"]));
-//                echo "<br><br>";
-//                if ($_GET["id"] == $_SESSION["cart"][$i][$product["id"]]) {
-//                    echo "<br><br>";
-//                    echo "Rätt id.";
-//                    echo "<br><br>";
-//                    if (($_SESSION["cart"][$i]["quantity"] + $_GET["amount"]) < $product["quantity"]) {
-//                        $_SESSION["cart"][$i]["amount"]+=$_GET["amount"];
-//                        echo "<br><br>";
-//                        var_dump($_SESSION["cart"][$i]["amount"]);
-//                        echo "<br><br>";
-//                    } else {
-//                        echo "Please choose fewer products.";
-//                    }
-//                }
-//            }
-//            if ($_SESSION["cart"] && $_GET["amount"] > $product["quantity"]) {
-//                echo "Too much.";
-//            } else {
-//
-////                cart ($products as $product) {
-////                echo "produkter:";
-////                var_dump($i);
-////                echo "<br><cbr>";
-//                if ($_GET["amount"] <= $product["quantity"]) {
-//                    if ($_GET["id"] == "" or $_GET["name"] == "" or $_GET["color"] == "" or $_GET["size"] == "" or $_GET["amount"] == "") {
-//                        $errormessage = "Please fill in the forms.";
-//                    } else {
-//                        
-//                    }
-//                }
-////            else {
-////                $message = "The amount is more than stock. Please choose fewer. Not more than " . $product["quantity"];
-////                echo "<script type='text/javascript'>alert('$message');</script>";
-//            }
-//        }
-//    }
-//        }
 
 
 var_dump($_SESSION);
@@ -240,8 +186,7 @@ var_dump($_SESSION);
                 echo "</tr>";
             }
         }
-
-        echo "<p class='item'>Cart: ";
+        echo "<p class='item'>Cart: <br>";
         foreach ($_SESSION["cart"] as $cart) {
             foreach ($cart as $item) {
                 $item = ucfirst($item);
@@ -256,6 +201,3 @@ var_dump($_SESSION);
         <a href="killCart.php">Delete all</a>
     </body>
 </html>
-<?php
-exit();
-?>
