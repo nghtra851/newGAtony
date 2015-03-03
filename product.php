@@ -1,5 +1,7 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
     <head>
         <title>Test</title>
@@ -21,7 +23,11 @@
 
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
                 <div class="container">
-                    <?php include 'showCart.php'; ?>
+                    <?php
+                    include 'showCart.php';
+                    include 'signout.php';
+                    include 'loggedin.php';
+                    ?>
                     <div class=" navbar navbar-static-top navigation">
                         <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>

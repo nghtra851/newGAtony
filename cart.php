@@ -27,82 +27,7 @@ $products = $stmt->fetchAll();
 
 
 
-if (isset($_GET["id"])) {
 
-
-
-    $select = "SELECT quantity FROM products WHERE id ='" . $_GET["id"] . "' ";
-    $stmt = $dbm->prepare($select);
-    $stmt->execute();
-    $totalQuantity = $stmt->fetchAll();
-//    echo "ID finns: " . $_GET["id"] . "<br><br>";
-////    echo "Antal i databasen for id " . $_GET["id"] . " ";
-//    var_dump($totalQuantity);
-//    echo "<br><br>";
-//    echo "antal: ";
-//    echo count($_SESSION["cart"]);
-    $addToCart = true;
-    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-        if ($_GET["id"] == $_SESSION["cart"][$i]["id"] && $_GET["color"] == $_SESSION["cart"][$i]["color"] && $_GET["size"] == $_SESSION["cart"][$i]["size"]) {
-//            echo "<br>Finns, position: ";
-//            var_dump($i);
-            $addToCart = false;
-
-//            echo "<br>ja: ";
-//            var_dump($_SESSION["cart"][$i]);
-            $total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
-            foreach ($totalQuantity as $q) {
-                foreach ($q as $que) {
-//                    echo "<br>antal i db: ";
-//                    echo "<br>" . $que;
-                    if ($total > $que) {
-//                        echo "<br>du försöker köpa " . $_SESSION["cart"][$i]["amount"] . " produkter. I databasen finns " . $que . " produkter";
-
-                        $addToCart = false;
-                    } else {
-                        $addToCart = false;
-                        $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
-                    }
-                }
-            }
-//            echo "<br>antal: " . $_SESSION["cart"][$i]["amount"];
-//            echo "<br><br>";
-        }
-//        echo "<br>Fanns inte";
-//        echo "<br><br>";
-//        }
-//        echo"add to cart: ";
-//        var_dump($addToCart);
-    }
-
-    if ($addToCart) {
-        if (isset($_GET["action"])) {
-            if ($_GET["action"] == "add") {
-                $id = $_GET["id"];
-                $name = $_GET["name"];
-                $price = $_GET["price"];
-                $size = $_GET["size"];
-                $color = $_GET["color"];
-                $amount = $_GET["amount"];
-                $_SESSION["cart"][] = array("id" => $id, "name" => $name, "price" => $price, "color" => $color, "size" => $size, "amount" => $amount);
-//                echo "<br>La till i cart.";
-            }
-
-//lägg till
-        } else {
-//            echo "<br>FELFELFEL<br>";
-        }
-    }
-
-//    echo "<br><br>";
-} else {
-//    echo " Kan inte hitta ID ";
-}
-
-
-
-//var_dump($_SESSION);
-//        include "loggedin.php";
 
 foreach ($products as $product) {
     $name = $product["name"];
@@ -114,7 +39,7 @@ foreach ($products as $product) {
 
     if ($quantity > 0) {
         echo "<tr>";
-        echo "<form method='GET'>";
+        echo "<form method='GET' action='addToCart.php'>";
         echo "<p>" . $name . " " . $price . "£" . "</p>";
         echo "<td>";
         echo "<input type='hidden' name='id' value='$id'";
@@ -149,7 +74,7 @@ foreach ($products as $product) {
     } else {
         $availability = "Out of stock";
         echo "<tr>";
-        echo "<form method='GET'>";
+        echo "<form method='GET' action='addToCart.php'>";
         echo "<p>" . $name . " " . $price . "£" . "</p>";
         echo "<td>";
         echo "<input type='hidden' name='id' value='$id'";

@@ -75,7 +75,6 @@ session_start();
 
                                 <?php
                                 include 'showCart.php';
-                                echo "<a href='killCart.php'>Delete All</a>";
                                 include 'signout.php';
                                 include 'loggedin.php';
                                 ?>

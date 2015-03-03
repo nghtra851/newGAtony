@@ -13,6 +13,7 @@ if ($_SESSION["cart"] != NULL) {
         echo $cart["amount"] . " <br><br>";
     }
     echo "</p>";
+    echo "<a href='killCart.php'>Delete All</a><br>";
 
     function countTotal() {
         $total = 0;
