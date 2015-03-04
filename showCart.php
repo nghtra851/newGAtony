@@ -11,6 +11,11 @@ if ($_SESSION["cart"] != NULL) {
         echo $cart["size"] . " ";
         echo $cart["price"] . " £ ";
         echo $cart["amount"] . " <br><br>";
+        echo "<br>";
+        echo "<form method='GET' action='deleteFromCart.php'>";
+        echo "<input type='hidden' value='" . $cart["id"] . "' name='id'>";
+        echo "<input type='submit' name='action' value='delete'>";
+        echo "</form>";
     }
     echo "</p>";
     echo "<a href='killCart.php'>Delete All</a><br>";

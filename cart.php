@@ -14,6 +14,7 @@ $name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
 $price = filter_input(INPUT_GET, "price", FILTER_SANITIZE_SPECIAL_CHARS);
 $color = filter_input(INPUT_GET, "color", FILTER_SANITIZE_SPECIAL_CHARS);
 $size = filter_input(INPUT_GET, "size", FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_GET, "price", FILTER_SANITIZE_SPECIAL_CHARS);
 $amount = filter_input(INPUT_GET, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
 
