@@ -16,6 +16,7 @@ session_start();
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/addToCart.js"></script>
     </head>
     <body>
         <div id="wrapper">
