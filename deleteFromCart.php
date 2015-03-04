@@ -9,7 +9,7 @@ if (isset($_GET["action"])) {
             if ($_SESSION["cart"][$i]["id"] == $_GET["id"]) {
                 array_splice($_SESSION["cart"], $i, 1);
             }
-            header("Location: index.php");
+            header("Location: " . $_SERVER['HTTP_REFERER']);
         }
     }
 }

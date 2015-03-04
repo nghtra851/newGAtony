@@ -132,6 +132,9 @@ session_start();
                 </ul>
 
                 <div class="row">
+                    <?php
+                    echo ("Location: " . $_SERVER['HTTP_HOST'] . "/newGA-1" . $_SERVER['PHP_SELF']);
+                    ?>
                     <div class="col-sm-4 indexprodukt">
                         <img class="img-responsive img"href="#" src="img/janne.jpg">
                         <h3>Male</h3>
@@ -179,12 +182,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function() {
+                jQuery(document).ready(function () {
                     $(".dropdown").hover(
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });

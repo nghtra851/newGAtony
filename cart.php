@@ -1,13 +1,9 @@
 <?php
-
-//session_start();
-
 include "includeDB.php";
 
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
-
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 $name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -17,18 +13,10 @@ $size = filter_input(INPUT_GET, "size", FILTER_SANITIZE_SPECIAL_CHARS);
 $price = filter_input(INPUT_GET, "price", FILTER_SANITIZE_SPECIAL_CHARS);
 $amount = filter_input(INPUT_GET, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
-
-include "signout.php";
-
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
 $stmt->execute();
 $products = $stmt->fetchAll();
-
-
-
-
-
 
 foreach ($products as $product) {
     $name = $product["name"];
@@ -102,20 +90,9 @@ foreach ($products as $product) {
         echo "<td>";
         echo "<input type='hidden' name='amount' value='1'>";
         echo "<td>";
-//        echo "<button type='submit' name='action' value='add' disabled>Add to cart</button>";
         echo $availability;
         echo "</form>";
         echo "</tr>";
     }
 }
-//        echo "<p class='item'>Cart: <br>";
-//        foreach ($_SESSION["cart"] as $cart) {
-//            foreach ($cart as $item) {
-//                $item = ucfirst($item);
-//                echo " ";
-//                echo $item;
-//            }
-//            echo "<br>";
-//        }
-//        echo "</p>";
 ?>

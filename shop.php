@@ -255,181 +255,6 @@ session_start();
                         <?php
                         include './showProducts.php';
                         ?>
-                        <!--                        <div class="row">
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                        
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">   
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">   
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">    
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                                                    <a href="Product.html">     
-                                                        <div class="col-sm-3 produkter">
-                                                            <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                                            <h3>JEANS</h3>
-                                                            <h3>BYXOR-MICROSOFT</h3>
-                                                            <h4>166KR</h4>
-                                                        </div></a>
-                        
-                        
-                        -->
-
-                        <!--</div>-->
                         <div class="col-sm-12 "> 
                             <ul class="pagination pilarna">
                                 <li><a href="#">1</a></li>
@@ -465,12 +290,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function() {
+                jQuery(document).ready(function () {
                     $(".dropdown").hover(
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });
