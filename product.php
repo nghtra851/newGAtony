@@ -30,13 +30,13 @@ session_start();
                     include 'loggedin.php';
                     ?>
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
+                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>
                             <ul>
-                                <li><a href="index.html">Home</a></li>  
+                                <li><a href="index.php">Home</a></li>  
                                 <li class="dropdown">
 
-                                    <a href="shop.html" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
+                                    <a href="shop.php" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
 
                                     <ul class="dropdown-menu mega-menu droppdown">
 

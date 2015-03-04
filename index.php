@@ -9,22 +9,24 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/test.css">
+        <!--<link type="text/css" rel="stylesheet" href="css/navtest.css">-->
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
 
     </head>
     <body>
         <div id="wrapper">
-            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
+            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
+                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>
-                            <li><a href="index.html">Home</a></li>  
+                            <li><a href="index.php">Home</a></li>  
                             <li class="dropdown">
 
-                                <a href="shop.html" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
+                                <a href="shop.php" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
 
                                 <ul class="dropdown-menu mega-menu droppdown">
 
@@ -69,37 +71,41 @@ session_start();
 
                             </li>
 
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="login dropdown1">
+                            <li><a href="contact.php">Contact</a></li>
+                            <div class="login LS-dropdown">
 
-
-                                <?php
-                                include 'showCart.php';
-                                include 'signout.php';
-                                include 'loggedin.php';
-                                ?>
-                                <ul class="dropdown-menu login-menu droppdown1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login | Signup<b class="caret"></b></a>                      
+                                <div class="dropdown-menu login-menu LS-droppdown">
                                     <div class="row"> 
 
                                         <div class="col-sm-6 login">
-                                            <h2>Sign Up</h2>
-                                            <h3 class="user">Username:</h3> 
-                                            <input type="text" name="username" value="">
-                                            <h3 class="user">Password:</h3>
-                                            <input type="text" name="password" value="">
-                                            <input class="send" type="submit" value="Submit">
+                                            <?php
+                                            include 'showCart.php';
+                                            include 'signout.php';
+                                            include 'loggedin.php';
+                                            ?>
+                                            <form>
+                                                <h2>Signup</h2>
+                                                <h3 class="user">Username:</h3> 
+                                                <input type="text" name="Username" value="">
+                                                <h3 class="user">Password:</h3>
+                                                <input type="text" name="Password" value="">
+                                                <input class="send" type="submit" value="Signup">
+                                            </form>
                                         </div>
                                         <div class="col-sm-6 login">
-                                            <h2>Login</h2>
-                                            <h3 class="user">Username:</h3> 
-                                            <input type="text" name="FirstName" value="">
-                                            <h3 class="user">Password:</h3>
-                                            <input type="text" name="LastName" value="">
-                                            <input class="send" type="submit" value="Submit">
+                                            <form>
+                                                <h2>Login</h2>
+                                                <h3 class="user">Username:</h3> 
+                                                <input type="text" name="Username" value="">
+                                                <h3 class="user">Password:</h3>
+                                                <input type="text" name="Password" value="">
+                                                <input class="send" type="submit" value="Login">
+                                            </form>
                                         </div>
                                     </div>
-                                </ul>
-                            </li>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,9 +138,6 @@ session_start();
                 </ul>
 
                 <div class="row">
-                    <?php
-                    echo ("Location: " . $_SERVER['HTTP_HOST'] . "/newGA-1" . $_SERVER['PHP_SELF']);
-                    ?>
                     <div class="col-sm-4 indexprodukt">
                         <img class="img-responsive img"href="#" src="img/janne.jpg">
                         <h3>Male</h3>
@@ -181,17 +184,7 @@ session_start();
 
                 </div>
             </div>
-            <script>
-                jQuery(document).ready(function () {
-                    $(".dropdown").hover(
-                            function () {
-                                $('.dropdown-menu', this).fadeIn("fast");
-                            },
-                            function () {
-                                $('.dropdown-menu', this).fadeOut("fast");
-                            });
-                });
-            </script>
+
         </div>
     </body>
 </html>

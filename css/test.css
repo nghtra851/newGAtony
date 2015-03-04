@@ -15,6 +15,13 @@
     margin: 0;
 }
 
+.container{
+    border-bottom: red;
+}
+.nav-shado{
+    box-shadow: 0px 10px 15px #424242;
+    border-bottom: 2px solid #424242;
+}
 .navigation{
     margin: 0;
     height: 100px;
@@ -39,9 +46,6 @@
 }
 .navigation2 li a:hover{
     color: #29B6F6;
-}
-.signout{
-    font-size: 15px;
 }
 .droppdown{
     background-color: #424242;
@@ -93,12 +97,13 @@
     margin-bottom: 0px;
     font-size: 40px;
 }
-.droppdown1{
+.LS-droppdown{
     background-color: #424242;
     width: 522px;
     left: 715px;
     position: absolute;
     z-index: 9999;
+    
 }
 .navigation2 .login a:hover {
     color: #fff;
@@ -235,7 +240,7 @@ input {
     width: 90%;
     position: absolute;
     margin-top: 120px;
-    background-color: #37474F;
+    background-color: #757575;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
@@ -437,8 +442,9 @@ input {
     text-align: center;
     text-decoration: none;
     margin: 20px;
+    width: 200px;
 }
-.köpknapp p{
+.köpknapp {
     text-decoration: none;
     border: solid black 1px;
     background-color: green;
@@ -452,7 +458,7 @@ input {
     transition: all 0.5s ease;
     padding: 10px;
 }
-.köpknapp:hover p{
+.köpknapp:hover{
 
     opacity: 1;
     background-color: red;

@@ -20,12 +20,12 @@ session_start();
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
+                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>
-                            <li><a href="index.html">Home</a></li>  
+                            <li><a href="index.php">Home</a></li>  
                             <li class="dropdown">
 
-                                <a href="shop.html" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>                      
+                                <a href="shop.php" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>                      
 
                                 <ul class="dropdown-menu mega-menu droppdown">
 
