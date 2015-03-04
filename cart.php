@@ -67,7 +67,7 @@ foreach ($products as $product) {
         }
         echo "</select>";
         echo "<td>";
-        echo "<input type='text' name='amount' placeholder='Amount'>";
+        echo "<input type='hidden' name='amount' value='1'>";
         echo "<td>";
         echo "<button type='submit' name='action' value='add'>Add to cart</button>";
         echo "</form>";
@@ -100,9 +100,9 @@ foreach ($products as $product) {
         }
         echo "</select>";
         echo "<td>";
-        echo "<input type='text' name='amount' placeholder='Amount'>";
+        echo "<input type='hidden' name='amount' value='1'>";
         echo "<td>";
-        echo "<button type='submit' name='action' value='add' disabled>Add to cart</button>";
+//        echo "<button type='submit' name='action' value='add' disabled>Add to cart</button>";
         echo $availability;
         echo "</form>";
         echo "</tr>";
