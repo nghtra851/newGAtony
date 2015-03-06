@@ -73,8 +73,9 @@ session_start();
 
                             <li><a href="contact.php">Contact</a></li>
                             <div class="login LS-dropdown">
-
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login | Signup<b class="caret"></b></a>                      
+                                <?php
+                                echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>   ";
+                                ?>
                                 <div class="dropdown-menu login-menu LS-droppdown">
                                     <div class="row"> 
 
@@ -83,28 +84,28 @@ session_start();
                                             include 'showCart.php';
                                             include 'signout.php';
                                             include 'loggedin.php';
-                                            if ($_SESSION["user"] != NULL){
+                                            $_SESSION["user"] = NULL;
+                                            if ($_SESSION["user"] != NULL) {
+                                                echo "<form method = 'POST' action ='signup.php'>";
+                                                echo "<h2>Signup</h2>";
+                                                echo "<h3 class ='user'>Username:</h3>";
+                                                echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
+                                                echo "<h3 class = 'user'>Password:</h3>";
+                                                echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
+                                                echo "<input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>";
+                                                echo "</form>";
+                                                echo "</div>";
 
+                                                echo "<div class = 'col-sm-6 login'>";
+                                                echo "<form method = 'POST' action = 'login.php'>";
+                                                echo "<h2>Login</h2>";
+                                                echo "<h3 class = 'user'>Username:</h3>";
+                                                echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
+                                                echo "<h3 class = 'user'>Password:</h3>";
+                                                echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
+                                                echo "<input class = 'send' type = 'submit' name = 'action' value = 'login'>";
+                                                echo "</form>";
                                             }
-
-                                            echo "<form method = 'POST' action ='signup.php'>";
-                                            echo "<h2>Signup</h2>";
-                                            echo "<h3 class ='user'>Username:</h3>";
-                                            echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
-                                            echo "<h3 class = 'user'>Password:</h3>";
-                                            echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
-                                            echo "<input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>";
-                                            </form>
-                                            </div>
-                                            <div class = "col-sm-6 login">
-                                            <form method = "POST" action = "login.php">
-                                            <h2>Signup</h2>
-                                            <h3 class = "user">Username:</h3>
-                                            <input name = "username" type = "text" placeholder = "Username" required>
-                                            <h3 class = "user">Password:</h3>
-                                            <input name = "password" type = "password" placeholder = "Password" required>
-                                            <input class = "send" type = "submit" name = "action" value = "login">
-                                            </form>
                                             ?>
                                         </div>
                                     </div>
