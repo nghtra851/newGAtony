@@ -70,39 +70,50 @@ session_start();
 
                             </li>
 
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="login dropdown">
+                            <li><a href="contact.php">Contact</a></li>
+                            <div class="login LS-dropdown">
+                                <?php
+                                include 'showCart.php';
+                                if (isset($_SESSION["user"])) {
+                                    if ($_SESSION["user"] != NULL) {
+                                        echo "Logged in as " . $_SESSION["user"];
+                                        echo "<form method='GET' action='signout.php'>";
+                                        echo "<input type='submit' name='action' value='signout'></input>";
+                                        echo "</form>";
+                                    }
+                                } else {
+                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                }
+                                ?>
+                                <div class="dropdown-menu login-menu LS-droppdown">
+                                    <div class="row"> 
 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Signup<b class="caret"></b></a>                      
-                                <ul class="dropdown-menu login-menu droppdown">
+                                        <div class="col-sm-6 login">
+                                            <form method = 'POST' action ='signup.php'>
+                                                <h2>Signup</h2>
+                                                <h3 class ='user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                            </form>
+                                        </div>
 
-                                    <form>
-                                        <h3 class="top user">Username:</h3> 
-                                        <input type="text" name="FirstName" value=""><br>
-                                        <h3 class="user">Password:</h3>
-                                        <input type="text" name="LastName" value=""><br>
-                                        <input class="send" type="submit" value="Submit">
-                                    </form>                                      
-                                </ul>
-                            </li>
-                            <li class="login dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>                      
-                                <ul class="dropdown-menu login-menu droppdown">
-                                    <form>
-                                        <h3 class="top user">Username:</h3> 
-                                        <input type="text" name="Username" value=""><br>
-                                        <h3 class="user">Password:</h3>
-                                        <input type="text" name="Password" value=""><br>
-                                        <input class="send" type="submit" value="Login">
-                                    </form>
-                                </ul>
-                            </li>
+                                        <div class = 'col-sm-6 login'>
+                                            <form method = 'POST' action = 'login.php'>
+                                                <h2>Login</h2>
+                                                <h3 class = 'user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                            </form>
+                                            ?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <?php
-                        include 'showCart.php';
-                        include 'signout.php';
-                        include 'loggedin.php';
-                        ?>
                     </div>
                 </div>
             </div>
@@ -290,12 +301,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function () {
+                jQuery(document).ready(function() {
                     $(".dropdown").hover(
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });

@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <?php
 session_start();
-//$_SESSION["user"] = NULL;
 ?>
 <html lang="en">
     <head>
-        <title>Clothes</title>
+        <title>Test</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/test.css">
-        <!--<link type="text/css" rel="stylesheet" href="css/navtest.css">-->
+        <link type="text/css" rel="stylesheet" href="css/navtest.css">
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
     </head>
     <body>
         <div id="wrapper">
-            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
+            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
                         <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
@@ -121,60 +118,44 @@ session_start();
 
             </div>
 
-            <div class="container">
-                <div class="slider">
-                    <img class="img-responsive img"href="#" src="img/suit.jpg">
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Male</h3>
-                    </div>
-                    <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Female</h3>
-                    </div>
-                    <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Children</h3>
-                    </div>
-                </div>
+            <div class="container Con">
+                <form action="" method="post" class="dark-matter">
+                    <h1>Welcome 
+                        <span>Here can you fill in, if you have a question or whant to refund!</span>
+                    </h1>
+                    <label>
+                        <span>Your Name :</span>
+                        <input id="name" type="text" name="name" placeholder="Your Full Name" />
+                    </label>
 
-                <ul class="nav nav-tabs indexproduktnav">
-                    <li><a href="#">Best Selling</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">New Products</a></li>        
-                </ul>
+                    <label>
+                        <span>Your Email :</span>
+                        <input id="email" type="email" name="email" placeholder="Your Email Address" />
+                    </label>
 
-                <div class="row">
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Male</h3>
-                    </div>
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Female</h3>
-                    </div>
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Children</h3>
-                    </div>
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Male</h3>
-                    </div>
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Female</h3>
-                    </div>
-                    <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
-                        <h3>Children</h3>
-                    </div>
-                </div>
+                    <label>
+                        <span>Message :</span>
+                        <textarea id="message" name="message" placeholder="Your message/refund explanation to Us"></textarea>
+                    </label> 
+                    <label>
+                        <span>Refund :</span><select name="selection">
+                            <option value="placeholder">Which article of clothing, you whant to refund</option>
+                            <option value="Hoodie">Hoodie</option>
+                            <option value="T-shirt">T-shirt</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Jeans">Jeans</option>
+                            <option value="Trousers">Trousers</option>
+                        </select>
+                    </label>    
+                    <label>
+                        <span id="button"></span> 
+                        <input type="button" class="button" value="Send" /> 
+                    </label>    
+                </form>
             </div>
             <div class="jumbotron backgroundfooter">
-                <div class="container navbar">
+                <div class="container">
 
                     <div class="col-sm-4 footercontent">
                         <h2>© 2014 Clothes Store </h2>
@@ -193,7 +174,17 @@ session_start();
 
                 </div>
             </div>
-
+            <script>
+                jQuery(document).ready(function() {
+                    $(".dropdown").hover(
+                            function() {
+                                $('.dropdown-menu', this).fadeIn("fast");
+                            },
+                            function() {
+                                $('.dropdown-menu', this).fadeOut("fast");
+                            });
+                });
+            </script>
         </div>
     </body>
 </html>
