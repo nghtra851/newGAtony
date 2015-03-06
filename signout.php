@@ -1,19 +1,12 @@
 <?php
 
-if (isset($_POST["action"])) {
-    if ($_POST["action"] == "signout") {
-        if (isset($_SESSION["user"]) != NULL) {
-            session_unset();
-            session_destroy();
-            $signoutmessage = "You have logged out.";
-        } else {
-            $signoutmessage = "You are not logged in. Please log in.";
-        }
-    } else {
-        $signoutmessage = "You are not logged in. Please log in.";
+session_start();
+
+if (isset($_GET["action"])) {
+    if ($_GET["action"] == "signout") {
+        session_unset();
+        session_destroy();
+        $signoutmessage = "You have logged out.";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
     }
-} else {
-    $signoutmessage = "You are not logged in. Please log in.";
 }
-
-

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+//$_SESSION["user"] = NULL;
 ?>
 <html lang="en">
     <head>
@@ -74,38 +75,43 @@ session_start();
                             <li><a href="contact.php">Contact</a></li>
                             <div class="login LS-dropdown">
                                 <?php
-                                echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>   ";
+                                include 'showCart.php';
+//                                include 'signout.php';
+//                                include 'loggedin.php';
+//                                $_SESSION["user"] != NULL;
+                                if ($_SESSION["user"] != NULL) {
+                                    echo "Logged in as " . $_SESSION["user"];
+                                    echo "<form method='GET' action='signout.php'>";
+                                    echo "<input type='submit' name='action' value='signout'></input>";
+                                    echo "</form>";
+                                } else {
+                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                }
                                 ?>
                                 <div class="dropdown-menu login-menu LS-droppdown">
                                     <div class="row"> 
 
                                         <div class="col-sm-6 login">
                                             <?php
-                                            include 'showCart.php';
-                                            include 'signout.php';
-                                            include 'loggedin.php';
-                                            $_SESSION["user"] = NULL;
-                                            if ($_SESSION["user"] != NULL) {
-                                                echo "<form method = 'POST' action ='signup.php'>";
-                                                echo "<h2>Signup</h2>";
-                                                echo "<h3 class ='user'>Username:</h3>";
-                                                echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
-                                                echo "<h3 class = 'user'>Password:</h3>";
-                                                echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
-                                                echo "<input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>";
-                                                echo "</form>";
-                                                echo "</div>";
+                                            echo "<form method = 'POST' action ='signup.php'>";
+                                            echo "<h2>Signup</h2>";
+                                            echo "<h3 class ='user'>Username:</h3>";
+                                            echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
+                                            echo "<h3 class = 'user'>Password:</h3>";
+                                            echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
+                                            echo "<input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>";
+                                            echo "</form>";
+                                            echo "</div>";
 
-                                                echo "<div class = 'col-sm-6 login'>";
-                                                echo "<form method = 'POST' action = 'login.php'>";
-                                                echo "<h2>Login</h2>";
-                                                echo "<h3 class = 'user'>Username:</h3>";
-                                                echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
-                                                echo "<h3 class = 'user'>Password:</h3>";
-                                                echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
-                                                echo "<input class = 'send' type = 'submit' name = 'action' value = 'login'>";
-                                                echo "</form>";
-                                            }
+                                            echo "<div class = 'col-sm-6 login'>";
+                                            echo "<form method = 'POST' action = 'login.php'>";
+                                            echo "<h2>Login</h2>";
+                                            echo "<h3 class = 'user'>Username:</h3>";
+                                            echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
+                                            echo "<h3 class = 'user'>Password:</h3>";
+                                            echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
+                                            echo "<input class = 'send' type = 'submit' name = 'action' value = 'login'>";
+                                            echo "</form>";
                                             ?>
                                         </div>
                                     </div>
