@@ -220,17 +220,17 @@ session_start();
                             echo "</h3>";
                             ?>
                             <div class="col-sm-12"></div>  
-                            <div id="grid">
-                                <p>Färger:</p>
-                                <a href="#" style="background-color: black;"></a>
-                                <a href="#" style="background-color: white;"></a>
-                                <a href="#" style="background-color: pink;"></a>
-                                <a href="#" style="background-color: red;"></a>
-                                <a href="#" style="background-color: yellow;"></a>
-                                <a href="#" style="background-color: green;"></a>
-                                <a href="#" style="background-color: gray;"></a>
-                                <a href="#" style="background-color: blue;"></a>
-                            </div>
+                            <!--                            <div id="grid">
+                                                            <p>Färger:</p>
+                                                            <a href="#" style="background-color: black;"></a>
+                                                            <a href="#" style="background-color: white;"></a>
+                                                            <a href="#" style="background-color: pink;"></a>
+                                                            <a href="#" style="background-color: red;"></a>
+                                                            <a href="#" style="background-color: yellow;"></a>
+                                                            <a href="#" style="background-color: green;"></a>
+                                                            <a href="#" style="background-color: gray;"></a>
+                                                            <a href="#" style="background-color: blue;"></a>
+                                                        </div>-->
 
 
                             <div class="panel-heading pbeskrivning" role="tab" id="headingOne">
@@ -255,12 +255,6 @@ session_start();
 
                             <div class="dropdown knappdesign knappdesignleft"> 
                                 <?php
-                                $_GET["size"] = explode(",", $_GET["size"]);
-                                echo "<select type='text' name='size'>";
-                                foreach ($_GET["size"] as $size) {
-                                    echo "<option value='" . $size . "'>" . $size . "</option>";
-                                }
-                                echo "</select>";
                                 ?>
                                 <!--                                <button class=" dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Storlek
                                                                     <span class="caret pilen"></span></button>-->
@@ -275,24 +269,27 @@ session_start();
                             </div>
                             <div class="dropdown knappdesign">
                                 <?php
+                                echo "<form method = 'GET' action = 'addToCart.php'>";
+                                $_GET["size"] = explode(",", $_GET["size"]);
+                                echo "<select type='text' name='size'>";
+                                foreach ($_GET["size"] as $size) {
+                                    echo "<option value='" . $size . "'>" . $size . "</option>";
+                                }
+                                echo "</select>";
+
                                 $_GET["color"] = explode(",", $_GET["color"]);
                                 echo "<select type='text' name='color'>";
                                 foreach ($_GET["color"] as $color) {
                                     echo "<option value='" . $color . "'>" . $color . "</option>";
                                 }
                                 echo "</select>";
+                                echo "<input type = 'hidden' name = 'id' value ='" . $_GET['id'] . "' >";
+                                echo "<input type = 'hidden' name = 'name' value ='" . $_GET['name'] . "' >";
+                                echo "<input type = 'hidden' name = 'price' value ='" . $_GET['price'] . "' >";
+                                echo "<input type = 'hidden' name = 'amount' value ='" . $_GET['amount'] . "' >";
+                                echo "<button class='köpknapp' type='submit' name='action' value='add'>Add</button>";
+                                echo "</form>";
                                 ?>
-                                <!--                                <button class=" dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Antal
-                                                                    <span class="caret pilen"></span></button>-->
-                                <!--                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">...</a></li>
-                                
-                                
-                                                                </ul>-->
                             </div>
                             <div class="panel-heading pbeskrivning margintop" role="tab" id="headingTwo">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
@@ -304,24 +301,7 @@ session_start();
                                     STOEOREOREORAOAFASDFJDSPFJSFSDFIJ
                                 </div>
                             </div>
-                            <?php
-                            $_GET["color"] = implode(",", $_GET["color"]);
-                            $_GET["size"] = implode(",", $_GET["size"]);
-                            echo "<form method = 'GET' action = 'addToCart.php'>";
-                            echo "<input type = 'hidden' name = 'id' value ='" . $_GET['id'] . "' >";
-                            echo "<input type = 'hidden' name = 'name' value ='" . $_GET['name'] . "' >";
-                            echo "<input type = 'hidden' name = 'price' value ='" . $_GET['price'] . "' >";
-                            echo "<input type = 'hidden' name = 'color' value ='" . $color . "' >";
-                            echo "<input type = 'hidden' name = 'size' value ='" . $size . "' >";
-                            echo "<input type = 'hidden' name = 'amount' value ='" . $_GET['amount'] . "' >";
-//                            $_GET["color"] = explode(",", $_GET["color"]);
-//                            $_GET["size"] = explode(",", $_GET["size"]);
-                            echo "<button class = 'köpknapp' type = 'submit' name = 'action' value = 'add'>Add to cart</button>";
-                            echo "</form>";
-                            ?>
-                            <!--<a class = "köpknapp" href = "#"><p>Lägg I varuuukoorken</p></a> -->
                         </div>
-
                     </div>
                 </div>
             </div>
