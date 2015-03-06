@@ -7,8 +7,9 @@ include "includeDB.php";
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
+echo "startar";
 if (isset($_GET["id"])) {
-
+    echo "id finns";
     $select = "SELECT quantity FROM products WHERE id ='" . $_GET["id"] . "' ";
     $stmt = $dbm->prepare($select);
     $stmt->execute();
@@ -41,7 +42,7 @@ if (isset($_GET["id"])) {
                 $color = $_GET["color"];
                 $amount = $_GET["amount"];
                 $_SESSION["cart"][] = array("id" => $id, "name" => $name, "price" => $price, "color" => $color, "size" => $size, "amount" => $amount);
-                header("Location: product.php");
+                header("Location: " . $_SERVER['HTTP_REFERER']);
             }
         } else {
             
