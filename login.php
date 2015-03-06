@@ -41,34 +41,5 @@ if (isset($_POST["action"])) {
         }
     }
 }
-include './style.html';
+//include './style.html';
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width">
-    </head>
-    <body>
-        <form id="loginform" method="POST">
-            <label>Username:</label>
-            <br>
-            <input name="username" type="text" placeholder ="Username" required>
-            <br>
-            <br>
-            <label>Password:</label>
-            <br>
-            <input name="password" type="password" placeholder="Password" required>
-            <br>
-            <br>
-            <input type="submit" name="action" value="login">
-            <br>
-
-        </form>
-        <br>
-        <a href="kill.php">Sign Out</a><br>
-        <a href="index.php">Home</a>
-    </body>
-</html>

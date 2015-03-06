@@ -83,25 +83,29 @@ session_start();
                                             include 'showCart.php';
                                             include 'signout.php';
                                             include 'loggedin.php';
+                                            if ($_SESSION["user"] != NULL){
+
+                                            }
+
+                                            echo "<form method = 'POST' action ='signup.php'>";
+                                            echo "<h2>Signup</h2>";
+                                            echo "<h3 class ='user'>Username:</h3>";
+                                            echo "<input name = 'username' type = 'text' placeholder = 'Username' required>";
+                                            echo "<h3 class = 'user'>Password:</h3>";
+                                            echo "<input name = 'password' type = 'password' placeholder = 'Password' required>";
+                                            echo "<input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>";
+                                            </form>
+                                            </div>
+                                            <div class = "col-sm-6 login">
+                                            <form method = "POST" action = "login.php">
+                                            <h2>Signup</h2>
+                                            <h3 class = "user">Username:</h3>
+                                            <input name = "username" type = "text" placeholder = "Username" required>
+                                            <h3 class = "user">Password:</h3>
+                                            <input name = "password" type = "password" placeholder = "Password" required>
+                                            <input class = "send" type = "submit" name = "action" value = "login">
+                                            </form>
                                             ?>
-                                            <form>
-                                                <h2>Signup</h2>
-                                                <h3 class="user">Username:</h3> 
-                                                <input type="text" name="Username" value="">
-                                                <h3 class="user">Password:</h3>
-                                                <input type="text" name="Password" value="">
-                                                <input class="send" type="submit" value="Signup">
-                                            </form>
-                                        </div>
-                                        <div class="col-sm-6 login">
-                                            <form>
-                                                <h2>Login</h2>
-                                                <h3 class="user">Username:</h3> 
-                                                <input type="text" name="Username" value="">
-                                                <h3 class="user">Password:</h3>
-                                                <input type="text" name="Password" value="">
-                                                <input class="send" type="submit" value="Login">
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
