@@ -24,11 +24,6 @@ session_start();
 
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
                 <div class="container">
-                    <?php
-                    include 'showCart.php';
-                    include 'signout.php';
-                    include 'loggedin.php';
-                    ?>
                     <div class=" navbar navbar-static-top navigation">
                         <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>
@@ -80,24 +75,49 @@ session_start();
 
 
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="login"><a href="#contact">Registrate</a></li>
-                                <li class="login dropdown">
+                                <li><a href="contact.php">Contact</a></li>
+                                <div class="login LS-dropdown">
+                                    <?php
+                                    include 'showCart.php';
+                                    if (isset($_SESSION["user"])) {
+                                        if ($_SESSION["user"] != NULL) {
+                                            echo "Logged in as " . $_SESSION["user"];
+                                            echo "<form method='GET' action='signout.php'>";
+                                            echo "<input type='submit' name='action' value='signout'></input>";
+                                            echo "</form>";
+                                        }
+                                    } else {
+                                        echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                    }
+                                    ?>
+                                    <div class="dropdown-menu login-menu LS-droppdown">
+                                        <div class="row"> 
 
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>                      
-                                    <ul class="dropdown-menu login-menu droppdown">
+                                            <div class="col-sm-6 login">
+                                                <form method = 'POST' action ='signup.php'>
+                                                    <h2>Signup</h2>
+                                                    <h3 class ='user'>Username:</h3>
+                                                    <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                    <h3 class = 'user'>Password:</h3>
+                                                    <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                    <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                                </form>
+                                            </div>
 
-                                        <form>
-                                            <h3 class="top user">Username:</h3> 
-                                            <input type="text" name="FirstName" value=""><br>
-                                            <h3 class="user">Password:</h3>
-                                            <input type="text" name="LastName" value=""><br>
-                                            <input class="send" type="submit" value="Login">
-                                        </form>
-
-
-                                    </ul>
-                                </li>
+                                            <div class = 'col-sm-6 login'>
+                                                <form method = 'POST' action = 'login.php'>
+                                                    <h2>Login</h2>
+                                                    <h3 class = 'user'>Username:</h3>
+                                                    <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                    <h3 class = 'user'>Password:</h3>
+                                                    <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                    <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                                </form>
+                                                ?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -185,13 +205,20 @@ session_start();
                     </div>
                     <div class="col-sm-5 pinfos top-product">
                         <div class="col-sm-12 pheadernamn">
-                            <h1>MICROSOFT</h1>
+                            <?php
+                            echo "<h1>";
+                            echo $_GET["name"];
+                            echo "</h1>";
+                            ?>
                         </div>
                         <div class="col-sm-12 pris">
-                            <h3>SuperJeans</h3>
-
-                            <h3>-200Kr</h3>
-
+                            <!--<h3>SuperJeans</h3>-->
+                            <?php
+                            echo "<h3>";
+                            echo $_GET["price"];
+                            echo "$";
+                            echo "</h3>";
+                            ?>
                             <div class="col-sm-12"></div>  
                             <div id="grid">
                                 <p>Färger:</p>

@@ -21,17 +21,30 @@ $size = filter_input(INPUT_GET, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
 $quantity = filter_input(INPUT_GET, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
 
 foreach ($products as $product) {
-    echo "<form method='GET'";
+    echo "<form method='GET' action='product.php'";
     echo "<a href='product.php'>"
     . "<div class='col-sm-3 produkter'>"
     . "<img class='img-responsive' src='http://placehold.it/400x400'>";
-//    echo $product["id"] . " ";
-    echo "<h3>" . $product["name"] . "</h3>";
-    echo "<h4>" . $product["price"] . " £</h4>";
-//    echo $product["color"] . " ";
-//    echo $product["size"] . " ";
-//    echo $product["quantity"] . " ";
-    echo "<input type='submit' name='action' value='add'></input>";
+    echo "<p>" . $product["name"] . " " . $product["price"] . "£" . "</p>";
+    echo "<td>";
+    echo "<input type='hidden' name='id' value='" . $product['id'] . "'";
+    echo "</td>";
+    echo "<td>";
+    echo "<input type='hidden' name='name' value='" . $product["name"] . "'";
+    echo "</td>";
+    echo "<td>";
+    echo "<input type='hidden' name='price' value='" . $product['price'] . "'";
+    echo "</td>";
+    echo "<td>";
+    echo "<input type='hidden' name='color' value='" . $product['color'] . "'";
+    echo "</td>";
+    echo "<td>";
+    echo "<input type='hidden' name='size' value='" . $product['size'] . "'";
+    echo "</td>";
+    echo "<td>";
+    echo "<input type='hidden' name='amount' value='1'>";
+    echo "<td>";
+    echo "<button>BUY</button>";
     echo "</div>"
     . "</a>";
     echo "</form>";
