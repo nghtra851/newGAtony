@@ -30,11 +30,11 @@ if ($_SESSION["cart"] != NULL) {
         $total = 0;
         foreach ($_SESSION['cart'] as $item) {
             $total += $item['price'] * $item['amount'];
-            foreach($products as $product){
-            if ($item["amount"] > $product["quantity"]) {
-                echo "error";
-            }
-            }
+//            foreach($products as $product){
+//            if ($item["amount"] > $product["quantity"]) {
+//                echo "error";
+//            }
+//            }
         }
 
         return $total;

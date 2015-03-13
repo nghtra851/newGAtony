@@ -671,7 +671,51 @@ input {
     color: #0277BD;
 }
 
+/* add to cart*/
 
+
+.cartlightboxdesign img{
+    width: 50px;
+    height: 40px;
+    border: 2px solid #0a526f;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.cartlightboxdesign:hover img{
+    background-color: rgba(2,119,189,0.5);
+}
+
+
+.closecart{
+    right: 10px;
+    color: #0277BD;
+    opacity: 1;
+    font-size: 25px;
+    top: 0;
+    position: absolute;
+    cursor:pointer;
+    z-index: 58;
+}
+.closecart:hover{
+
+    color: gray;
+
+}
+
+.cartpbox{
+    position:absolute;
+    background:#ffffff;
+    z-index:51;
+    padding: 20px;
+    margin: 0;
+    box-shadow:0px 0px 7px #0277BD;
+    display: none;
+    width: 70%;
+}
 
 
 
