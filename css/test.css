@@ -103,7 +103,7 @@
     left: 715px;
     position: absolute;
     z-index: 9999;
-    
+
 }
 .navigation2 .login a:hover {
     color: #fff;
@@ -357,6 +357,61 @@ input {
     margin: 0;
 
 }
+.productsizebutton{
+    width: 45%;
+    height: 40px;
+    margin: 0 2.5% 0 2.5%;
+}
+.productbuttondesignPHP{
+    color:#0277BD;
+    border: none;
+    box-shadow:  0px 0px 2px 0px #0277BD;
+    border-radius: 0;
+    background-color: whitesmoke;
+    padding: 0;
+}
+.productbuttondesignPHP p {
+    padding: 12px;
+    font-size: 17px;
+}
+
+.productbuttondesignPHP:hover {
+    box-shadow: inset 0px 0px 2px 0px #0277BD, 0px 0px 2px 0px #0277BD;
+}
+
+.productbuttondesign{
+    color:#0277BD;
+    border: none;
+    box-shadow:  0px 0px 2px 0px #0277BD;
+    border-radius: 0;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.productbuttondesign p {
+    padding: 12px;
+    font-size: 17px;
+}
+
+.productbuttondesign:hover {
+    background-color: #0277BD;
+
+}
+.productbuttondesign:hover p{
+    color: white;
+
+}
+.productbuttondesign:hover a{
+    text-decoration: none;
+    color:#0277BD;
+
+} 
+
 .pris {
 
 }

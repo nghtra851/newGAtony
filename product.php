@@ -16,7 +16,6 @@ session_start();
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="js/addToCart.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
     </head>
     <body>
@@ -223,19 +222,6 @@ session_start();
                             echo "</h3>";
                             ?>
                             <div class="col-sm-12"></div>  
-                            <!--                            <div id="grid">
-                                                            <p>Färger:</p>
-                                                            <a href="#" style="background-color: black;"></a>
-                                                            <a href="#" style="background-color: white;"></a>
-                                                            <a href="#" style="background-color: pink;"></a>
-                                                            <a href="#" style="background-color: red;"></a>
-                                                            <a href="#" style="background-color: yellow;"></a>
-                                                            <a href="#" style="background-color: green;"></a>
-                                                            <a href="#" style="background-color: gray;"></a>
-                                                            <a href="#" style="background-color: blue;"></a>
-                                                        </div>-->
-
-
                             <div class="panel-heading pbeskrivning" role="tab" id="headingOne">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <p>Produkt Beskrivning</p>
@@ -257,31 +243,19 @@ session_start();
                         <div class="col-sm-12">
 
                             <div class="dropdown knappdesign knappdesignleft"> 
-                                <?php
-                                ?>
-                                <!--                                <button class=" dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Storlek
-                                                                    <span class="caret pilen"></span></button>-->
-                                <!--                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">S</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">M</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">L</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">XL</a></li>
-                                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">XXL</a></li>
-                                
-                                                                </ul>-->
                             </div>
                             <div class="dropdown knappdesign">
                                 <?php
                                 echo "<form method = 'GET' action = 'addToCart.php'>";
                                 $_GET["size"] = explode(",", $_GET["size"]);
-                                echo "<select type='text' name='size'>";
+                                echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='size'>";
                                 foreach ($_GET["size"] as $size) {
                                     echo "<option value='" . $size . "'>" . $size . "</option>";
                                 }
                                 echo "</select>";
 
                                 $_GET["color"] = explode(",", $_GET["color"]);
-                                echo "<select type='text' name='color'>";
+                                echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='color'>";
                                 foreach ($_GET["color"] as $color) {
                                     echo "<option value='" . $color . "'>" . $color . "</option>";
                                 }
@@ -290,7 +264,7 @@ session_start();
                                 echo "<input type = 'hidden' name = 'name' value ='" . $_GET['name'] . "' >";
                                 echo "<input type = 'hidden' name = 'price' value ='" . $_GET['price'] . "' >";
                                 echo "<input type = 'hidden' name = 'amount' value ='" . $_GET['amount'] . "' >";
-                                echo "<button class='köpknapp' type='submit' name='action' value='add'>Add</button>";
+                                echo "<button class='addprodukt' type='submit' name='action' value='add'>Add</button>";
                                 echo "</form>";
                                 ?>
                             </div>

@@ -10,11 +10,14 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/test.css">
-        <!--<link type="text/css" rel="stylesheet" href="css/navtest.css">-->
+        <link type="text/css" rel="stylesheet" href="css/navtest.css">
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/cartButton.js"></script>
 
     </head>
     <body>
@@ -78,7 +81,6 @@ session_start();
                             ?>
                             <div class="login LS-dropdown">
                                 <?php
-//                                include 'showCart.php';
                                 if (isset($_SESSION["user"])) {
                                     if ($_SESSION["user"] != NULL) {
                                         echo "Logged in as " . $_SESSION["user"];

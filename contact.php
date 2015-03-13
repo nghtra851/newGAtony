@@ -13,6 +13,10 @@ session_start();
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.cycle.all.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/cartButton.js"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -70,9 +74,11 @@ session_start();
                             </li>
 
                             <li><a href="contact.php">Contact</a></li>
+                            <?php
+                            include "cartDesign.php";
+                            ?>
                             <div class="login LS-dropdown">
                                 <?php
-                                include 'showCart.php';
                                 if (isset($_SESSION["user"])) {
                                     if ($_SESSION["user"] != NULL) {
                                         echo "Logged in as " . $_SESSION["user"];
