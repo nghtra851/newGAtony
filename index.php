@@ -73,9 +73,12 @@ session_start();
                             </li>
 
                             <li><a href="contact.php">Contact</a></li>
+                            <?php
+                            include "cartDesign.php";
+                            ?>
                             <div class="login LS-dropdown">
                                 <?php
-                                include 'showCart.php';
+//                                include 'showCart.php';
                                 if (isset($_SESSION["user"])) {
                                     if ($_SESSION["user"] != NULL) {
                                         echo "Logged in as " . $_SESSION["user"];
