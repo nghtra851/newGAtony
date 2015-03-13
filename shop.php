@@ -127,7 +127,7 @@ session_start();
                                     <div class="panel-heading" role="tab" id="headingKATAGORI">
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseKATAGORI" aria-expanded="false" aria-controls="collapseKATAGORI">
-                                                KATAGORI
+                                                KATEGORI
                                             </a>
                                         </h4>
                                     </div>

@@ -1,5 +1,11 @@
 <?php
 
+//include "includeDB.php";
+//$sql = "SELECT * FROM products";
+//$stmt = $dbm->prepare($sql);
+//$stmt->execute();
+//$products = $stmt->fetchAll();
+
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
@@ -24,6 +30,11 @@ if ($_SESSION["cart"] != NULL) {
         $total = 0;
         foreach ($_SESSION['cart'] as $item) {
             $total += $item['price'] * $item['amount'];
+            foreach($products as $product){
+            if ($item["amount"] > $product["quantity"]) {
+                echo "error";
+            }
+            }
         }
 
         return $total;

@@ -7,7 +7,6 @@ include "includeDB.php";
 if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
-//echo "startar";
 if (isset($_GET["id"])) {
     $select = "SELECT quantity FROM products WHERE id ='" . $_GET["id"] . "' ";
     $stmt = $dbm->prepare($select);
@@ -18,14 +17,16 @@ if (isset($_GET["id"])) {
         if ($_GET["id"] == $_SESSION["cart"][$i]["id"] && $_GET["color"] == $_SESSION["cart"][$i]["color"] && $_GET["size"] == $_SESSION["cart"][$i]["size"]) {
             $addToCart = false;
             $total = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
-            foreach ($totalQuantity as $q) {
-                foreach ($q as $que) {
-                    if ($total > $que) {
+            foreach ($totalQuantity as $items) {
+                foreach ($items as $item) {
+                    if ($total > $item) {
                         $addToCart = false;
+                        $errormessage = "Too many items.";
                     } else {
-                        $addToCart = true;
+                        $addToCart = false;
                         $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_GET["amount"];
                     }
+                    header("Location: " . $_SERVER['HTTP_REFERER']);
                 }
             }
         }
@@ -42,7 +43,7 @@ if (isset($_GET["id"])) {
                 $color = $_GET["color"];
                 $amount = $_GET["amount"];
                 $_SESSION["cart"][] = array("id" => $id, "name" => $name, "price" => $price, "color" => $color, "size" => $size, "amount" => $amount);
-//                header("Location: " . $_SERVER['HTTP_REFERER']);
+                header("Location: " . $_SERVER['HTTP_REFERER']);
             }
         } else {
             
