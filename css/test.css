@@ -310,74 +310,262 @@ input {
     text-align: center;
     line-height: 15px;
 }
-.pilarna{
-    float: right;
+
+
+
+
+
+
+
+/*produktsidan*/ 
+
+
+.similarproducts{
+    border-top: 2px solid #0277BD;
+    border-bottom: 2px solid #0277BD;
+    padding: 30px 0 30px 0;
+
+}
+.productslist div{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    padding: 5px;
+}
+.productslist div:hover{
+    box-shadow: 0 0 10px 0 rgba(2,119,189,0.5);
+    color: #0a526f;
 }
 
+.productslist img{
+    padding: 5px;
+    width: 100%;
+    border: 2px solid #0a526f;
+}
+.productslist h3{
+    text-align: center;
+    font-size: 17px;
+    padding: 0;
+    margin: 5px;
+}
+.productslist h4{
+    text-align: center;
+    font-size: 17px;
+    padding: 0;
+    margin: 5px;
+}
+
+.similarproductstitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: -32px;
+    margin-bottom: 32px;
+    line-height: 0;
+    background-color: red;
+    color: #0277BD;
+}
+.similarproductstitle span{
+    background-color: #EEEEEE;
+    padding: 0 5px 0 5px;
+}
+
+.pagination {list-style:none; margin:0px; padding:0px;}  
+.pagination li{float:left; margin:3px;}  
+.pagination li a{   display:block; padding:3px 5px; color:#fff; background-color:#44b0dd; text-decoration:none;}  
+.pagination li a.active {border:1px solid #000; color:#000; background-color:#fff;}  
+.pagination li a.inactive {background-color:#eee; color:#777; border:1px solid #ccc;}
 
 /*Product*/
 
 .top-product{
     margin-top: 120px;
 }
-
-.pheader ul li{
-    display: inline;
-    font-style: none;
+.producttitledesign{
+    background-color:#424242;
+    box-shadow:  0px 0px 2px 0px #0277BD;
 }
-.pheader a {
-    color: gray;
-}
-.pheader{
-    border: solid black 1px;
-    padding: 10px 0px 0px 0px;
+.producttitledesign h2{
+    color: white;
+    font-size: 19px;
+    padding: 16px;
+    margin: 0 0 10px 0;
 
 }
-
-.pbild{
-}
-.pbild img{
+.pimg img{
     width: 100%;
+    border: 2px solid #0a526f;
 }
 .sidebar {
-    height: 300px;
 }
-.pinfos{
-    padding:  0;
-}
-.pheadernamn{
-    height: 80px;
 
+.close{
+    right: 5px;
+    color: #0277BD;
+    opacity: 1;
+    font-size: 25px;
+    top: 0;
+    position: absolute;
+    cursor:pointer;
+    z-index: 58;
 }
-.pheadernamn h1{
-    font-size: 24px;
-    background-color: #424242;
-    color:white;
-    padding: 20px 0px 20px 20px;
+
+.lightboxdesign2 p{
+    background-color: whitesmoke;
+    padding: 15px 10px 15px 5px;
+    font-size: 20px;
+    border: 2px solid #0a526f;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.lightboxdesign2:hover{
+
+    text-decoration: none;
+}
+.lightboxdesign2:hover p{
+    background-color: rgba(2,119,189,0.5);
+}
+.lightboxdesign p{
+    background-color: whitesmoke;
+    padding: 15px 10px 15px 18px;
+    font-size: 20px;
+    border: 2px solid #0a526f;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.lightboxdesign:hover{
+
+    text-decoration: none;
+}
+.lightboxdesign:hover p{
+    background-color: rgba(2,119,189,0.5);
+}
+.sharebackdrop{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: .0;
+    filter:alpha(opacity=0);
+    z-index:50;
+    display:none;
+}
+.closeshare{
+    right: 10px;
+    color: #0277BD;
+    opacity: 1;
+    font-size: 25px;
+    top: 0;
+    position: absolute;
+    cursor:pointer;
+    z-index: 58;
+}
+.closeshare:hover{
+   
+    color: gray;
+    
+}
+.backdrop{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: .0;
+    filter:alpha(opacity=0);
+    z-index:50;
+    display:none;
+}
+
+.sharepbox{
+    position:absolute;
+    top:15%;
+    left:42%;
+    background:#ffffff;
+    z-index:51;
+    padding: 20px;
     margin: 0;
+    box-shadow:0px 0px 7px #0277BD;
+    display: none;
+    width: 20%;
+}
+.pbox{
+    position:absolute;
+    top:15%;
+    left:15%;
+    background:#ffffff;
+    z-index:51;
+    padding: 20px;
+    margin: 0;
+    box-shadow:0px 0px 7px #0277BD;
+    display: none;
+    width: 70%;
+}
+.pbox img{
+    height: 600px;
+}
 
-}
-.productsizebutton{
-    width: 45%;
-    height: 40px;
-    margin: 0 2.5% 0 2.5%;
-}
-.productbuttondesignPHP{
+
+
+.addprodukt{
+
     color:#0277BD;
-    border: none;
+    border: 2px solid #0a526f;
     box-shadow:  0px 0px 2px 0px #0277BD;
     border-radius: 0;
     background-color: whitesmoke;
-    padding: 0;
+    text-align: center;
+    padding: 10px 35px 10px 35px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
-.productbuttondesignPHP p {
-    padding: 12px;
+.addprodukt p {
+    margin: 0;
+    padding: 0px;
+    font-size: 17px;
+}
+.addprodukt a {
+    margin: 0;
+    padding: 0px;
     font-size: 17px;
 }
 
-.productbuttondesignPHP:hover {
-    box-shadow: inset 0px 0px 2px 0px #0277BD, 0px 0px 2px 0px #0277BD;
+.addprodukt:hover a{
+    color: white;
+
 }
+.addprodukt:hover {
+    background-color: #0277BD;
+
+}
+.addprodukt:hover p{
+    color: white;
+
+}
+.productcolorbutton{
+
+}
+.productcolorbuttontest a{
+    background-color: red;
+}
+.productsizebutton{
+    width: 150px;
+    height: 35px;
+}
+
 
 .productbuttondesign{
     color:#0277BD;
@@ -412,152 +600,169 @@ input {
 
 } 
 
-.pris {
-
-}
-.pbeskrivning{
-    margin-top:30px;
-}
-.pbeskrivning a{
-    text-align: center;
-    text-decoration: none;
-}
-.pbeskrivning p {
-    border: solid gray 1px;
-    opacity: 0.5;
-    margin: 0;
-    padding: 10px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-
-
-}
-.pbeskrivning p:hover {
-    background-color: black;
-    color:white;
-
-}
-.pbeskrivning2{
-
-    border-bottom: 1px solid black;
-
-}
-
-.pris h3{
-    margin: 5px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    padding: 0px 0px 0px 20px;
-    float: left;
-}
-
-.knappdesign{
-    margin-top: 30px;
-    float: left;
-}
-
-.knappdesign button{
-    text-align: left;
-    width: 200px;
-    padding: 10px;
-    border: solid gray 1px;
-    opacity: 0.5;
+.productdetails{
+    border-left: solid 1px rgba(2,119,189,0.3);
+    border-right: solid 1px rgba(2,119,189,0.3);
+    border-bottom: solid 1px rgba(2,119,189,0.3);
+    margin: 0 0 10px 0;
     background-color: white;
-    margin-top: -15px;
-    margin-left: 15px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
-.pilen{
-    float: right;
-    margin-top:10px; 
-}
-.knappdesign button:hover{
-
-    background-color: black;
-    color:white;
-
-}
-.knappdesignleft{
-    margin-right: 12px;
-}
-.knappdesign ul {
-
-    margin-left: 35px;
-    border-radius: 0;
-}
-
-.köpknapp{
-    text-align: center;
-    text-decoration: none;
-    margin: 20px;
-    width: 200px;
-}
-.köpknapp {
-    text-decoration: none;
-    border: solid black 1px;
-    background-color: green;
-    opacity: 0.5;
-    font-size: 20px;
-    color: white;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.productdetails p{
+    color: #0277BD;
+    font-size: 14px;
     padding: 10px;
 }
-.köpknapp:hover{
-
-    opacity: 1;
-    background-color: red;
-}
-.köpknapp:hover {
-    text-decoration: none;
+.productdetails h4{
+    color: #0277BD;
+    font-size: 16px;
 }
 
 
-.margintop{
-    margin-top: 80px;
+.lightbox-container a:active,
+.lightbox-slider a:active,
+.lightbox-container a:focus,
+.lightbox-slider a:focus  { outline: none; }
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
+.lightbox-slider a img { outline: none; border: none; }
 
-#grid {
+.lightbox-slider {
+    margin: 0;
+    padding: 0;
+}
+.lightbox-slider .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+}
+
+.lightbox-slider .slides img {
     width: 100%;
-    margin-top: 15px;
-    height: 30px;
-}
-#grid p{
-    float: left;
-    margin-right: 10px;
-    margin-left: 25px;
-}
-#grid a {
     display: block;
-    float: left;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html[xmlns] .slides { display: block; }
+* html .slides { height: 1%; }
+.flex-direction-nav a {
+    display: block;
+    position: absolute;
+    margin: -17px 0 0 0;
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    z-index: 52;
+    background-color: #0277BD;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0277BD), to(#0277BD));
+    background-image: -webkit-linear-gradient(top, #0277BD, #0277BD);
+    background-image: -moz-linear-gradient(top, #0277BD, #0277BD);
+    background-image: -o-linear-gradient(top, #0277BD, #0277BD);
+    background-image: linear-gradient(to bottom, #0277BD, #0277BD);
+}
+.flex-direction-nav a:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: 13px;
+    top: 11px;
+    left: 11px;
+}
+
+.flex-direction-nav a:after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+
+    top: 45px;
+}
+.flex-direction-nav .flex-next {
+    right: -5px;
+}
+
+.flex-direction-nav .flex-prev {
+    left: -5px;
+}
+
+.flex-direction-nav .flex-next:before { background-position: -9px 0; left: 15px; }
+.flex-direction-nav .flex-prev:before { background-position: 0 0; }
+
+.flex-direction-nav .flex-next:after {
+    right: 0;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #31611e;
+}
+
+.flex-direction-nav .flex-prev:after {
+    left: 0;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #31611e;
+}
+.lightbox-slider .flex-control-nav {
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    text-align: center;
+    margin: 0 0 0 -10px;
+}
+
+.flex-control-nav li {
+    display: inline-block;
+    zoom: 1;
+}
+
+.flex-control-paging li a {
+    display: block;
+    cursor: pointer;
+    text-indent: -9999px;
     width: 20px;
     height: 20px;
-    margin-right: 10px;
-    border: 1px solid black;
-    box-shadow: 1px 1px 3px #333333;
+    margin: 0 3px;
+    background-color: #0277BD \9;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+
+    -webkit-box-shadow: inset 0 0 0 2px #b6b6b6;
+    -moz-box-shadow: inset 0 0 0 2px #b6b6b6;
+    box-shadow: inset 0 0 0 2px #b6b6b6;
 }
 
-
-.likprodukter {
-    border-bottom: solid black 1px;
-    padding-bottom: 10px;
-    text-align: center;
+.flex-control-paging li a.flex-active {
+    background-color: #0277BD;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0277BD), to(#0277BD));
+    background-image: -webkit-linear-gradient(top, #0277BD, #0277BD);
+    background-image: -moz-linear-gradient(top, #0277BD, #0277BD);
+    background-image: -o-linear-gradient(top, #0277BD, #0277BD);
+    background-image: linear-gradient(to bottom, #0277BD, #0277BD);
+    box-shadow: inset 0 0 5px 0 #0a526f;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
-.likprodukter h5{
-    font-size: 15px;
-}
 
 #thumb { 
     height: 100px;
@@ -577,23 +782,30 @@ input {
     display: block;
     height: 70px;
     border: 3px solid #FFFFFF;
-    box-shadow: 1px 1px 3px #333333;
+    box-shadow: 1px 1px 3px #0a526f;
 
 }
 #thumb li.activeSlide a { 
-    border: 3px solid #0a526f;
-
+    border: 3px solid #0277BD;
     box-shadow: 1px 1px 3px #333333;
 }
 #thumb a:focus { 
-    outline: none; 
+    outline: none;
+
 }
 #thumb img { 
     height: 64px;
-
     border: none; 
     display: block;
 }
+
+#thumb a:hover { 
+    box-shadow:  0px 0px 2px 2px #0277BD;
+}
+
+
+
+
 
 
 
