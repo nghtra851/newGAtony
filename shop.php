@@ -13,6 +13,7 @@ session_start();
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
@@ -77,93 +78,93 @@ session_start();
                             <?php
                             include 'cartDesign.php';
                             ?>
-                            <div class="login LS-dropdown">
-                                <?php
-                                if (isset($_SESSION["user"])) {
-                                    if ($_SESSION["user"] != NULL) {
-                                        echo "Logged in as " . $_SESSION["user"];
-                                        echo "<form method='GET' action='signout.php'>";
-                                        echo "<input type='submit' name='action' value='signout'></input>";
-                                        echo "</form>";
-                                    }
-                                } else {
-                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                                        <div class="login LS-dropdown">
+                            <?php
+                            if (isset($_SESSION["user"])) {
+                                if ($_SESSION["user"] != NULL) {
+                                    echo "Logged in as " . $_SESSION["user"];
+                                    echo "<form method='GET' action='signout.php'>";
+                                    echo "<input type='submit' name='action' value='signout'></input>";
+                                    echo "</form>";
                                 }
-                                ?>
-                                <div class="dropdown-menu login-menu LS-droppdown">
-                                    <div class="row"> 
-
-                                        <div class="col-sm-6 login">
-                                            <form method = 'POST' action ='signup.php'>
-                                                <h2>Signup</h2>
-                                                <h3 class ='user'>Username:</h3>
-                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                <h3 class = 'user'>Password:</h3>
-                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
-                                            </form>
-                                        </div>
-
-                                        <div class = 'col-sm-6 login'>
-                                            <form method = 'POST' action = 'login.php'>
-                                                <h2>Login</h2>
-                                                <h3 class = 'user'>Username:</h3>
-                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                <h3 class = 'user'>Password:</h3>
-                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type = 'submit' name = 'action' value = 'login'>
-                                            </form>
-                                            ?
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            } else {
+                                echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                            }
+                            ?>
+                                                            <div class="dropdown-menu login-menu LS-droppdown">
+                                                                <div class="row"> 
+                            
+                                                                    <div class="col-sm-6 login">
+                                                                        <form method = 'POST' action ='signup.php'>
+                                                                            <h2>Signup</h2>
+                                                                            <h3 class ='user'>Username:</h3>
+                                                                            <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                                            <h3 class = 'user'>Password:</h3>
+                                                                            <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                                            <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                                                        </form>
+                                                                    </div>
+                            
+                                                                    <div class = 'col-sm-6 login'>
+                                                                        <form method = 'POST' action = 'login.php'>
+                                                                            <h2>Login</h2>
+                                                                            <h3 class = 'user'>Username:</h3>
+                                                                            <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                                            <h3 class = 'user'>Password:</h3>
+                                                                            <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                                            <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                                                        </form>
+                                                                        ?
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class='container'>
                 <div class='row'>
-                    <div class='col-sm-3 colfärg1'>
+                    <div class='col-sm-3'>
                         <div id="sorting-list">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 <h3 class="">FILTER</h3>
-                                <div class="panel ">
-                                    <div class="panel-heading" role="tab" id="headingKATAGORI">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseKATAGORI" aria-expanded="false" aria-controls="collapseKATAGORI">
-                                                KATEGORI
-                                            </a>
-                                        </h4>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingCATAGORY">
+
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseCATAGORY" aria-expanded="false" aria-controls="collapseCATAGORY">
+                                            <h4 class="panel-title">  Catagory </h4>
+                                        </a>
+
                                     </div>
-                                    <div id="collapseKATAGORI" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingKATAGORI">
-                                        <div class="panel-body">
-                                            <div class="btn-group katagoricss" data-toggle="buttons">
-                                                <label class="btn ">
+                                    <div id="collapseCATAGORY" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCATAGORY">
+                                        <div class="panel-body ">
+                                            <div class="btn-group catagoryDesign " data-toggle="buttons">
+                                                <label class="btn filterbtndesign2">
                                                     <input type="radio" name="options" id="option1" autocomplete="off" > <p>JACKOR</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option2" autocomplete="off">  <p>TRÖJA</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option3" autocomplete="off">  <p>BYXOR</p>
                                                 </label>
-                                                <label class="btn ">
-                                                    <input type="radio" name="options" id="option4" autocomplete="off" > <p> UNDERKLÄDER </p>
+                                                <label class="btn filterBtnDesign">
+                                                    <input type="radio" name="options" id="option4" autocomplete="off" > <p> UNDERKLÄDER </p> 
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option5" autocomplete="off">  <p>BADKLÄDER</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option6" autocomplete="off">  <p>HANDSKAR</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option7" autocomplete="off" > <p> SKJORTOR</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option8" autocomplete="off"> <p> KEPSAR</p>
                                                 </label>
-                                                <label class="btn ">
+                                                <label class="btn filterBtnDesign">
                                                     <input type="radio" name="options" id="option9" autocomplete="off"> <p> T-SHIRTS</p>
                                                 </label>
                                             </div>
@@ -172,15 +173,15 @@ session_start();
                                 </div>
                                 <div class="panel ">
                                     <div class="panel-heading" role="tab" id="headingMARKE">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseMARKE" aria-expanded="false" aria-controls="collapseMARKE">
-                                                MÄRKE
-                                            </a>
-                                        </h4>
+
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseMARKE" aria-expanded="false" aria-controls="collapseMARKE">
+                                            <h4 class="panel-title">    MÄRKE </h4>
+                                        </a>
+
                                     </div>
                                     <div id="collapseMARKE" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMARKE">
                                         <div class="panel-body">
-                                            <div class="checkbox markecss">
+                                            <div class="checkbox checkBoxDesign">
                                                 <input id="check1" type="checkbox" name="check" value="check1">
                                                 <label for="check1">Microsoft</label>
                                                 <input id="check2" type="checkbox" name="check" value="check2">
@@ -203,28 +204,50 @@ session_start();
                                 </div>
                                 <div class="panel">
                                     <div class="panel-heading" role="tab" id="headingFARG">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFARG" aria-expanded="false" aria-controls="collapseFARG">
-                                                FÄRG
-                                            </a>
-                                        </h4>
+
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFARG" aria-expanded="false" aria-controls="collapseFARG">
+                                            <h4 class="panel-title">       FÄRG </h4>
+                                        </a>
+
                                     </div>
                                     <div id="collapseFARG" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFARG">
-                                        <div class="panel-body">
+                                        <div class="panel-body" >
+
+                                            <div class="btn-group " data-toggle="buttons">
+                                                <label class="btn filterBtnColor" style="background-color: blue;">
+                                                    <input type="radio" name="options" id="blue" autocomplete="off" >
+                                                </label>
+                                                <label class="btn filterBtnColor" style="background-color: red;">
+                                                    <input type="radio" name="options" id="red" autocomplete="off" >
+                                                </label>
+                                                <label class="btn filterBtnColor" style="background-color: green;">
+                                                    <input type="radio" name="options" id="green" autocomplete="off" >
+                                                </label>
+                                                <label class="btn filterBtnColor" style="background-color: yellow;">
+                                                    <input type="radio" name="options" id="yellow" autocomplete="off" >
+                                                </label>
+                                                <label class="btn filterBtnColor" style="background-color: white;">
+                                                    <input type="radio" name="options" id="white" autocomplete="off" >
+                                                </label>
+                                                <label class="btn filterBtnColor" style="background-color: black;">
+                                                    <input type="radio" name="options" id="black" autocomplete="off" >
+                                                </label>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel">
                                     <div class="panel-heading" role="tab" id="headingPRIS">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed " data-toggle="collapse" data-parent="#accordion" href="#collapsePRIS" aria-expanded="false" aria-controls="collapsePRIS">
-                                                PRIS
-                                            </a>
-                                        </h4>
+
+                                        <a class="collapsed " data-toggle="collapse" data-parent="#accordion" href="#collapsePRIS" aria-expanded="false" aria-controls="collapsePRIS">
+                                            <h4 class="panel-title">       PRIS    </h4>
+                                        </a>
+
                                     </div>
                                     <div id="collapsePRIS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPRIS">
                                         <div class="panel-body">
-                                            <div class="checkbox markecss">
+                                            <div class="checkbox checkBoxDesign">
                                                 <input id="check9" type="checkbox" name="check" value="check9">
                                                 <label for="check9">0-100</label>
                                                 <input id="check10" type="checkbox" name="check" value="check10">
@@ -247,11 +270,11 @@ session_start();
                                 </div>
                                 <div class="panel">
                                     <div class="panel-heading" role="tab" id="headingSTORLEK">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSTORLEK" aria-expanded="false" aria-controls="collapseSTORLEK">
-                                                STORLEK
-                                            </a>
-                                        </h4>
+
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSTORLEK" aria-expanded="false" aria-controls="collapseSTORLEK">
+                                            <h4 class="panel-title">        STORLEK  </h4>
+                                        </a>
+
                                     </div>
                                     <div id="collapseSTORLEK" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSTORLEK">
                                         <div class="panel-body">
@@ -268,20 +291,204 @@ session_start();
 
 
                     <div class='col-sm-9 top-shop'>
-                        <?php
-                        include './showProducts.php';
-                        ?>
-                        <div class="col-sm-12 "> 
-                            <ul class="pagination pilarna">
-                                <li><a href="#">1</a></li>
-                                <li class="active"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">7</a></li>
-                            </ul>
-                        </div>
+                        <div id='content' class="col-sm-12 productslist">                        
+
+                            <?php
+                            include './showProducts.php';
+                            ?>
+
+
+
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+                            <a href="Product.html">    
+                                <div class="col-sm-3">
+                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <h3>VANTE-MICROSOFT</h3>
+                                    <h4>19999KR</h4>
+
+                                </div>
+                            </a>
+
+
+
+
+
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -306,12 +513,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function() {
+                jQuery(document).ready(function () {
                     $(".dropdown").hover(
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function() {
+                            function () {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });

@@ -1,103 +1,29 @@
-jQuery(document).ready(function() {
-    $(".dropdown").hover(
-            function() {
-                $('.dropdown-menu', this).fadeIn("fast");
-            },
-            function() {
-                $('.dropdown-menu', this).fadeOut("fast");
-            });
-    $('.dropdown-menu input').click(function(event) {
-        event.stopPropagation();
-    });
-});
-$(document).ready(function() {
+// jPaginate Plugin for jQuery - Version 0.3
+// by Angel Grablev for Enavu Web Development network (enavu.com)
+// Dual license under MIT and GPL :) enjoy
+/*
 
+To use simply call .paginate() on the element you wish like so:
+$("#content").jPaginate(); 
 
-    $('#slider1').cycle({
-        fx: 'scrollHorz', // Here you can change the effect
-        speed: 'slow',
-        timeout: 0,
-        next: '#next',
-        prev: '#prev',
-        pager: '#thumb',
-        pagerAnchorBuilder: function(idx, slide) {
-            return '<li><a href="#"><img src="' + slide.src + '" /></a></li>';
-        }
-    });
-});
-window.onload = function() {
+you can specify the following options:
+items = number of items to have per page on pagination
+next = the text you want to have inside the text button
+previous = the text you want in the previous button
+active = the class you want the active paginaiton link to have
+pagination_class = the class of the pagination element that is being generated for you to style
+minimize = minimizing will limit the overall number of elements in the pagination links
+nav_items = when minimize is set to true you can specify how many items to show
+cookies = if you want to use cookies to remember which page the user is on, true by default
+position = specify the position of the pagination, possible options: "before", "after", or "both"
+equal = implements an equal height main element by using the highest possible element use true false
+offset = unfortunately calculating heights with javascript isn't always 100% accurate, so please use this value to make it perfect :) its defaultly set to 50
 
-    function getScrollTop() {
-        if (typeof window.pageYOffset !== 'undefined') {
-            // Most browsers
-            return window.pageYOffset;
-        }
-
-        var d = document.documentElement;
-        if (d.clientHeight) {
-            // IE in standards mode
-            return d.scrollTop;
-        }
-
-        // IE in quirks mode
-        return document.body.scrollTop;
-    }
-
-    window.onscroll = function() {
-        var box = document.getElementById('sorting-list'),
-                scroll = getScrollTop();
-
-        if (scroll < 5) {
-            box.style.top = "0";
-        }
-        else {
-            box.style.top = (scroll + 0) + "px";
-        }
-    };
-
-};
-window.onload = function() {
-
-    function getScrollTop() {
-        if (typeof window.pageYOffset !== 'undefined') {
-            // Most browsers
-            return window.pageYOffset;
-        }
-
-        var d = document.documentElement;
-        if (d.clientHeight) {
-            // IE in standards mode
-            return d.scrollTop;
-        }
-
-        // IE in quirks mode
-        return document.body.scrollTop;
-    }
-
-    window.onscroll = function() {
-        var box = document.getElementById('sorting-list'),
-                scroll = getScrollTop();
-
-        if (scroll < 5) {
-            box.style.top = "0";
-        }
-        else {
-            box.style.top = (scroll + 0) + "px";
-        }
-    };
-
-};
-
-//Pagnation Content in Shop
-
-$(document).ready(function(){
-    $("#content").jPaginate();                       
-});
-
+*/
 (function($){
     $.fn.jPaginate = function(options) {
         var defaults = {
-            items: 20,
+            items: 4,
             next: "Next",
             previous: "Previous",
             active: "active",
