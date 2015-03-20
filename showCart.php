@@ -10,17 +10,18 @@ if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 if ($_SESSION["cart"] != NULL) {
+    
     echo "<p class='item'>Cart: <br>";
     foreach ($_SESSION["cart"] as $cart) {
         echo $cart["name"] . " ";
         echo $cart["color"] . " ";
         echo $cart["size"] . " ";
         echo $cart["price"] . " £ ";
-        echo $cart["amount"] . " <br><br>";
+        echo $cart["amount"] . " ";
         echo "<br>";
-        echo "<form method='GET' action='deleteFromCart.php'>";
-        echo "<input type='hidden' value='" . $cart["id"] . "' name='id'>";
-        echo "<input type='submit' name='action' value='delete'>";
+        echo "<form class='col-sm-12' method='GET' action='deleteFromCart.php'>";
+        echo "<input class='productbuttondesignPHP' type='hidden' value='" . $cart["id"] . "' name='id'> ";
+        echo "<input class='productbuttondesignPHP' type='submit' name='action' value='delete'>";
         echo "</form>";
     }
     echo "</p>";

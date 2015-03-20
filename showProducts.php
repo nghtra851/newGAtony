@@ -23,7 +23,7 @@ $quantity = filter_input(INPUT_GET, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
 foreach ($products as $product) {
     echo "<form method='GET' action='product.php'";
     echo "<a href='product.php'>"
-    . "<div class='col-sm-3 produkter'>"
+    . "<div class='col-sm-3'>"
     . "<img class='img-responsive' src='http://placehold.it/400x400'>";
     echo "<p>" . $product["name"] . " " . $product["price"] . "£" . "</p>";
     echo "<td>";
@@ -45,6 +45,7 @@ foreach ($products as $product) {
     echo "<input type='hidden' name='amount' value='1'>";
     echo "<td>";
     echo "<button>BUY</button>";
+    echo "<div class='shopProduct2' ></div>";
     echo "</div>"
     . "</a>";
     echo "</form>";

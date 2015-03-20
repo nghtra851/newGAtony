@@ -16,6 +16,8 @@ session_start();
         <script src="js/jquery.flexslider-min.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
+        <script src="js/cartButton.js"></script>
+
         <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
@@ -81,14 +83,14 @@ session_start();
                                 <div class="login LS-dropdown">
                                     <?php
                                     if (isset($_SESSION["user"])) {
-                                    if ($_SESSION["user"] != NULL) {
-                                    echo "Logged in as " . $_SESSION["user"];
-                                    echo "<form method='GET' action='signout.php'>";
-                                    echo "<input type='submit' name='action' value='signout'></input>";
-                                    echo "</form>";
-                                    }
+                                        if ($_SESSION["user"] != NULL) {
+                                            echo "Logged in as " . $_SESSION["user"];
+                                            echo "<form method='GET' action='signout.php'>";
+                                            echo "<input type='submit' name='action' value='signout'></input>";
+                                            echo "</form>";
+                                        }
                                     } else {
-                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                        echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
                                     }
                                     ?>
                                     <div class="dropdown-menu login-menu LS-droppdown">
@@ -210,14 +212,14 @@ session_start();
                             $_GET["size"] = explode(",", $_GET["size"]);
                             echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='size'>";
                             foreach ($_GET["size"] as $size) {
-                            echo "<option value='" . $size . "'>" . $size . "</option>";
+                                echo "<option value='" . $size . "'>" . $size . "</option>";
                             }
                             echo "</select>";
 
                             $_GET["color"] = explode(",", $_GET["color"]);
                             echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='color'>";
                             foreach ($_GET["color"] as $color) {
-                            echo "<option value='" . $color . "'>" . $color . "</option>";
+                                echo "<option value='" . $color . "'>" . $color . "</option>";
                             }
                             echo "</select>";
                             echo "<input type = 'hidden' name = 'id' value ='" . $_GET['id'] . "' >";
@@ -228,7 +230,9 @@ session_start();
                             echo "</form>";
                             ?>
 
-
+                            <div class="added">
+Item Added to Cart
+                            </div>
                         </div>
 
 
@@ -257,7 +261,9 @@ session_start();
                             </div>
                         </div>
 
-                        <button class="addprodukt"><p>Add to Cart</p></button>
+
+
+
                     </div>
                 </div>
 
@@ -324,98 +330,7 @@ session_start();
             </div>
 
         </div>
-        <script>
 
-            $(document).ready(function () {
-
-                $('.lightbox').click(function () {
-                    $('.backdrop, .pbox').animate({'opacity': '.50'}, 300, 'linear');
-                    $('.pbox').animate({'opacity': '1.00'}, 300, 'linear');
-                    $('.backdrop, .pbox').css('display', 'block');
-                });
-
-                $('.close').click(function () {
-                    close_box();
-                });
-
-                $('.backdrop').click(function () {
-                    close_box();
-                });
-
-            });
-
-            function close_box()
-            {
-                $('.backdrop, .pbox').animate({'opacity': '0'}, 300, 'linear', function () {
-                    $('.backdrop, .pbox').css('display', 'none');
-                });
-            }
-
-
-            $(document).ready(function () {
-
-                $('.sharelightbox').click(function () {
-                    $('.sharebackdrop, .sharepbox').animate({'opacity': '.50'}, 300, 'linear');
-                    $('.sharepbox').animate({'opacity': '1.00'}, 300, 'linear');
-                    $('.sharebackdrop, .sharepbox').css('display', 'block');
-                });
-
-                $('.closeshare').click(function () {
-                    close_share();
-                });
-
-                $('.sharebackdrop').click(function () {
-                    close_share();
-                });
-
-            });
-
-            function close_share()
-            {
-                $('.sharebackdrop, .sharepbox').animate({'opacity': '0'}, 300, 'linear', function () {
-                    $('.sharebackdrop, .sharepbox').css('display', 'none');
-                });
-            }
-
-
-
-
-            $(document).ready(function () {
-
-                $('.cartlightbox').click(function () {
-                    $('.cartpbox').animate({'opacity': '1.00'}, 300, 'linear');
-                    $('.cartpbox').css('display', 'block');
-                });
-
-                $('.closecart').click(function () {
-                    close_cart();
-                });
-
-
-
-            });
-
-            function close_cart()
-            {
-                $('.cartpbox').animate({'opacity': '0'}, 300, 'linear', function () {
-                    $('.cartpbox').css('display', 'none');
-                });
-            }
-
-
-
-
-
-
-
-            $(document).ready(function () {
-                $('.lightbox-slider').flexslider({
-                    animation: 'fade',
-                    controlsContainer: '.lightbox-slider'
-                });
-            });
-
-        </script>
     </body>
 
 </html>
