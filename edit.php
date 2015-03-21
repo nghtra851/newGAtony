@@ -10,7 +10,7 @@
         <?php
         include "includeDB.php";
 
-        $sql = "SELECT * FROM products WHERE id='" . $_GET["id"] . "'";
+        $sql = "SELECT * FROM products WHERE id='" . $_POST["id"] . "'";
         $stmt = $dbm->prepare($sql);
         $stmt->bindParam(":name", $name);
         $stmt->execute();
@@ -23,7 +23,7 @@
             echo $product["size"] . "<br>";
             echo $product["quantity"] . "<br>";
         }
-        echo "<form method='GET' action='editAction.php'>";
+        echo "<form method='POST' action='editAction.php'>";
         echo "<input type='hidden' value='" . $product['id'] . "' name='id'>";
         echo "<input type='text'  name='name' value='" . $product['name'] . "'>";
         echo "<input type='text'  name='price' value='" . $product['price'] . "'>";

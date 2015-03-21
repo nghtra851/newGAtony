@@ -8,9 +8,9 @@ $stmt->bindParam(":name", $name);
 $stmt->execute();
 $infos = $stmt->fetchAll();
 
-if (isset($_GET["action"])) {
-    if ($_GET["action"] == "add") {
-        $add = "INSERT INTO products (name, price, color, size, quantity) VALUES ('" . $_GET["name"] . "','" . $_GET["price"] . "', '" . $_GET["color"] . "','" . $_GET["size"] . "','" . $_GET["quantity"] . "')";
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "add") {
+        $add = "INSERT INTO products (name, price, color, size, quantity) VALUES ('" . $_POST["name"] . "','" . $_POST["price"] . "', '" . $_POST["color"] . "','" . $_POST["size"] . "','" . $_POST["quantity"] . "')";
         $stmt = $dbm->prepare($add);
         $stmt->execute();
         header("Location: db.php");

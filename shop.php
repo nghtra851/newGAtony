@@ -83,7 +83,7 @@ session_start();
                             if (isset($_SESSION["user"])) {
                                 if ($_SESSION["user"] != NULL) {
                                     echo "Logged in as " . $_SESSION["user"];
-                                    echo "<form method='GET' action='signout.php'>";
+                                    echo "<form method='POST' action='signout.php'>";
                                     echo "<input type='submit' name='action' value='signout'></input>";
                                     echo "</form>";
                                 }

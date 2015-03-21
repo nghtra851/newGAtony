@@ -2,8 +2,8 @@
 
 session_start();
 
-if (isset($_GET["action"])) {
-    if ($_GET["action"] == "signout") {
+if (isset($_POST["action"])) {
+    if ($_POST["action"] == "signout") {
         session_unset();
         session_destroy();
         $signoutmessage = "You have logged out.";

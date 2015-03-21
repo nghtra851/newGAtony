@@ -25,13 +25,13 @@ session_start();
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.html"><h1>LOGO</h1></a>
+                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
                         <div class='navigation2 col-sm-10'>
                             <ul>
-                                <li><a href="index.html">Home</a></li>  
+                                <li><a href="index.php">Home</a></li>  
                                 <li class="dropdown">
 
-                                    <a href="shop.html" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
+                                    <a href="shop.php" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
 
                                     <ul class="dropdown-menu mega-menu droppdown">
 
@@ -85,7 +85,7 @@ session_start();
                                     if (isset($_SESSION["user"])) {
                                         if ($_SESSION["user"] != NULL) {
                                             echo "Logged in as " . $_SESSION["user"];
-                                            echo "<form method='GET' action='signout.php'>";
+                                            echo "<form method='POST' action='signout.php'>";
                                             echo "<input type='submit' name='action' value='signout'></input>";
                                             echo "</form>";
                                         }
@@ -143,7 +143,7 @@ session_start();
 
                         <div class="col-sm-12 productslist similarproducts">
                             <p class="similarproductstitle" > <span>Similar Products</span></p>
-                            <a href="Product.html">    
+                            <a href="Product.php">    
                                 <div class="col-sm-3">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
                                     <h3>VANTE-MICROSOFT</h3>
@@ -151,21 +151,21 @@ session_start();
 
                                 </div>
                             </a>
-                            <a href="Product.html">    
+                            <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
                                     <h3>VANTE-MICROSOFT</h3>
                                     <h4>19999KR</h4>
                                 </div>
                             </a>
-                            <a href="Product.html">    
+                            <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
                                     <h3>VANTE-MICROSOFT</h3>
                                     <h4>19999KR</h4>
                                 </div>
                             </a>
-                            <a href="Product.html">    
+                            <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
                                     <h3>VANTE-MICROSOFT</h3>
@@ -188,7 +188,7 @@ session_start();
                         <div class="producttitledesign">
                             <?php
                             echo "<h1>";
-                            echo $_GET["name"];
+                            echo $_POST["name"];
                             echo "</h1>";
                             ?>
                         </div>
@@ -196,7 +196,7 @@ session_start();
 
                             <?php
                             echo "<h3>";
-                            echo $_GET["price"];
+                            echo $_POST["price"];
                             echo "$";
                             echo "</h3>";
                             ?>
@@ -208,24 +208,24 @@ session_start();
 
                         <div>
                             <?php
-                            echo "<form method = 'GET' action = 'addToCart.php'>";
-                            $_GET["size"] = explode(",", $_GET["size"]);
+                            echo "<form method = 'POST' action = 'addToCart.php'>";
+                            $_POST["size"] = explode(",", $_POST["size"]);
                             echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='size'>";
-                            foreach ($_GET["size"] as $size) {
+                            foreach ($_POST["size"] as $size) {
                                 echo "<option value='" . $size . "'>" . $size . "</option>";
                             }
                             echo "</select>";
 
-                            $_GET["color"] = explode(",", $_GET["color"]);
+                            $_POST["color"] = explode(",", $_POST["color"]);
                             echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='color'>";
-                            foreach ($_GET["color"] as $color) {
+                            foreach ($_POST["color"] as $color) {
                                 echo "<option value='" . $color . "'>" . $color . "</option>";
                             }
                             echo "</select>";
-                            echo "<input type = 'hidden' name = 'id' value ='" . $_GET['id'] . "' >";
-                            echo "<input type = 'hidden' name = 'name' value ='" . $_GET['name'] . "' >";
-                            echo "<input type = 'hidden' name = 'price' value ='" . $_GET['price'] . "' >";
-                            echo "<input type = 'hidden' name = 'amount' value ='" . $_GET['amount'] . "' >";
+                            echo "<input type = 'hidden' name = 'id' value ='" . $_POST['id'] . "' >";
+                            echo "<input type = 'hidden' name = 'name' value ='" . $_POST['name'] . "' >";
+                            echo "<input type = 'hidden' name = 'price' value ='" . $_POST['price'] . "' >";
+                            echo "<input type = 'hidden' name = 'amount' value ='" . $_POST['amount'] . "' >";
                             echo "<button class='addprodukt' type='submit' name='action' value='add'>Add</button>";
                             echo "</form>";
                             ?>

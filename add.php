@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <form method='GET' action="addAction.php">
+        <form method='POST' action="addAction.php">
             <input type='text' placeholder='name' name='name'>
             <br>
             <input type='text' placeholder='price' name='price'>

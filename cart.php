@@ -5,13 +5,13 @@ if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
-$name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_GET, "price", FILTER_SANITIZE_SPECIAL_CHARS);
-$color = filter_input(INPUT_GET, "color", FILTER_SANITIZE_SPECIAL_CHARS);
-$size = filter_input(INPUT_GET, "size", FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_GET, "price", FILTER_SANITIZE_SPECIAL_CHARS);
-$amount = filter_input(INPUT_GET, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
+$id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_POST, "color", FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_POST, "size", FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_SPECIAL_CHARS);
+$amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_SPECIAL_CHARS);
 
 $sql = "SELECT * FROM products";
 $stmt = $dbm->prepare($sql);
@@ -28,7 +28,7 @@ foreach ($products as $product) {
 
     if ($quantity > 0) {
         echo "<tr>";
-        echo "<form method='GET' action='addToCart.php'>";
+        echo "<form method='POST' action='addToCart.php'>";
         echo "<p>" . $name . " " . $price . "£" . "</p>";
         echo "<td>";
         echo "<input type='hidden' name='id' value='$id'";
@@ -63,7 +63,7 @@ foreach ($products as $product) {
     } else {
         $availability = "Out of stock";
         echo "<tr>";
-        echo "<form method='GET' action='addToCart.php'>";
+        echo "<form method='POST' action='addToCart.php'>";
         echo "<p>" . $name . " " . $price . "£" . "</p>";
         echo "<td>";
         echo "<input type='hidden' name='id' value='$id'";

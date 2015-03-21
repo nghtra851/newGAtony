@@ -19,7 +19,7 @@ if ($_SESSION["cart"] != NULL) {
         echo $cart["price"] . " £ ";
         echo $cart["amount"] . " ";
         echo "<br>";
-        echo "<form class='col-sm-12' method='GET' action='deleteFromCart.php'>";
+        echo "<form class='col-sm-12' method='POST' action='deleteFromCart.php'>";
         echo "<input class='productbuttondesignPHP' type='hidden' value='" . $cart["id"] . "' name='id'> ";
         echo "<input class='productbuttondesignPHP' type='submit' name='action' value='delete'>";
         echo "</form>";

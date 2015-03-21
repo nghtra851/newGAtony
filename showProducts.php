@@ -13,15 +13,15 @@ $stmt->bindParam(":quantity", $quantity);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-$name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_GET, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
-$color = filter_input(INPUT_GET, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
-$size = filter_input(INPUT_GET, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
-$quantity = filter_input(INPUT_GET, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
+$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_POST, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
+$quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
 
 foreach ($products as $product) {
-    echo "<form method='GET' action='product.php'";
+    echo "<form method='POST' action='product.php'";
     echo "<a href='product.php'>"
     . "<div class='col-sm-3'>"
     . "<img class='img-responsive' src='http://placehold.it/400x400'>";

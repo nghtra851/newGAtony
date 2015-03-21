@@ -14,12 +14,12 @@ $stmt->bindParam(":quantity", $quantity);
 $stmt->execute();
 $products = $stmt->fetchAll();
 
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-$name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-$price = filter_input(INPUT_GET, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
-$color = filter_input(INPUT_GET, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
-$size = filter_input(INPUT_GET, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
-$quantity = filter_input(INPUT_GET, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
+$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+$price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_SPECIAL_CHARS);
+$color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_SPECIAL_CHARS);
+$size = filter_input(INPUT_POST, 'size', FILTER_SANITIZE_SPECIAL_CHARS);
+$quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_SPECIAL_CHARS);
 
 foreach ($products as $product) {
     echo $product["id"] . " ";
@@ -28,21 +28,21 @@ foreach ($products as $product) {
     echo $product["color"] . " ";
     echo $product["size"] . " ";
     echo $product["quantity"] . " ";
-    echo "<form method='GET'>";
+    echo "<form method='POST'>";
     echo "<input type='hidden' value='" . $product["id"] . "' name='id'>";
     echo "<input type='submit' name='action' value='delete'>";
     echo "</form>";
-    echo "<form method='GET' action='edit.php'>";
+    echo "<form method='POST' action='edit.php'>";
     echo "<input type='hidden' value='" . $product["id"] . "' name='id'>";
     echo "<input type='submit' name='action' value='edit'>";
     echo "</form>";
     echo "<br>";
 }
 
-if (isset($_GET["action"])) {
+if (isset($_POST["action"])) {
 
-    if ($_GET["action"] == "delete") {
-        $delete = "DELETE FROM products WHERE id='" . $_GET["id"] . "'";
+    if ($_POST["action"] == "delete") {
+        $delete = "DELETE FROM products WHERE id='" . $_POST["id"] . "'";
         $stmt = $dbm->prepare($delete);
         $stmt->execute();
         header("Location: db.php");
