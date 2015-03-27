@@ -2,7 +2,10 @@
     <a href="#" class="cartlightbox cartlightboxdesign">
         <img src="img/CART.png">
         <?php
-        echo count($_SESSION["cart"]);
+        if(isset($_SESSION["cart"])){
+        echo count($_SESSION["cart"]); 
+        }
+        
         ?>
     </a>
     <div class="cartpbox">

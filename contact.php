@@ -20,11 +20,11 @@ session_start();
     </head>
     <body>
         <div id="wrapper">
-            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
+            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
-                        <div class='navigation2 col-sm-10'>
+                        <a class="logo col-sm-5" href="index.php"><h1>Cranes Crown</h1></a>
+                        <div class='navigation2 col-sm-7'>
                             <li><a href="index.php">Home</a></li>  
                             <li class="dropdown">
 
@@ -100,7 +100,7 @@ session_start();
                                                 <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                 <h3 class = 'user'>Password:</h3>
                                                 <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                                <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
                                             </form>
                                         </div>
 
@@ -111,14 +111,14 @@ session_start();
                                                 <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                 <h3 class = 'user'>Password:</h3>
                                                 <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                                <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
                                             </form>
                                             ?
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@ session_start();
             <div class="container Con">
                 <form action="" method="post" class="dark-matter">
                     <h1>Welcome 
-                        <span>Here can you fill in, if you have a question or whant to refund!</span>
+                        <span>Fill in the questions if you want to refund a product.</span>
                     </h1>
                     <label>
                         <span>Your Name :</span>
@@ -144,8 +144,8 @@ session_start();
                         <textarea id="message" name="message" placeholder="Your message/refund explanation to Us"></textarea>
                     </label> 
                     <label>
-                        <span>Refund :</span><select name="selection">
-                            <option value="placeholder">Which article of clothing, you whant to refund</option>
+                        <span>Refund : </span><select name="selection">
+                            <option value="placeholder">Which article of clothing, do you want to refund?</option>
                             <option value="Hoodie">Hoodie</option>
                             <option value="T-shirt">T-shirt</option>
                             <option value="Shirt">Shirt</option>
@@ -156,7 +156,7 @@ session_start();
                     </label>    
                     <label>
                         <span id="button"></span> 
-                        <input type="button" class="button" value="Send" /> 
+                        <input type="button" class="productbuttondesign send" value="Send" /> 
                     </label>    
                 </form>
             </div>

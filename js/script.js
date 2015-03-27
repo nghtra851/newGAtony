@@ -97,7 +97,7 @@ $(document).ready(function(){
 (function($){
     $.fn.jPaginate = function(options) {
         var defaults = {
-            items: 20,
+            items: 12,
             next: "Next",
             previous: "Previous",
             active: "active",

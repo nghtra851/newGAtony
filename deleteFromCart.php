@@ -3,7 +3,7 @@
 session_start();
 if (isset($_POST["action"])) {
 
-    if ($_POST["action"] == "delete") {
+    if ($_POST["action"] == "Remove") {
         for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
             echo "<br>finns " . $_SESSION["cart"][$i]["id"];
             if ($_SESSION["cart"][$i]["id"] == $_POST["id"]) {

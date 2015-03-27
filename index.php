@@ -25,8 +25,8 @@ session_start();
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
-                        <div class='navigation2 col-sm-10'>
+                        <a class="logo col-sm-5" href="index.php"><h1>Cranes Crown</h1></a>
+                        <div class='navigation2 col-sm-7'>
                             <li><a href="index.php">Home</a></li>  
                             <li class="dropdown">
 
@@ -102,7 +102,7 @@ session_start();
                                                 <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                 <h3 class = 'user'>Password:</h3>
                                                 <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                                <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
                                             </form>
                                         </div>
 
@@ -113,7 +113,7 @@ session_start();
                                                 <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                 <h3 class = 'user'>Password:</h3>
                                                 <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                                <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
                                             </form>
                                             ?
                                         </div>

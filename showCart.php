@@ -11,21 +11,26 @@ if (!isset($_SESSION["cart"])) {
 }
 if ($_SESSION["cart"] != NULL) {
     
-    echo "<p class='item'>Cart: <br>";
+    echo "<p class='item '>Cart: <br>";
+    echo "<div id='item'>";
     foreach ($_SESSION["cart"] as $cart) {
+         echo "<div class='item'>";
         echo $cart["name"] . " ";
         echo $cart["color"] . " ";
         echo $cart["size"] . " ";
-        echo $cart["price"] . " £ ";
-        echo $cart["amount"] . " ";
+        echo "£" . $cart["price"];
+        echo "x" . $cart["amount"];
         echo "<br>";
         echo "<form class='col-sm-12' method='POST' action='deleteFromCart.php'>";
         echo "<input class='productbuttondesignPHP' type='hidden' value='" . $cart["id"] . "' name='id'> ";
-        echo "<input class='productbuttondesignPHP' type='submit' name='action' value='delete'>";
+        echo "<input class='productbuttondesignPHP' type='submit' name='action' value='Remove'>";
         echo "</form>";
+        echo "</div>";
     }
+    echo "</div>";
     echo "</p>";
-    echo "<a href='killCart.php'>Delete All</a><br>";
+    echo "<div id='totalCost '>";
+    echo "<a href='killCart.php'>Remove All</a><br>";
 
     function countTotal() {
         $total = 0;
@@ -41,5 +46,6 @@ if ($_SESSION["cart"] != NULL) {
         return $total;
     }
 
-    echo "<p>Total:  " . countTotal() . "   £</p>";
+    echo "<p>Total:  £" . countTotal() . "   </p>";
+    echo "</div>";
 } 

@@ -75,13 +75,7 @@
             }
 
 
- $(document).ready(function () {
-
-                $('.addprodukt').click(function () {
-                     $('.added').css('display', 'block');
-            });
-     });
-
+ 
 
 
             $(document).ready(function () {

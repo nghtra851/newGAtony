@@ -26,7 +26,7 @@ if (isset($_POST["id"])) {
                         $addToCart = false;
                         $_SESSION["cart"][$i]["amount"] = $_SESSION["cart"][$i]["amount"] + $_POST["amount"];
                     }
-                    header("Location: " . $_SERVER['HTTP_REFERER']);
+                    header("Location: shop.php");
                 }
             }
         }

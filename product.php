@@ -22,56 +22,55 @@ session_start();
     </head>
     <body>
         <div id="wrapper">
-            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top ">
+            <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
-                        <a class="logo col-sm-2" href="index.php"><h1>LOGO</h1></a>
-                        <div class='navigation2 col-sm-10'>
-                            <ul>
-                                <li><a href="index.php">Home</a></li>  
-                                <li class="dropdown">
+                        <a class="logo col-sm-5" href="index.php"><h1>Cranes Crown</h1></a>
+                        <div class='navigation2 col-sm-7'>
+                            <li><a href="index.php">Home</a></li>  
+                            <li class="dropdown">
 
-                                    <a href="shop.php" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
+                                <a href="shop.php" class="dropdown-toggle" >Shop<b class="caret"></b></a>                      
 
-                                    <ul class="dropdown-menu mega-menu droppdown">
+                                <ul class="dropdown-menu mega-menu droppdown">
 
-                                        <li class="mega-menu-column ">
-                                            <ul>
-                                                <li class="nav-header">Kille</li>
-                                                <li class="undermen"><a href="#">Hoodie</a></li>
-                                                <li class="undermen"><a href="#">T-shirt</a></li>
-                                                <li class="undermen"><a href="#">Shirt</a></li>
-                                                <li class="undermen"><a href="#">Shorts</a></li>
-                                                <li class="undermen"><a href="#">Jeans</a></li>
-                                                <li class="undermen"><a href="#">Trousers</a></li>
-                                            </ul>
-                                        </li>    
+                                    <li class="mega-menu-column ">
+                                        <ul>
+                                            <li class="nav-header">Kille</li>
+                                            <li class="undermen"><a href="#">Hoodie</a></li>
+                                            <li class="undermen"><a href="#">T-shirt</a></li>
+                                            <li class="undermen"><a href="#">Shirt</a></li>
+                                            <li class="undermen"><a href="#">Shorts</a></li>
+                                            <li class="undermen"><a href="#">Jeans</a></li>
+                                            <li class="undermen"><a href="#">Trousers</a></li>
+                                        </ul>
+                                    </li>    
 
-                                        <li class="mega-menu-column">
-                                            <ul>
-                                                <li class="nav-header">Tjej</li>
-                                                <li class="undermen"><a href="#">Hoodie</a></li>
-                                                <li class="undermen"><a href="#">T-shirt</a></li>
-                                                <li class="undermen"><a href="#">Shirt</a></li>
-                                                <li class="undermen"><a href="#">Shorts</a></li>
-                                                <li class="undermen"><a href="#">Jeans</a></li>
-                                                <li class="undermen"><a href="#">Trousers</a></li>
-                                            </ul>
-                                        </li> 
+                                    <li class="mega-menu-column">
+                                        <ul>
+                                            <li class="nav-header">Tjej</li>
+                                            <li class="undermen"><a href="#">Hoodie</a></li>
+                                            <li class="undermen"><a href="#">T-shirt</a></li>
+                                            <li class="undermen"><a href="#">Shirt</a></li>
+                                            <li class="undermen"><a href="#">Shorts</a></li>
+                                            <li class="undermen"><a href="#">Jeans</a></li>
+                                            <li class="undermen"><a href="#">Trousers</a></li>
+                                        </ul>
+                                    </li> 
 
-                                        <li class="mega-menu-column">
-                                            <ul>                            
-                                                <li class="nav-header">Barn</li>
-                                                <li class="undermen"><a href="#">Hoodie</a></li>
-                                                <li class="undermen"><a href="#">T-shirt</a></li>
-                                                <li class="undermen"><a href="#">Shirt</a></li>
-                                                <li class="undermen"><a href="#">Shorts</a></li>
-                                                <li class="undermen"><a href="#">Jeans</a></li>
-                                                <li class="undermen"><a href="#">Trousers</a></li>
-                                            </ul>
-                                        </li> 
+                                    <li class="mega-menu-column">
+                                        <ul>                            
+                                            <li class="nav-header">Barn</li>
+                                            <li class="undermen"><a href="#">Hoodie</a></li>
+                                            <li class="undermen"><a href="#">T-shirt</a></li>
+                                            <li class="undermen"><a href="#">Shirt</a></li>
+                                            <li class="undermen"><a href="#">Shorts</a></li>
+                                            <li class="undermen"><a href="#">Jeans</a></li>
+                                            <li class="undermen"><a href="#">Trousers</a></li>
+                                        </ul>
+                                    </li> 
 
-                                    </ul>
+                                </ul>
 
 
                                 </li>
@@ -103,7 +102,7 @@ session_start();
                                                     <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                     <h3 class = 'user'>Password:</h3>
                                                     <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                    <input class = 'send' type ='submit' name = 'action' value = 'Sign Up'>
+                                                    <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
                                                 </form>
                                             </div>
 
@@ -114,7 +113,7 @@ session_start();
                                                     <input name = 'username' type = 'text' placeholder = 'Username' required>
                                                     <h3 class = 'user'>Password:</h3>
                                                     <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                    <input class = 'send' type = 'submit' name = 'action' value = 'login'>
+                                                    <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
                                                 </form>
                                                 ?
                                             </div>
@@ -146,30 +145,30 @@ session_start();
                             <a href="Product.php">    
                                 <div class="col-sm-3">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                    <h3>VANTE-MICROSOFT</h3>
-                                    <h4>19999KR</h4>
+                                    <h3>Tophat</h3>
+                                    <h4>$449</h4>
 
                                 </div>
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                    <h3>VANTE-MICROSOFT</h3>
-                                    <h4>19999KR</h4>
+                                    <h3>Tophat</h3>
+                                    <h4>$449</h4>
                                 </div>
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                    <h3>VANTE-MICROSOFT</h3>
-                                    <h4>19999KR</h4>
+                                    <h3>Tophat</h3>
+                                    <h4>$449</h4>
                                 </div>
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
                                     <img class="img-responsive "href="#" src="http://placehold.it/400x400">
-                                    <h3>VANTE-MICROSOFT</h3>
-                                    <h4>19999KR</h4>
+                                    <h3>Tophat</h3>
+                                    <h4>$449</h4>
                                 </div>
                             </a>
                         </div>
@@ -230,9 +229,7 @@ session_start();
                             echo "</form>";
                             ?>
 
-                            <div class="added">
-Item Added to Cart
-                            </div>
+                           
                         </div>
 
 
