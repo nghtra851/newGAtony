@@ -24,7 +24,7 @@ foreach ($products as $product) {
     echo "<form method='POST' action='product.php'";
     echo "<a href='product.php'>"
     . "<div class='col-sm-3'>"
-    . "<img class='img-responsive' src='http://placehold.it/400x400'>";
+    . "<img class='img-responsive' src='img/david.jpg'>";
     echo "<p>" . $product["name"] . " " . $product["price"] . "£" . "</p>";
     echo "<td>";
     echo "<input type='hidden' name='id' value='" . $product['id'] . "'";

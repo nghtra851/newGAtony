@@ -19,7 +19,7 @@ session_start();
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
     </head>
-     <body>
+    <body>
         <div id="wrapper">
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
@@ -184,21 +184,17 @@ session_start();
                                         <div class="panel-body">
                                             <div class="checkbox checkBoxDesign">
                                                 <input id="check1" type="checkbox" name="check" value="check1">
-                                                <label for="check1">Microsoft</label>
+                                                <label for="check1">Björkvin</label>
                                                 <input id="check2" type="checkbox" name="check" value="check2">
-                                                <label for="check2">Apple</label>
+                                                <label for="check2">Crown</label>
                                                 <input id="check3" type="checkbox" name="check" value="check3">
-                                                <label for="check3">DELL</label>
+                                                <label for="check3">Crocker Jeans</label>
                                                 <input id="check4" type="checkbox" name="check" value="check4">
-                                                <label for="check4">HP</label>
+                                                <label for="check4">Dope</label>
                                                 <input id="check5" type="checkbox" name="check" value="check5">
-                                                <label for="check5">Checkbox No. 1</label>
-                                                <input id="check6" type="checkbox" name="check" value="check6">
-                                                <label for="check6">Checkbox No. 2</label>
-                                                <input id="check7" type="checkbox" name="check" value="check7">
-                                                <label for="check7">Checkbox No. 1</label>
+                                                <label for="check5">Lyle & Scott</label>
                                                 <input id="check8" type="checkbox" name="check" value="check8">
-                                                <label for="check8">Checkbox No. 2</label>
+                                                <label for="check8">Wezc</label>
                                             </div>
                                         </div>
                                     </div>
@@ -279,7 +275,20 @@ session_start();
                                     </div>
                                     <div id="collapseSTORLEK" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSTORLEK">
                                         <div class="panel-body">
-
+                                            <div class="checkbox checkBoxDesign">
+                                                <input id="check17" type="checkbox" name="check" value="check9">
+                                                <label for="check9">XS</label>
+                                                <input id="check18" type="checkbox" name="check" value="check10">
+                                                <label for="check10">S</label>
+                                                <input id="check19" type="checkbox" name="check" value="check11">
+                                                <label for="check11">M</label>
+                                                <input id="check20" type="checkbox" name="check" value="check12">
+                                                <label for="check12">L</label>
+                                                <input id="check21" type="checkbox" name="check" value="check13">
+                                                <label for="check13">XL</label>
+                                                <input id="check22" type="checkbox" name="check" value="check14">
+                                                <label for="check14">XXL</label>
+                                            </div>
 
 
                                         </div>
@@ -329,12 +338,12 @@ session_start();
                 </div>
             </div>
             <script>
-                jQuery(document).ready(function () {
+                jQuery(document).ready(function() {
                     $(".dropdown").hover(
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeIn("fast");
                             },
-                            function () {
+                            function() {
                                 $('.dropdown-menu', this).fadeOut("fast");
                             });
                 });

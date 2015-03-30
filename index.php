@@ -133,9 +133,9 @@ session_start();
 
                     <div class="banner">
                         <ul>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/tröja.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/tröja.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/tröja.jpg"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -197,9 +197,9 @@ session_start();
                     </div>
                     <div class="col-sm-4 footercontent">
                         <h2>Find us</h2>
-                        <p>Adress:</p>
-                        <p>City:</p>
-                        <p>Phone nr:</p>
+                        <p>Adress: Berzeliusgatan 96</p>
+                        <p>City: Linköping</p>
+                        <p>Phone nr: 013-27092204</p>
                     </div>
                     <div class="col-sm-4 footercontent">
                         <h2>Follow us</h2>
