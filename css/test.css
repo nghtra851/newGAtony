@@ -142,6 +142,7 @@ input {
 .banner { 
     position: relative;
     overflow: auto; 
+    
 }
 .banner li { 
     list-style: none;
@@ -153,9 +154,6 @@ input {
     -o-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease;
-}
-.banner ul li:hover { 
-    border: 2px solid rgba(2,119,189,0.7);
 }
 .banner ul { 
     padding: 0;
@@ -175,6 +173,9 @@ input {
     bottom: 20px;
     text-align: center;
 }
+.dots li:hover {
+    background: #0277BD;
+}
 
 .dots li {
     display: inline-block;
@@ -186,9 +187,9 @@ input {
     border-radius: 10px;
     cursor: pointer;
     opacity: .4;
-    -webkit-transition: background .5s, opacity .5s;
-    -moz-transition: background .5s, opacity .5s;
-    transition: background .5s, opacity .5s;
+    -webkit-transition: background .3s, opacity .5s;
+    -moz-transition: background .3s, opacity .5s;
+    transition: background .3s, opacity .5s;
 }
 
 .dots li.active {
@@ -236,6 +237,7 @@ input {
 }
 .indexprodukt{
     margin-top: 20px;
+   
 }
 .img2{
     width: 100%;
@@ -487,6 +489,7 @@ background-color:#424242;
 .productslist img{
     padding: 5px;
     width: 100%;
+    height: 160px;
     border: 2px solid #0a526f;
 
 }
@@ -535,7 +538,9 @@ background-color:#424242;
 
 }
 .pimg img{
+    padding: 5px;
     width: 100%;
+    height: 500px;
     border: 2px solid #0a526f;
 }
 .sidebar {
@@ -658,7 +663,7 @@ background-color:#424242;
 
 
 
-.addprodukt{
+.addproduct{
 
     color:#0277BD;
     border: 2px solid #0a526f;
@@ -673,20 +678,22 @@ background-color:#424242;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.addprodukt a {
+.addproduct a {
     margin: 0;
     padding: 0px;
     font-size: 17px;
 }
-.addprodukt:hover {
+.addproduct:hover {
     background-color: #0277BD;
     color: white;
 }
 
 .productsizebutton{
-    width: 150px;
+    width: 130px;
     height: 35px;
+    margin: 15px 15px 10px 0;
 }
+
 .productbuttondesignPHP{
     box-shadow:  0px 0px 2px 0px #0277BD;
     border: none;
@@ -734,6 +741,11 @@ background-color:#424242;
     color:#0277BD;
 
 } 
+
+.buyButton{
+    width: 150px;
+    float: right;
+}
 
 .productdetails{
     border-left: solid 1px rgba(2,119,189,0.3);
@@ -1100,7 +1112,7 @@ html[xmlns] .slides { display: block; }
     margin: 0;
     box-shadow:0px 0px 7px #0277BD;
     display: none;
-    min-width: 60%;
+    width: 100%;
 }
 
 .cartDesign {

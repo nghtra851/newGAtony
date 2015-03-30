@@ -73,53 +73,53 @@ session_start();
                                 </ul>
 
 
-                                </li>
+                            </li>
 
-                                <li><a href="contact.php">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
+                            <?php
+                            include "cartDesign.php";
+                            ?>
+                            <div class="login LS-dropdown">
                                 <?php
-                                include "cartDesign.php";
-                                ?>
-                                <div class="login LS-dropdown">
-                                    <?php
-                                    if (isset($_SESSION["user"])) {
-                                        if ($_SESSION["user"] != NULL) {
-                                            echo "Logged in as " . $_SESSION["user"];
-                                            echo "<form method='POST' action='signout.php'>";
-                                            echo "<input type='submit' name='action' value='signout'></input>";
-                                            echo "</form>";
-                                        }
-                                    } else {
-                                        echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                if (isset($_SESSION["user"])) {
+                                    if ($_SESSION["user"] != NULL) {
+                                        echo "Logged in as " . $_SESSION["user"];
+                                        echo "<form method='POST' action='signout.php'>";
+                                        echo "<input type='submit' name='action' value='signout'></input>";
+                                        echo "</form>";
                                     }
-                                    ?>
-                                    <div class="dropdown-menu login-menu LS-droppdown">
-                                        <div class="row"> 
+                                } else {
+                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
+                                }
+                                ?>
+                                <div class="dropdown-menu login-menu LS-droppdown">
+                                    <div class="row"> 
 
-                                            <div class="col-sm-6 login">
-                                                <form method = 'POST' action ='signup.php'>
-                                                    <h2>Signup</h2>
-                                                    <h3 class ='user'>Username:</h3>
-                                                    <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                    <h3 class = 'user'>Password:</h3>
-                                                    <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                    <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
-                                                </form>
-                                            </div>
+                                        <div class="col-sm-6 login">
+                                            <form method = 'POST' action ='signup.php'>
+                                                <h2>Signup</h2>
+                                                <h3 class ='user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
+                                            </form>
+                                        </div>
 
-                                            <div class = 'col-sm-6 login'>
-                                                <form method = 'POST' action = 'login.php'>
-                                                    <h2>Login</h2>
-                                                    <h3 class = 'user'>Username:</h3>
-                                                    <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                    <h3 class = 'user'>Password:</h3>
-                                                    <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                    <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
-                                                </form>
-                                                ?
-                                            </div>
+                                        <div class = 'col-sm-6 login'>
+                                            <form method = 'POST' action = 'login.php'>
+                                                <h2>Login</h2>
+                                                <h3 class = 'user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
+                                            </form>
+                                            ?
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,22 +129,20 @@ session_start();
             <div class="container ">
 
                 <div class="row top-product ">
-                    <div class="col-sm-6 pimg ">
+                    <div class="col-sm-6 ">
+                        <div class="col-sm-12 pimg ">
                         <div id="slider1" >
-                            <img border="0" src="img/img1.jpg"  alt="" />
-                            <img  border="0" src="img/img2.jpg"  alt="" />
-                            <img  border="0" src="img/img3.jpg"  alt="" />
-                            <img border="0" src="img/img4.jpg"  alt="" />
-                            <img  border="0" src="img/img5.jpg"  alt="" />
-                            <img border="0" src="img/img6.jpg"  alt="" />
+                            <img border="0" src="img/example.jpg"  alt="" />
+                            <img  border="0" src="img/example.jpg"  alt="" />
+                            <img border="0" src="img/example.jpg"  alt="" />
                         </div>
                         <ul id="thumb"> </ul>
-
+ </div>
                         <div class="col-sm-12 productslist similarproducts">
                             <p class="similarproductstitle" > <span>Similar Products</span></p>
                             <a href="Product.php">    
                                 <div class="col-sm-3">
-                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <img class="img-responsive "href="#" src="img/example.jpg">
                                     <h3>Tophat</h3>
                                     <h4>$449</h4>
 
@@ -152,21 +150,21 @@ session_start();
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
-                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <img class="img-responsive "href="#" src="img/example.jpg">
                                     <h3>Tophat</h3>
                                     <h4>$449</h4>
                                 </div>
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
-                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <img class="img-responsive "href="#" src="img/example.jpg">
                                     <h3>Tophat</h3>
                                     <h4>$449</h4>
                                 </div>
                             </a>
                             <a href="Product.php">    
                                 <div class="col-sm-3 ">
-                                    <img class="img-responsive "href="#" src="http://placehold.it/400x400">
+                                    <img class="img-responsive "href="#" src="img/example.jpg">
                                     <h3>Tophat</h3>
                                     <h4>$449</h4>
                                 </div>
@@ -209,14 +207,14 @@ session_start();
                             <?php
                             echo "<form method = 'POST' action = 'addToCart.php'>";
                             $_POST["size"] = explode(",", $_POST["size"]);
-                            echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='size'>";
+                            echo "<select class=' productsizebutton productbuttondesignPHP' type='text' name='size'>";
                             foreach ($_POST["size"] as $size) {
                                 echo "<option value='" . $size . "'>" . $size . "</option>";
                             }
                             echo "</select>";
 
                             $_POST["color"] = explode(",", $_POST["color"]);
-                            echo "<select class='productsizebutton productbuttondesignPHP' type='text' name='color'>";
+                            echo "<select class='productLeft productsizebutton productbuttondesignPHP' type='text' name='color'>";
                             foreach ($_POST["color"] as $color) {
                                 echo "<option value='" . $color . "'>" . $color . "</option>";
                             }
@@ -225,22 +223,22 @@ session_start();
                             echo "<input type = 'hidden' name = 'name' value ='" . $_POST['name'] . "' >";
                             echo "<input type = 'hidden' name = 'price' value ='" . $_POST['price'] . "' >";
                             echo "<input type = 'hidden' name = 'amount' value ='" . $_POST['amount'] . "' >";
-                            echo "<button class='addprodukt' type='submit' name='action' value='add'>Add</button>";
+                            echo "<button class='addproduct' type='submit' name='action' value='add'>Add</button>";
                             echo "</form>";
                             ?>
 
-                           
+
                         </div>
 
 
                         <div class="panel-heading productbuttondesign" role="tab" id="headingOne">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <p>Produkt Beskrivning</p>
+                                <p>Product Details</p>
                             </a>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body productdetails">
-                                <h4>Beskrivning</h4>
+                                <h4>Details</h4>
                                 <p>En Byxa i snabbtorkande funktionsmaterial som andas. Slim fit. Byxan är delvis tillverkad av återvunnen polyester.</p>
                                 <h4>Detaljer</h5>             
                                     <p>Snabbtorkande, 83% polyester, 17% elastan. Maskintvätt 40˚
@@ -254,7 +252,12 @@ session_start();
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body productdetails">
-                                <p>   STOEOREOREORAOAFASDFJDSPFJSFSDFIJ</p>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+
+
                             </div>
                         </div>
 
@@ -272,15 +275,15 @@ session_start();
                         <div class="lightbox-slider">
                             <ul class="slides">
                                 <li>
-                                    <a href="#"><img src="img/img1.jpg" /></a>
+                                    <a href="#"><img src="img/example.jpg" /></a>
                                 </li>
 
                                 <li>
-                                    <img src="img/img2.jpg" />
+                                    <img src="img/example.jpg" />
                                 </li>
 
                                 <li>
-                                    <img src="img/img3.jpg" />
+                                    <img src="img/example.jpg" />
                                 </li>
                             </ul>
                         </div>

@@ -16,6 +16,7 @@ session_start();
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/unslider.min.js"></script>
+        <script src="js/index.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
@@ -132,23 +133,23 @@ session_start();
 
                     <div class="banner">
                         <ul>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
-                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/example.jpg"></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Male</h3>
                     </div>
                     <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Female</h3>
                     </div>
                     <div class="col-sm-4 underslider">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Children</h3>
                     </div>
                 </div>
@@ -161,27 +162,27 @@ session_start();
 
                 <div class="row">
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Male</h3>
                     </div>
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Female</h3>
                     </div>
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Children</h3>
                     </div>
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Male</h3>
                     </div>
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Female</h3>
                     </div>
                     <div class="col-sm-4 indexprodukt">
-                        <img class="img-responsive img"href="#" src="img/janne.jpg">
+                        <img class="img-responsive img"href="#" src="img/example.jpg">
                         <h3>Children</h3>
                     </div>
                 </div>

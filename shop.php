@@ -19,8 +19,8 @@ session_start();
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
     </head>
-    <body>
-       <div id="wrapper">
+     <body>
+        <div id="wrapper">
             <div class="jumbotron backgroundheader navbar navbar-default navbar-fixed-top nav-shado">
                 <div class="container">
                     <div class=" navbar navbar-static-top navigation">
@@ -76,52 +76,53 @@ session_start();
 
                             <li><a href="contact.php">Contact</a></li>
                             <?php
-                            include 'cartDesign.php';
+                            include "cartDesign.php";
                             ?>
-                                                        <div class="login LS-dropdown">
-                            <?php
-                            if (isset($_SESSION["user"])) {
-                                if ($_SESSION["user"] != NULL) {
-                                    echo "Logged in as " . $_SESSION["user"];
-                                    echo "<form method='POST' action='signout.php'>";
-                                    echo "<input type='submit' name='action' value='signout'></input>";
-                                    echo "</form>";
+                            <div class="login LS-dropdown">
+                                <?php
+                                if (isset($_SESSION["user"])) {
+                                    if ($_SESSION["user"] != NULL) {
+                                        echo "Logged in as " . $_SESSION["user"];
+                                        echo "<form method='POST' action='signout.php'>";
+                                        echo "<input type='submit' name='action' value='signout'></input>";
+                                        echo "</form>";
+                                    }
+                                } else {
+                                    echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
                                 }
-                            } else {
-                                echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
-                            }
-                            ?>
-                                                            <div class="dropdown-menu login-menu LS-droppdown">
-                                                                <div class="row"> 
-                            
-                                                                    <div class="col-sm-6 login">
-                                                                        <form method = 'POST' action ='signup.php'>
-                                                                            <h2>Signup</h2>
-                                                                            <h3 class ='user'>Username:</h3>
-                                                                            <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                                            <h3 class = 'user'>Password:</h3>
-                                                                            <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                                            <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
-                                                                        </form>
-                                                                    </div>
-                            
-                                                                    <div class = 'col-sm-6 login'>
-                                                                        <form method = 'POST' action = 'login.php'>
-                                                                            <h2>Login</h2>
-                                                                            <h3 class = 'user'>Username:</h3>
-                                                                            <input name = 'username' type = 'text' placeholder = 'Username' required>
-                                                                            <h3 class = 'user'>Password:</h3>
-                                                                            <input name = 'password' type = 'password' placeholder = 'Password' required>
-                                                                            <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
-                                                                        </form>
-                                                                        ?
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                ?>
+                                <div class="dropdown-menu login-menu LS-droppdown">
+                                    <div class="row"> 
+
+                                        <div class="col-sm-6 login">
+                                            <form method = 'POST' action ='signup.php'>
+                                                <h2>Signup</h2>
+                                                <h3 class ='user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'productbuttondesign send' type ='submit' name = 'action' value = 'Sign Up'>
+                                            </form>
+                                        </div>
+
+                                        <div class = 'col-sm-6 login'>
+                                            <form method = 'POST' action = 'login.php'>
+                                                <h2>Login</h2>
+                                                <h3 class = 'user'>Username:</h3>
+                                                <input name = 'username' type = 'text' placeholder = 'Username' required>
+                                                <h3 class = 'user'>Password:</h3>
+                                                <input name = 'password' type = 'password' placeholder = 'Password' required>
+                                                <input class = 'productbuttondesign send' type = 'submit' name = 'action' value = 'login'>
+                                            </form>
+                                            ?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class='container'>
                 <div class='row'>

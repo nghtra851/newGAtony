@@ -17,6 +17,7 @@
                 <?php
                 include 'showCart.php';
                 ?>
+               <button class="productbuttondesign buyButton" type='submit'>Buy</button>
             </div>
         </div>
     </div>
