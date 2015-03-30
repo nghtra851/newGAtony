@@ -4,7 +4,7 @@
     background-color: #EEEEEE;
 }
 .logo h1{
-float: left;
+    float: left;
 }
 
 .backgroundheader{
@@ -33,7 +33,7 @@ float: left;
     font-size: 30px;
     list-style-type: none;
     margin-top: 45px;
-margin-left: -50px;
+    margin-left: -50px;
 }
 .navigation2 li{
     display: inline;
@@ -139,6 +139,63 @@ input {
 .row{
 
 }
+.banner { 
+    position: relative;
+    overflow: auto; 
+}
+.banner li { 
+    list-style: none;
+}
+.banner ul li { 
+    float: left;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.banner ul li:hover { 
+    border: 2px solid rgba(2,119,189,0.7);
+}
+.banner ul { 
+    padding: 0;
+}
+.img{
+    width: 100%;
+    height: 350px;
+}
+.imgBanner{
+    width: 100%;
+    height: 400px;
+}
+.dots {
+    position: absolute;
+    left: -20px;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+}
+
+.dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #0277BD;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+
+.dots li.active {
+    background: #0277BD;
+    opacity: 0.5;
+}
+
 .slider{
     margin-top: 140px;
     margin-bottom: 50px;                      
@@ -162,10 +219,7 @@ input {
 .underslider:hover h3{
     background-color: #E0E0E0;
 }
-.img{
-    width: 100%;
-    height: 350px;
-}
+
 .indexproduktnav{
     margin-top: 20px;
     border-top: solid 1px #CFD8DC;
@@ -922,7 +976,7 @@ html[xmlns] .slides { display: block; }
 .dark-matter h1>span {
     display: block;
     font-size: 18px;
-    
+
 }
 .dark-matter label {
     display: block;
@@ -956,7 +1010,7 @@ html[xmlns] .slides { display: block; }
     width: 70%;
     height: 35px;
     color: #525252;
-        background-color: whitesmoke;
+    background-color: whitesmoke;
     line-height: 25px;
 }
 .dark-matter textarea{

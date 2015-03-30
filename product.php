@@ -293,7 +293,6 @@ session_start();
                     <div class="closeshare">x</div>
                     <div class="sharelightbox-container">
                         <div id="fb-root"></div>
-                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="icon"></div>
 
                     </div>
                 </div>

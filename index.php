@@ -15,6 +15,7 @@ session_start();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
+        <script src="js/unslider.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
@@ -128,7 +129,14 @@ session_start();
 
             <div class="container">
                 <div class="slider">
-                    <img class="img-responsive img"href="#" src="img/suit.jpg">
+
+                    <div class="banner">
+                        <ul>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
+                            <li><a href=""><img class="imgBanner"href="#" src="img/suit.jpg"></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 underslider">
