@@ -85,10 +85,13 @@ session_start();
                                 <?php
                                 if (isset($_SESSION["user"])) {
                                     if ($_SESSION["user"] != NULL) {
+                                        echo "<div class=loggedin>";
                                         echo "Logged in as " . $_SESSION["user"];
+                                        echo "</div>";
                                         echo "<form method='POST' action='signout.php'>";
                                         echo "<input type='submit' name='action' value='signout'></input>";
-                                        echo "</form>";
+                                        echo "</form>";                                   
+                                        
                                     }
                                 } else {
                                     echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Login | Signup<b class='caret'></b></a>";
@@ -203,6 +206,13 @@ session_start();
                     </div>
                     <div class="col-sm-4 footercontent">
                         <h2>Follow us</h2>
+                        <ul class="sprite">
+                            <li class="Face"><a href="https://facebook.com/"><span>F</span></a></li>
+                            <li class="Google"><a href="https://plus.google.com/"><span>G</span></a></li>
+                            <li class="Insta"><a href="https://instagram.com/"><span>I</span></a></li>
+                            <li class="Twitter"><a href="https://twitter.com/"><span>T</span></a></li>
+                            <li class="YouT"><a href="https://youtube.com/"><span>YT</span></a></li>
+                        </ul>
                     </div>
 
                 </div>

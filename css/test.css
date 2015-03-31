@@ -15,9 +15,7 @@
     margin: 0;
 }
 
-.container{
-    border-bottom: red;
-}
+
 .nav-shado{
     box-shadow: 0px 10px 15px #424242;
     border-bottom: 2px solid #424242;
@@ -34,7 +32,7 @@
     font-size: 30px;
     list-style-type: none;
     margin-top: 45px;
-    margin-left: 0px;
+    margin-left: -20px;
 }
 .navigation2 li{
     display: inline;
@@ -105,7 +103,7 @@
 
 }
 .navigation2 .login a:hover {
-    color: #fff;
+    color: #29B6F6;
     text-decoration: none;
 }
 .login-menu{
@@ -136,6 +134,10 @@ input {
     margin-left: 20px;
     margin-bottom: 20px;
     margin-top: 7px;
+}
+.loggedin{
+    color: #0277BD;
+    padding-left: 20px;
 }
 .row{
 
@@ -720,6 +722,20 @@ background-color:#424242;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+.hej{
+        color:#0277BD;
+    border: none;
+    box-shadow:  0px 0px 2px 0px #0277BD;
+    border-radius: 0;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 .productbuttondesign p {
     padding: 12px;
     font-size: 17px;
@@ -766,10 +782,7 @@ background-color:#424242;
 }
 
 
-.lightbox-container a:active,
-.lightbox-slider a:active,
-.lightbox-container a:focus,
-.lightbox-slider a:focus  { outline: none; }
+
 
 .slides,
 .flex-control-nav,
@@ -951,18 +964,6 @@ html[xmlns] .slides { display: block; }
     box-shadow:  0px 0px 2px 2px #0277BD;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*Contact*/
 
 .Con{
@@ -1142,3 +1143,57 @@ html[xmlns] .slides { display: block; }
 .item {
     margin-top: 15px;
 }
+
+.sprite{
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    width: 260px;
+    height: 48px;
+    background-image: url(../img/sprite.png);
+}
+.sprite li{
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    list-style-type: none;
+    display: inline;
+    height: 48px;
+    text-align: center;
+    float: left;
+    line-height: 44px;
+    /*border: 2px solid green;*/
+}
+
+.sprite li.Face{
+    padding-left: 0px;
+    /*border: 2px solid green;*/
+}
+.sprite li.YouT{
+    padding-left: 0px;
+    /*border: 2px solid green;*/
+}
+.sprite a{
+    display: block;
+    height: 48px;
+    color: blueviolet;
+}
+.sprite span{
+    display: none;
+}
+
+.Face{
+    width: 48px;
+}
+.Google{
+    width: 48px;
+}
+.Insta{
+    width: 48px
+}
+.Twitter{
+    width: 48px
+}
+.YouT{
+    width: 48px
+}   
