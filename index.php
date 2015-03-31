@@ -14,7 +14,7 @@ session_start();
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="jquery-1.11.2.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/cartButton.js"></script>
