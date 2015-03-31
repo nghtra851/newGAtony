@@ -4,21 +4,19 @@ session_start();
 ?>
 <html lang="en">
     <head>
-        <title>Test</title>
+        <title>CranesCrown/product</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/test.css">
-        <link type="text/css" rel="stylesheet" href="css/navtest.css">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/megameny.css">
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="js/jquery.flexslider-min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
-        <script src="js/cartButton.js"></script>
-
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/cartButton.js"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -297,7 +295,19 @@ session_start();
                 <div class="sharepbox">
                     <div class="closeshare">x</div>
                     <div class="sharelightbox-container">
-                        <div id="fb-root"></div>
+                        <div id="share-buttons">
+ 
+<a href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
+ 
+<a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
+ 
+<a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" /></a>
+ 
+<a href="http://reddit.com/submit?url=http://www.simplesharebuttons.com&title=Simple Share Buttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" /></a>
+ 
+<a href="mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://www.simplesharebuttons.com"><img src="http://www.simplesharebuttons.com/images/somacro/email.png" alt="Email" /></a>
+ 
+</div>
 
                     </div>
                 </div>

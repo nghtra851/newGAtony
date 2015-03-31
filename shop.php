@@ -4,16 +4,15 @@ session_start();
 ?>
 <html lang="en">
     <head>
-        <title>Test</title>
+        <title>CranesCrown/shoppinglist</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/test.css">
-        <link type="text/css" rel="stylesheet" href="css/navtest.css">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/megameny.css">
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script src="js/jquery.cycle.all.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
